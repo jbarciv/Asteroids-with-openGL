@@ -1,6 +1,11 @@
 
-
+## Windows
 # ignore .object files
-*.o 
+Windows/*.o
+Windows/tempCodeRunnerFile.*
 
-tempCodeRunnerFile.*
+## Linux
+# ignore .object files
+Linux/*.o
+Linux/tempCodeRunnerFile.*
+
