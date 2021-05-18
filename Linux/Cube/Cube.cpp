@@ -7,22 +7,22 @@
 #include <string.h>
 
 #define ESC 27
-#define WINX 1024   // Dimensiones de la ventana
+#define WINX 1024   // Windows dimensions
 #define WINY 800
 using namespace std;
 
-// Prototipos de funciones 
+// Functions prototype 
 void myLogic();
-void DibujarCubo();
+void DrawCube();
 
-//Callback para teclado y raton
+//Callback for mouse and keyboard
 void OnKeyboardDown(unsigned char key, int x, int y);
 void OnSpecKeyboardDown(int key, int x, int y);
 
-//Callbacks de dibujo
-void OnDibuja(void);	
+//Callbacks of draw
+void OnDraw(void);	
 
-// Posicion y step de la camara
+// Position and step of the camera
 float cam_pos[6]={0, 0, 27};
 
 float rot=0;
@@ -31,46 +31,46 @@ float vel=0.25;
 /**************************************************************/
 int main(int argc,char* argv[]){
 
-    // Inicializaciones
+    // Initializations
 
-    //Creacion y definicion de la ventana
+    // Window creation and definition
     glutInit(&argc, argv);
     glutInitWindowSize(WINX,WINY);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-    glutCreateWindow("Asteroids GL"); // Nombre de la ventana
+    glutCreateWindow("Asteroids GL"); // Window's name
 
-    //Habilitar las luces, la renderizacion y el color de los materiales
+    // Enable lights, rendering, and color of materials
     glEnable(GL_LIGHT0);
     glEnable(GL_LIGHTING);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_COLOR_MATERIAL);
 
 
-    //definir la proyeccion
+    //define the projection
     glMatrixMode(GL_PROJECTION);
     gluPerspective( 40.0, WINX/WINY, 0.1, 50);
 
 
     // define call backs to GLUT
-    glutDisplayFunc(OnDibuja);
+    glutDisplayFunc(OnDraw);
     glutIdleFunc(myLogic);
 
     glutKeyboardFunc(OnKeyboardDown);
     glutSpecialFunc(OnSpecKeyboardDown);
     
     
-    //Para definir el punto de vista
+    //To define the viewpoint
     glMatrixMode(GL_MODELVIEW);	
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);    
     
     
-    // posicciona el punto de vista 
+    // posicciona the viewpoint
     gluLookAt(cam_pos[0],cam_pos[1],cam_pos[2],  // posicion del  ojo  
     	    0.0, 0.0, 0.0,		        // hacia que punto mira  
     	    0.0, 1.0, 0.0);         // vector "UP"  (vertical positivo)
 
 
-    // bucle del programa
+    // program loop
     glutMainLoop();
     
     return 0;   
@@ -84,22 +84,22 @@ void myLogic(){
 }
  
 /**************************************************************/
-void OnDibuja(void){ 
-    //Borrado de la pantalla	
+void OnDraw(void){ 
+    //Clearing the screen	
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    DibujarCubo();
+    DrawCube();
 
-    // posicciona el punto de vista
+    // posicciona the viewpoint
     glLoadIdentity();
     gluLookAt(cam_pos[0],cam_pos[1],cam_pos[2],  // posicion del  ojo  
     	    0.0, 0.0, 0.0,		        // hacia que punto mira  
     	    0.0, 1.0, 0.0);             // vector "UP"  (vertical positivo)
 
 
-    //Al final, cambiar el buffer
+    //At the end, change the buffer
     glutSwapBuffers();
-    glutPostRedisplay();//se le indica que redibuje la pantalla
+    glutPostRedisplay();//prompted to redraw the screen
 }
 /**************************************************************/
 
@@ -145,7 +145,7 @@ void OnSpecKeyboardDown(int key, int x, int y){
     }		
 }
 
-void DibujarCubo(void){
+void DrawCube(void){
   glPushMatrix();
   glTranslatef(0,1,0);
   glRotatef(rot,1,0,0);
