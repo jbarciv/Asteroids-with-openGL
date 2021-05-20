@@ -3,7 +3,7 @@
  *       --> Drawing a CUBE with OpenGL <--
  * It is a first getting in touch example with OpenGL
  * Provided by: Claudio Rossi, Technical University of Madrid (UPM)
- * Translated/adapted: Josep Maria Barbera
+ * Translated/adapted by: Josep Maria Barbera
  * -------------------------------------------------------------------------- */
 
 #ifdef linux
