@@ -1,5 +1,23 @@
 
+/* ----------------------------------------------------------------------------
+ *                   --> Drawing a CUBE with OpenGL <--
+ * It is a first getting in touch example with OpenGL
+ * Provided by: Claudio Rossi, Technical University of Madrid (UPM)
+ * Translated: Josep Maria Barbera
+ * -------------------------------------------------------------------------- */
+
+#ifdef linux
 #include <GL/glut.h>
+#endif
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#include <stdlib.h>
+#endif
+#ifdef _WIN32
+#include <windows.h>
+#include "glut.h"
+#endif
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
