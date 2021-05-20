@@ -1,4 +1,7 @@
-
+## Main folder
+.pdf
+.zip
+Latex
 ## Windows
 # ignore .object files
 Windows/*.o
