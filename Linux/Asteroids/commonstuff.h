@@ -1,17 +1,17 @@
 
 
-#include <stdio.h>
-#include <math.h>
-
-
-//#ifdef linux
-// #ifdef __APPLE__
-#include "GL/glut.h"
+#ifdef linux
+#include <GL/glut.h>
+#endif
+#ifdef __APPLE__
+#include <GLUT/glut.h>
 #include <stdlib.h>
-// #else
-// #include <windows.h>
-// #include "glut.h"
-// #endif
+#endif
+#ifdef _WIN64
+#include <windows.h>
+#include "glut.h"
+#endif
+
 
 #define X 0
 #define Y 1
