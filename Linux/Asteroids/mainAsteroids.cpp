@@ -6,15 +6,15 @@
 
 
 
-#include "commonstuff.h"
+#include "commonstuff.hpp"
 
 
-#include "Shape.h"
-#include "Asteroid.h"
-#include "Bullet.h"
-#include "Ship.h"
-#include "ObjectsList.h"
-#include "Flame.h"
+#include "Shape.hpp"
+#include "Asteroid.hpp"
+#include "Bullet.hpp"
+#include "Ship.hpp"
+#include "ObjectsList.hpp"
+#include "Flame.hpp"
 
 #include <stdio.h>
 #include <math.h>
@@ -204,14 +204,14 @@ void myLogic()
   int res;
 
   // borra el proyectil despu�s de cierto tiempo si no ha dado con nada
-  if(shotTime++>MAXSHOTTIME)
+  if(shotTime++ > MAXSHOTTIME)
     {
       worldobjects.remove(theBullet);    
       theBullet = NULL;
       shotTime = 0;
     }
 
-  // Pide al mudo que mueve los objetos
+  // Pide al mundo que mueve los objetos
   worldobjects.move();
 
   // Pide si ha habido colisi�n, pasa referencia a proyectil y nave, retorna tipo de colisi�n y posici�n de la colisi�n
