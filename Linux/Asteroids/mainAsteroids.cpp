@@ -70,8 +70,6 @@ int FlameTime=0;
 int FT=20;
 
 
-
-
 //***********************
 // Programa principal
 //***********************
@@ -137,9 +135,6 @@ int main(int argc,char* argv[])
 }
 
 /************************** FIN DEL MAIN ************************************/
-
-
-
 
 
 //***********************
@@ -257,8 +252,6 @@ void myLogic()
       score += 100*(res-1);
     }
 
-
-
 }
  
 /**************************************************************/ 
@@ -279,9 +272,6 @@ void OnDibuja(void)
   glutPostRedisplay();//se le indica que redibuje la pantalla
   /**************************************************************/}
 
-
-
-   
 
 
 void OnKeyboardDown(unsigned char key, int x, int y)
@@ -362,7 +352,4 @@ void  OnMouseMoveBtn  (int x, int y)
     {
      
     }
-
- 
- 
 }
