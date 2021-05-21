@@ -1,6 +1,6 @@
 
-#include "commonstuff.h"
-#include "Shape.h"
+#include "commonstuff.hpp"
+#include "Shape.hpp"
 
 #ifndef __ASTEROID_H__
 #define __ASTEROID_H__

@@ -1,6 +1,6 @@
 
-#include "commonstuff.h"
-#include "Shape.h"
+#include "commonstuff.hpp"
+#include "Shape.hpp"
 
 #ifndef __BULLET_H__
 #define __BULLET_H__

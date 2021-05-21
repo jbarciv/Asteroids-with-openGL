@@ -1,6 +1,6 @@
 
-#include "commonstuff.h"
-#include "Asteroid.h"
+#include "commonstuff.hpp"
+#include "Asteroid.hpp"
 
 
 Asteroid::Asteroid(int t)

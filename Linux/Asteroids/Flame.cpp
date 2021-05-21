@@ -1,6 +1,6 @@
 
-#include "commonstuff.h"
-#include "Flame.h" 
+#include "commonstuff.hpp"
+#include "Flame.hpp" 
 
 
 Flame::Flame(float *p)

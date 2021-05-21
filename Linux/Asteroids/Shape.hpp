@@ -1,7 +1,7 @@
 
 
 
-#include "commonstuff.h"
+#include "commonstuff.hpp"
 
 // forward declaration
 class ObjectList;

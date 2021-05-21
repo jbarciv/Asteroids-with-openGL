@@ -1,7 +1,7 @@
 
-#include "commonstuff.h"
-#include "Shape.h"
-#include "Bullet.h"
+#include "commonstuff.hpp"
+#include "Shape.hpp"
+#include "Bullet.hpp"
 
 #ifndef __SHIP_H__
 #define __SHIP_H__

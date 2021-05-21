@@ -1,7 +1,7 @@
 
-#include "commonstuff.h"
-#include "Shape.h"
-#include "Bullet.h"
+#include "commonstuff.hpp"
+#include "Shape.hpp"
+#include "Bullet.hpp"
 
 #ifndef __FLAME_H__
 #define __FLAME_H__

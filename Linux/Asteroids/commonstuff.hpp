@@ -12,6 +12,7 @@
 #include "glut.h"
 #endif
 
+#include <math.h>
 
 #define X 0
 #define Y 1

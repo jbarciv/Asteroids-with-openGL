@@ -1,6 +1,6 @@
 
-#include "commonstuff.h"
-#include "Bullet.h"
+#include "commonstuff.hpp"
+#include "Bullet.hpp"
 
 Bullet::Bullet(float px, float py, float vx, float vy)
 {

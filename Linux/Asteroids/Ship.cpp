@@ -1,7 +1,7 @@
 
-#include "commonstuff.h"
-#include "Ship.h"
-#include "Bullet.h"
+#include "commonstuff.hpp"
+#include "Ship.hpp"
+#include "Bullet.hpp"
 
 
 Ship::Ship()
