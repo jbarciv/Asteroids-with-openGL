@@ -3,6 +3,7 @@
 #include "Flame.hpp" 
 
 
+
 Flame::Flame(float *p)
 {
   pos[X] = p[X];

@@ -5,22 +5,13 @@
 //***********************
 
 
-
 #include "commonstuff.hpp"
-
-
 #include "Shape.hpp"
 #include "Asteroid.hpp"
 #include "Bullet.hpp"
 #include "Ship.hpp"
 #include "ObjectsList.hpp"
 #include "Flame.hpp"
-
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 
 //***********************
 // Prototipos de funciones 

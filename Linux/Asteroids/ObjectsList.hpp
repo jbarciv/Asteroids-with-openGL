@@ -1,24 +1,30 @@
- 
+
 #include "Shape.hpp"
 #include "Asteroid.hpp"
 #include "Bullet.hpp"
 #include "Ship.hpp"
 #include "Flame.hpp"
 
-class ObjectList{
+#ifndef __OBJECTSLIST_H_
+#define __OBJECTSLIST_H_
+
+class ObjectsList: list<Shape*>
+{
     private:
         int n;
-        nodo* head;
+        Shape* head;
     public:
         Ship* theShip;
     public:
-        ObjectList();
-        ~ObjectList();
+        ObjectsList();
+        ~ObjectsList();
         void move();
         void draw();
         void add(Shape* s);
         void remove(Shape* s);
         Ship* getShip();
-        int collision(Bullet* bullet, Ship* ship, float*);
+        int collisions(Bullet* bullet, Ship* ship, float*);
         void reposition(Ship* ship);
 };
+
+#endif

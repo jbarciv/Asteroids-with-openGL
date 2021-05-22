@@ -1,4 +1,6 @@
 
+#ifndef _STUFF_
+#define _STUFF_
 
 #ifdef linux
 #include <GL/glut.h>
@@ -13,6 +15,13 @@
 #endif
 
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <algorithm>
+#include <list>
+using namespace std;
 
 #define X 0
 #define Y 1
@@ -70,3 +79,5 @@
 #define R2D              57.29577951308232
 
 #define SQR(a) ((a)*(a))
+
+#endif
