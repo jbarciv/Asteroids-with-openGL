@@ -169,7 +169,7 @@ void DrawCube(void){
   glRotatef(rot,1,0,0);
   glRotatef(rot,0,1,0);
   glRotatef(0,0,0,1);
-  glColor3f(0,1,0);
+  glColor3f(1,1,1);
   glutSolidCube(3);
   glPopMatrix();
 }
