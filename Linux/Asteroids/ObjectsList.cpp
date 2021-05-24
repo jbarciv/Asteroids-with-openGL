@@ -1,9 +1,15 @@
 
 #include "commonstuff.hpp"
 #include "ObjectsList.hpp"
+extern int nShips;
 
 ObjectsList::ObjectsList(){
-
+    Ship *spaceShip;
+    push_front(spaceShip);
+    for(int i=0 ; i < NUMASTEROIDS; i++){
+        Asteroid *asteroid;
+        push_front(asteroid);
+    }
 }
 ObjectsList::~ObjectsList(){
 
