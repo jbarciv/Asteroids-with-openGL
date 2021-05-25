@@ -8,7 +8,7 @@
 #ifndef _OBJECTSLIST_H_
 #define _OBJECTSLIST_H_
 
-class ObjectList: list<Shape*>
+class ObjectsList: list<Shape*>
 {
     private:
         int n;

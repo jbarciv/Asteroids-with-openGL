@@ -4,7 +4,7 @@
 
 //***********************
 // Asteroids Open GL
-// Claudio Rossi, Universidad Politécnica de Madrid 
+// Claudio Rossi, Universidad Politï¿½cnica de Madrid 
 // (C) 2015 
 //***********************
 
@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <list>
 
 #include "Shape.h"
 #include "Asteroid.h"
@@ -51,10 +52,10 @@ void gameover(int score);
 // Variables globales
 //***********************
 
-// Posición y step de la camara
+// Posiciï¿½n y step de la camara
 float cam_pos[6]={0, 0, 27};
 
-// posición de la explosión
+// posiciï¿½n de la explosiï¿½n
 float expl_pos[2]={-1000,-1000};
 
 // Modo del Mouse
@@ -113,29 +114,29 @@ int main(int argc,char* argv[])
     // Idle function: contiene la logica del juego
   glutIdleFunc(myLogic);
   
-  // Callbacks de teclado y ratón
+  // Callbacks de teclado y ratï¿½n
   glutKeyboardFunc(OnKeyboardDown);
   glutSpecialFunc(OnSpecKeyboardDown);
   glutMotionFunc(OnMouseMoveBtn);
   glutMouseFunc(OnMouseBtn);
 
   
-  // Posicciona el punto de vista (cámara)
+  // Posicciona el punto de vista (cï¿½mara)
   gluLookAt(cam_pos[0],cam_pos[1],cam_pos[2],  // posicion del  ojo  
 	    0.0, 0.0, 0.0,		        // hacia que punto mira  
 	    0.0, 1.0, 0.0);         // vector "UP"  (vertical positivo)
 
 
   
-  // Creacción de los objetos iniciales
+  // Creacciï¿½n de los objetos iniciales
   theShip = worldobjects.getShip();
 
-  // ObjectsList es declarada estática, se inicializa "automaticamente" - contiene los asteroides
+  // ObjectsList es declarada estï¿½tica, se inicializa "automaticamente" - contiene los asteroides
   
   // bucle infinito de Open GL
   glutMainLoop();
 
-  // Esto solo sirve para que el compilador no proteste, nunca se llegará aquí
+  // Esto solo sirve para que el compilador no proteste, nunca se llegarï¿½ aquï¿½
   return 0;   
 
 }
@@ -151,7 +152,7 @@ int main(int argc,char* argv[])
 //***********************
 
 
-// Imprime puntuacción y num. de naves
+// Imprime puntuacciï¿½n y num. de naves
 void printdata()
 {
   int i,l;
@@ -207,7 +208,7 @@ void myLogic()
 {
   int res;
 
-  // borra el proyectil después de cierto tiempo si no ha dado con nada
+  // borra el proyectil despuï¿½s de cierto tiempo si no ha dado con nada
   if(shotTime++>MAXSHOTTIME)
     {
       worldobjects.remove(theBullet);    
@@ -218,10 +219,10 @@ void myLogic()
   // Pide al mudo que mueve los objetos
   worldobjects.move();
 
-  // Pide si ha habido colisión, pasa referencia a proyectil y nave, retorna tipo de colisión y posición de la colisión
-  // res==0:  No ha colisicón
+  // Pide si ha habido colisiï¿½n, pasa referencia a proyectil y nave, retorna tipo de colisiï¿½n y posiciï¿½n de la colisiï¿½n
+  // res==0:  No ha colisicï¿½n
   // res==1:  Asteroide/Nave
-  // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeño)
+  // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeï¿½o)
   res = worldobjects.collisions(theBullet,theShip,expl_pos);  
 
   // Explosion
@@ -246,7 +247,7 @@ void myLogic()
     {
       nShips--;
 
-      // Esto habría que mejorarlo...
+      // Esto habrï¿½a que mejorarlo...
       if(nShips==0)
 	exit(1);
       
@@ -309,7 +310,7 @@ void OnKeyboardDown(unsigned char key, int x, int y)
       
       break;
     case '-': theShip->thrust(SHIPSPEED); break;  // accelara
-    case ',': theShip->hyperjump(); break;  // hyper jump (mueve la nave a una posición random
+    case ',': theShip->hyperjump(); break;  // hyper jump (mueve la nave a una posiciï¿½n random
 
     }		
 
