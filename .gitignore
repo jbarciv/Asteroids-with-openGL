@@ -12,4 +12,5 @@ Windows/tempCodeRunnerFile.*
 # ignore .object files
 Linux/*.o
 Linux/tempCodeRunnerFile.*
+Linux/.vscode
 

@@ -48,7 +48,9 @@ float expl_pos[2]={-1000,-1000};
 int MODE=NONE;
 
 // Objetos globales
+
 ObjectsList worldobjects;
+// list<Shape*> worldobjects;
 Ship *theShip=NULL;
 Bullet *theBullet=NULL;
 Flame *theFlame=NULL;
@@ -211,27 +213,24 @@ void myLogic()
     {
       FlameTime++;
       if(!theFlame)
-	{
-	  theFlame = new Flame(expl_pos);
-	  worldobjects.add(theFlame);
-	}
-      else
-	if(FlameTime>FT)
-	  {
-	    worldobjects.remove(theFlame);
-	    theFlame=NULL;
-	    FlameTime = 0;
-	  }
+        {
+          theFlame = new Flame(expl_pos);
+          worldobjects.add(theFlame);
+        }else
+	        if(FlameTime>FT)
+	        {
+	            worldobjects.remove(theFlame);
+	            theFlame=NULL;
+	            FlameTime = 0;
+	        }
     }
   
   if(res==1)    
     {
       nShips--;
-
-      // Esto habr�a que mejorarlo...
-      if(nShips==0)
-	exit(1);
       
+      // Esto habr�a que mejorarlo...
+      if(nShips==0) exit(1);
       theShip->resetpos();
       worldobjects.reposition(theShip);
     }

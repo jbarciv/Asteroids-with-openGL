@@ -2,36 +2,51 @@
 #include "commonstuff.hpp"
 #include "ObjectsList.hpp"
 extern int nShips;
+extern ObjectsList worldobjects;
 
-ObjectsList::ObjectsList(){
+ObjectsList::ObjectsList()
+{
     Ship *spaceShip;
-    push_front(spaceShip);
-    for(int i=0 ; i < NUMASTEROIDS; i++){
+    worldobjects.push_front(spaceShip);
+    for(int i=0 ; i < NUMASTEROIDS; i++)
+    {
         Asteroid *asteroid;
-        push_front(asteroid);
+        worldobjects.push_front(asteroid);
     }
 }
-ObjectsList::~ObjectsList(){
-
+ObjectsList::~ObjectsList()
+{
+    worldobjects.clear();
 }
-void ObjectsList::move(){
-
+void ObjectsList::move()
+{
+    list<Shape*>::iterator i;
+    for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
+        (*i)->move();
 }
-void ObjectsList::draw(){
-
+void ObjectsList::draw()
+{
+    list<Shape*>::iterator i;
+    for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
+        (*i)->draw();
 }
-void ObjectsList::add(Shape* s){
-
+void ObjectsList::add(Shape* s)
+{
+    worldobjects.push_front(s);
 }
-void ObjectsList::remove(Shape* s){
-
+void ObjectsList::remove(Shape* s)
+{
+    worldobjects.remove(s);
 }
-Ship* ObjectsList::getShip(){
-
+Ship* ObjectsList::getShip()
+{
+    return theShip;
 }
-int ObjectsList::collisions(Bullet* bullet, Ship* ship, float*){
-
+int ObjectsList::collisions(Bullet* bullet, Ship* ship, float*)
+{
+    return 0;
 }
-void ObjectsList::reposition(Ship* ship){
-
+void ObjectsList::reposition(Ship* ship)
+{
+        
 }
