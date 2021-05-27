@@ -1,6 +1,3 @@
-
-
-
 #include "commonstuff.h"
 
 // forward declaration
