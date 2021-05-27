@@ -5,7 +5,6 @@ using namespace std;
 
 Asteroid::Asteroid(int t)
 {
-    // cout << "soy un asteroide, ";
   float tmp;
 
   size = BIG;

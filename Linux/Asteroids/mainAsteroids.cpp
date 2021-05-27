@@ -195,26 +195,25 @@ void myLogic()
       cout << "I'm here" << endl;
   int res;
 
-  // borra el proyectil despu�s de cierto tiempo si no ha dado con nada
+  // borra el proyectil despues de cierto tiempo si no ha dado con nada
   if(shotTime++ > MAXSHOTTIME)
     {
       worldobjects.remove(theBullet);    
       theBullet = NULL;
       shotTime = 0;
     }
-  cout << "I'm here" << endl;
+
   // Pide al mundo que mueve los objetos
   worldobjects.move();
-  cout << "I'm here" << endl;
 
-  // Pide si ha habido colisi�n, pasa referencia a proyectil y nave, retorna tipo de colisi�n y posici�n de la colisi�n
-  // res==0:  No ha colisic�n
+  // Pide si ha habido colision, pasa referencia a proyectil y nave, retorna tipo de colision y posicion de la colision
+  // res==0:  No ha colision
   // res==1:  Asteroide/Nave
   // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeno)
   res = worldobjects.collisions(theBullet,theShip,expl_pos);  
 
   // Explosion
-  if(res>0 || FlameTime>0)
+  if(res > 0 || FlameTime > 0)
     {
       FlameTime++;
       if(!theFlame)
@@ -222,29 +221,29 @@ void myLogic()
           theFlame = new Flame(expl_pos);
           worldobjects.add(theFlame);
         }else
-	        if(FlameTime>FT)
+	        if(FlameTime > FT)
 	        {
 	            worldobjects.remove(theFlame);
-	            theFlame=NULL;
+	            theFlame = NULL;
 	            FlameTime = 0;
 	        }
     }
   
-  if(res==1)    
+  if(res == 1)    
     {
       nShips--;
       
       // Esto habria que mejorarlo...
-      if(nShips==0) exit(1);
-      theShip->resetpos();
+      if(nShips == 0) exit(1);
+      theShip -> resetpos();
       worldobjects.reposition(theShip);
     }
 
-  if(res>=2)    
+  if(res >= 2)    
     {
       theBullet = NULL;
       shotTime = 0;
-      score += 100*(res-1);
+      score += 100*(res - 1);
     }
 
 }
@@ -253,13 +252,11 @@ void myLogic()
 
 void OnDibuja(void)
 { 
-      cout << "I'm here" << endl;
   //Borrado de la pantalla	
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   // Manda el mensaje "draw" al mundo
   worldobjects.draw();    
-  cout << "I'm here" << endl;
   // imprime datos
   printdata();
  
@@ -282,27 +279,22 @@ void OnKeyboardDown(unsigned char key, int x, int y)
     case ESC:
       exit(1);
     case ' ':
-      // Si no hay proyectil, lo crea
-      if(!theBullet)
-	{
-	  theBullet=theShip->fire(); 
-	  worldobjects.add(theBullet);
-	}
-      
-      break;
+    // Si no hay proyectil, lo crea
+        if(!theBullet)
+	    {
+	        theBullet=theShip->fire(); 
+	        worldobjects.add(theBullet);
+	    }
+        break;
     case '-': theShip->thrust(SHIPSPEED); break;  // accelara
     case ',': theShip->hyperjump(); break;  // hyper jump (mueve la nave a una posici�n random
-
     }		
-
 }
-
 
 void OnSpecKeyboardDown(int key, int x, int y)
 { 
   switch(key)
     {
-
     case GLUT_KEY_DOWN:
       break;
     case GLUT_KEY_UP:
@@ -316,7 +308,6 @@ void OnSpecKeyboardDown(int key, int x, int y)
     case GLUT_KEY_PAGE_UP:
       break;
     }		
-
 }
 
 // No usada
@@ -333,7 +324,6 @@ void OnMouseBtn(int button, int state,int x, int y)
     printf("MOUSE!\n");
 }
 
- 
 // No usada
 void  OnMouseMoveBtn  (int x, int y)
 {

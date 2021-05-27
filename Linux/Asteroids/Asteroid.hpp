@@ -11,7 +11,7 @@ class Asteroid:public Shape {
   int type;
  public:
   Asteroid *split();
-  Asteroid(int);
+  Asteroid(int=1);
   Asteroid(int t, int s, float px, float py);
   void draw();
   float getSize();
