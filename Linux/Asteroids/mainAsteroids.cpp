@@ -12,6 +12,8 @@
 #include "Ship.hpp"
 #include "ObjectsList.hpp"
 #include "Flame.hpp"
+using namespace std;
+
 
 //***********************
 // Prototipos de funciones 
@@ -113,10 +115,10 @@ int main(int argc,char* argv[])
 	    0.0, 1.0, 0.0);         // vector "UP"  (vertical positivo)
 
 
-  
+  cout << "I'm here" << endl;
   // Creacci�n de los objetos iniciales
   theShip = worldobjects.getShip();
-
+  cout << "I'm here" << endl;
   // ObjectsList es declarada est�tica, se inicializa "automaticamente" - contiene los asteroides
   
   // bucle infinito de Open GL
@@ -138,6 +140,7 @@ int main(int argc,char* argv[])
 // Imprime puntuacci�n y num. de naves
 void printdata()
 {
+      cout << "I'm here" << endl;
   int i,l;
   char buffer[50];
   
@@ -189,6 +192,7 @@ void gameover(int score)
 // Logica del juego: mueve los objeto mandando el mensaje "move"
 void myLogic()
 {
+      cout << "I'm here" << endl;
   int res;
 
   // borra el proyectil despu�s de cierto tiempo si no ha dado con nada
@@ -198,14 +202,15 @@ void myLogic()
       theBullet = NULL;
       shotTime = 0;
     }
-
+  cout << "I'm here" << endl;
   // Pide al mundo que mueve los objetos
   worldobjects.move();
+  cout << "I'm here" << endl;
 
   // Pide si ha habido colisi�n, pasa referencia a proyectil y nave, retorna tipo de colisi�n y posici�n de la colisi�n
   // res==0:  No ha colisic�n
   // res==1:  Asteroide/Nave
-  // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/peque�o)
+  // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeno)
   res = worldobjects.collisions(theBullet,theShip,expl_pos);  
 
   // Explosion
@@ -229,7 +234,7 @@ void myLogic()
     {
       nShips--;
       
-      // Esto habr�a que mejorarlo...
+      // Esto habria que mejorarlo...
       if(nShips==0) exit(1);
       theShip->resetpos();
       worldobjects.reposition(theShip);
@@ -248,12 +253,13 @@ void myLogic()
 
 void OnDibuja(void)
 { 
+      cout << "I'm here" << endl;
   //Borrado de la pantalla	
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
   // Manda el mensaje "draw" al mundo
   worldobjects.draw();    
-
+  cout << "I'm here" << endl;
   // imprime datos
   printdata();
  

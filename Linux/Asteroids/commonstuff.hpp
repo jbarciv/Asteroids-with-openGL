@@ -14,6 +14,7 @@
 #include "glut.h"
 #endif
 
+#include <iostream>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,7 +22,7 @@
 #include <string.h>
 #include <algorithm>
 #include <list>
-using namespace std;
+
 
 #define X 0
 #define Y 1

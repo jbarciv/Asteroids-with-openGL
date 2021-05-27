@@ -4,12 +4,14 @@
 #include "Bullet.hpp"
 #include "Ship.hpp"
 #include "Flame.hpp"
+using namespace std;
 
 #ifndef __OBJECTSLIST_H_
 #define __OBJECTSLIST_H_
 
-class ObjectsList: list<Shape*>
+class ObjectsList: public list<Shape*>
 {
+    
     private:
         int n;
         Shape* head;

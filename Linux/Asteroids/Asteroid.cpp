@@ -1,10 +1,11 @@
 
 #include "commonstuff.hpp"
 #include "Asteroid.hpp"
-
+using namespace std;
 
 Asteroid::Asteroid(int t)
 {
+    // cout << "soy un asteroide, ";
   float tmp;
 
   size = BIG;
@@ -67,6 +68,7 @@ Asteroid::Asteroid(int t, int s, float px, float py)
 
 void Asteroid::draw()
 {
+    cout << "I'm asteroid::draw" << endl;
   predraw();
   glutSolidSphere(size*0.3,9,8);
   glTranslatef(0,size*0.3,0);	
