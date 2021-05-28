@@ -63,8 +63,7 @@ void Ship::draw()
 {
     cout << "I'm Ship::draw" << endl;
   predraw();
-  cout << "I'm Ship::draw" << endl;
-  glutSolidCone(0.25,1,10,10);	
+  glutSolidCone(0.25,1,10,10);
   postdraw();
 }
   

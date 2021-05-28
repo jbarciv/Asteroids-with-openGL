@@ -115,10 +115,8 @@ int main(int argc,char* argv[])
 	    0.0, 1.0, 0.0);         // vector "UP"  (vertical positivo)
 
 
-  cout << "I'm here" << endl;
   // Creacci�n de los objetos iniciales
   theShip = worldobjects.getShip();
-  cout << "I'm here" << endl;
   // ObjectsList es declarada est�tica, se inicializa "automaticamente" - contiene los asteroides
   
   // bucle infinito de Open GL
@@ -140,7 +138,7 @@ int main(int argc,char* argv[])
 // Imprime puntuacci�n y num. de naves
 void printdata()
 {
-      cout << "I'm here" << endl;
+
   int i,l;
   char buffer[50];
   
@@ -192,7 +190,7 @@ void gameover(int score)
 // Logica del juego: mueve los objeto mandando el mensaje "move"
 void myLogic()
 {
-      cout << "I'm here" << endl;
+
   int res;
 
   // borra el proyectil despues de cierto tiempo si no ha dado con nada
@@ -210,7 +208,7 @@ void myLogic()
   // res==0:  No ha colision
   // res==1:  Asteroide/Nave
   // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeno)
-  res = worldobjects.collisions(theBullet,theShip,expl_pos);  
+  res = worldobjects.collisions(theBullet, theShip, expl_pos);  
 
   // Explosion
   if(res > 0 || FlameTime > 0)

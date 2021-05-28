@@ -10,8 +10,8 @@ class Asteroid:public Shape {
   int size;
   int type;
  public:
-  Asteroid *split();
-  Asteroid(int=1);
+  Asteroid* split();
+  Asteroid(int = 1);
   Asteroid(int t, int s, float px, float py);
   void draw();
   float getSize();

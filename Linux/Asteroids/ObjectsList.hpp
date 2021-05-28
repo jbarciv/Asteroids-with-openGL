@@ -1,6 +1,6 @@
 
-#include "Shape.hpp"
 #include "Asteroid.hpp"
+#include "Shape.hpp"
 #include "Bullet.hpp"
 #include "Ship.hpp"
 #include "Flame.hpp"
