@@ -23,7 +23,7 @@ class ObjectsList: public list<Shape*>
         void move();
         void draw();
         void add(Shape* s);
-        void remove(Shape* s);
+        void removes(Shape* s);
         Ship* getShip();
         int collisions(Bullet* bullet, Ship* ship, float*);
         void reposition(Ship* ship);

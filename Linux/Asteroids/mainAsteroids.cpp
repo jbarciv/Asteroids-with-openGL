@@ -196,7 +196,7 @@ void myLogic()
   // borra el proyectil despues de cierto tiempo si no ha dado con nada
   if(shotTime++ > MAXSHOTTIME)
     {
-      worldobjects.remove(theBullet);    
+      worldobjects.removes(theBullet);    
       theBullet = NULL;
       shotTime = 0;
     }
@@ -221,7 +221,7 @@ void myLogic()
         }else
 	        if(FlameTime > FT)
 	        {
-	            worldobjects.remove(theFlame);
+	            worldobjects.removes(theFlame);
 	            theFlame = NULL;
 	            FlameTime = 0;
 	        }
