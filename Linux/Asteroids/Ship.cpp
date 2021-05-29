@@ -70,7 +70,7 @@ void Ship::draw()
 
 float Ship::getSize()
 {
-  return (0.25);
+  return (SIZE_ASTEROID);
 }
 
 void Ship::resetpos()

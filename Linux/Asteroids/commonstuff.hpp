@@ -31,11 +31,14 @@
 #define BIG 3
 #define MEDIUM 2
 #define SMALL 1
+#define CONSTANT 0.3 // for Asteroid::getSize()
 
 #define R 0
 #define G 1
 #define B 2
 
+#define SIZE_ASTEROID 0.25
+#define SIZE_BULLET 0.1
 #define SIZEX 20
 #define SIZEY 20
 #define SIZEZ 0
