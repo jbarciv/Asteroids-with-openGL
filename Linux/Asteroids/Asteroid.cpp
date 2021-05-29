@@ -129,7 +129,7 @@ Asteroid *Asteroid::split()
  
 float Asteroid::getSize()
 {
-  return (0.3*size);
+  return (0.2*size);
 }
 
 void Asteroid::reposition()

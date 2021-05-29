@@ -64,52 +64,50 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
     float pos_s[3];
     ship -> getPos(pos_s);
     float size_s = ship->getSize();
-    cout << "collision0!" << endl;
-
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
     {   
-        cout << "collision1!" << endl;
         if((*i) == theShip) continue;
         if((*i) == bullet) continue;
-        cout << "collision2!" << endl;
         float pos_a[3];
         (*i) -> getPos(pos_a);
         float size_a = (*i)->getSize();
-        cout << "collision3!" << endl;
+        cout << "Por ahora NO collision!" << endl;
         if(mydistance(pos_a[0], pos_a[1], pos_s[0], pos_s[1]) < (size_a + size_s)) 
         {
-            cout << "collision3.5!" << endl;
+            cout << "pos_s[x]=" <<  pos_s[0] << endl;
+            cout << "pos_s[y]=" <<  pos_s[1] << endl;
+            cout << "pos_a[x]=" <<  pos_a[0] << endl;
+            cout << "pos_a[y]=" <<  pos_a[1] << endl;
+            cout << "mydistance=" <<  mydistance(pos_a[0], pos_a[1], pos_s[0], pos_s[1]) << endl;
+            cout << "size plus=" <<  (size_a + size_s) << endl;
+
+
             worldobjects.remove(ship);
+            cout << "YES COLLISION!" << endl;
             return 1;
         }
         if(bullet)
         {   
-            cout << "collision4!" << endl;
+            cout << "THERE IS A BULLET" << endl;
             float pos_b[3];
             bullet -> getPos(pos_b);
             float size_b = bullet -> getSize();
-            cout << "collision5!" << endl;
             if(mydistance(pos_a[0], pos_a[1], pos_b[0], pos_b[1]) < (size_a + size_b))
             {   
-                cout << "collision5.5!" << endl;
+                cout << "ASTEROID GOLPEADO" << endl;
                 worldobjects.remove(bullet);
-                cout << "collision6!" << endl;
                 if( size_a == SMALL)
                 {
-                    cout << "collision7!" << endl;
                     worldobjects.remove(*i);
-                    cout << "collision8!" << endl;
+                    cout << "ASTEROIDE DESTRUIDO" << endl;
                     return 4;
                 } else if(size_a == MEDIUM || size_a == BIG)
-                {   
-                    cout << "explode0!" << endl;
+                {  
                     Asteroid *x = new Asteroid;
-                    cout << "explode1!" << endl;
                     x = (Asteroid*) (*i);
-                    cout << "explode2!" << endl;
                     worldobjects.push_front(x->split());
-                    cout << "explode3!" << endl;
+                    cout << "ASTEROIDE DEBILITADO!" << endl;
                 }
             }
         }
