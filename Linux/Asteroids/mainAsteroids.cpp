@@ -234,8 +234,9 @@ void myLogic()
       // Esto habria que mejorarlo...
       if(nShips == 0) exit(1);
       theShip -> resetpos();
-      worldobjects.reposition(theShip);
-    }
+      worldobjects.reposition(theShip); // hay que acabar de revisar la función collision y la de reposicion
+    }                                   // hay que revisar cuando se quita la nave de la lista y se vuelve a 
+                                        // a poner... 
 
   if(res >= 2)    
     {
