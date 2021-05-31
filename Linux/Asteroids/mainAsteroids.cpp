@@ -59,7 +59,7 @@ Flame *theFlame=NULL;
 
 // Varias constantes usadas en el programa
 int shotTime=0;
-int nShips=100;
+int nShips=10;
 int score=0;
 int FlameTime=0;
 int FT=20;
@@ -233,12 +233,10 @@ void myLogic()
       // Esto habria que mejorarlo...
       if(nShips == 0) exit(1);
 
-    
-      worldobjects.reposition(theShip);
       theShip -> resetpos();
-       // hay que acabar de revisar la función collision y la de reposicion
-    }                                   // hay que revisar cuando se quita la nave de la lista y se vuelve a 
-                                        // a poner... 
+      worldobjects.reposition(theShip);
+      
+    }                                  
 
   if(res >= 2)    
     {
@@ -246,9 +244,11 @@ void myLogic()
       shotTime = 0;
       score += 100*(res - 1);
     }
-
 }
- 
+
+//Thrust
+
+
 /**************************************************************/ 
 
 void OnDibuja(void)
@@ -287,7 +287,7 @@ void OnKeyboardDown(unsigned char key, int x, int y)
 	        worldobjects.add(theBullet);
 	    }
         break;
-    case '-': theShip->thrust(SHIPSPEED); break;  // accelara
+    case '-': theShip->thrust(SHIPSPEED); break;  // acelera
     case ',': theShip->hyperjump(); break;  // hyper jump (mueve la nave a una posici�n random
     }		
 }
@@ -296,13 +296,13 @@ void OnSpecKeyboardDown(int key, int x, int y)
 { 
   switch(key)
     {
-    case GLUT_KEY_DOWN:
+    case GLUT_KEY_DOWN: 
       break;
-    case GLUT_KEY_UP:
+    case GLUT_KEY_UP: theShip->thrust(SHIPSPEED); // more intuitive movement
       break;
-    case GLUT_KEY_LEFT: theShip->rotate(0,-5,0);
+    case GLUT_KEY_LEFT: theShip->rotate(0,-20,0);
       break;
-    case GLUT_KEY_RIGHT: theShip->rotate(0,5,0);
+    case GLUT_KEY_RIGHT: theShip->rotate(0,20,0);
       break;
     case GLUT_KEY_PAGE_DOWN:
       break;

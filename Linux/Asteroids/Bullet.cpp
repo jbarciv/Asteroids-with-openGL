@@ -35,5 +35,5 @@ void Bullet::draw()
 
 float Bullet::getSize()
 {
-  return (SIZE_BULLET); // Change on commonstuff.hpp
+  return (SIZE_BULLET); // Change SIZE_BULLET on commonstuff.hpp
 }

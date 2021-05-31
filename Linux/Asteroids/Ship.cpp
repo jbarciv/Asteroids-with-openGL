@@ -42,8 +42,8 @@ void Ship::rotate(float rx, float ry, float rz)
    return tmp;
  }
 
- void Ship::thrust(float howmuch)
- {
+ void Ship::thrust(double howmuch)
+ { 
    tspeed[X] += howmuch*sin(D2R*rot[Y]);
    tspeed[Y] += howmuch*cos(D2R*rot[Y]);
 }
