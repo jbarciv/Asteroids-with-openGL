@@ -53,7 +53,7 @@
 #define BULLETSPEED 0.2
 #define SHIPSPEED 0.01
 #define NUMASTEROIDS 15
-#define MAXSHOTTIME 100
+#define MAXSHOTTIME 90
 
 #define ESC 27
 #define EPS 1

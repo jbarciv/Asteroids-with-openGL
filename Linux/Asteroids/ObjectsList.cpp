@@ -100,6 +100,8 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
                 {
                     worldobjects.remove(*i);
                     cout << "ASTEROIDE DESTRUIDO" << endl;
+                    explos[0] = pos_a[0];
+                    explos[1] = pos_a[1];
                     return 4;
                 } else if(size_a == MEDIUM || size_a == BIG)
                 {  
@@ -107,6 +109,8 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
                     x = (Asteroid*) (*i);
                     worldobjects.push_front(x->split());
                     cout << "ASTEROIDE DEBILITADO!" << endl;
+                    explos[0] = pos_a[0];
+                    explos[1] = pos_a[1];
                     return (size_a == MEDIUM) ? 2 : 3;
                 }
             }
@@ -133,5 +137,6 @@ void ObjectsList::reposition(Ship* ship)
             x = (Asteroid*) (*i);
             x->reposition();            
         }
+        worldobjects.push_front(ship);
     }
 }
