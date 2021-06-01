@@ -81,7 +81,8 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
             // cout << "pos_a[y]=" <<  pos_a[1] << endl;
             // cout << "mydistance=" <<  mydistance(pos_a[0], pos_a[1], pos_s[0], pos_s[1]) << endl;
             // cout << "size plus=" <<  (size_a + size_s) << endl;
-
+            explos[0] = pos_s[0];
+            explos[1] = pos_s[1];
             worldobjects.remove(ship);
             // cout << "YES COLLISION!" << endl;
             return 1;
@@ -119,7 +120,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
     return 0;
 }
 
-void ObjectsList::reposition(Ship* ship)
+void ObjectsList::reposition(Ship* ship) // se podría hacer un variante que es esperar a que no haya ninguno cerca
 {
     cout << "Entro en ObjectsList::reposition" << endl;
     float size_s = ship->getSize();
@@ -137,6 +138,6 @@ void ObjectsList::reposition(Ship* ship)
             x = (Asteroid*) (*i);
             x->reposition();            
         }
-        worldobjects.push_front(ship);
     }
+    worldobjects.push_front(ship);
 }

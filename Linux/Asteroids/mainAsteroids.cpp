@@ -296,7 +296,7 @@ void OnSpecKeyboardDown(int key, int x, int y)
 { 
   switch(key)
     {
-    case GLUT_KEY_DOWN: 
+    case GLUT_KEY_DOWN:
       break;
     case GLUT_KEY_UP: theShip->thrust(SHIPSPEED); // more intuitive movement
       break;

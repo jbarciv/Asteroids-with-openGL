@@ -15,13 +15,13 @@ Ship::Ship()
   rot[X] = -90;
   rot[Y] = 0;
 
-  rspeed[X] = 0;
-  rspeed[Y] = 0;
-  rspeed[Z] = 0;
+  rspeed[X] = 0.0;
+  rspeed[Y] = 0.0;
+  rspeed[Z] = 0.0;
 
-  tspeed[X] = 0;
-  tspeed[Y] = 0;
-  tspeed[Z] = 0;
+  tspeed[X] = 0.0;
+  tspeed[Y] = 0.0;
+  tspeed[Z] = 0.0;
 
   color[R] = 0.2;
   color[G] = 0.4;
