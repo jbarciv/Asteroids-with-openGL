@@ -59,7 +59,7 @@ Flame *theFlame=NULL;
 
 // Varias constantes usadas en el programa
 int shotTime=0;
-int nShips=10;
+int nShips=3;
 int score=0;
 int FlameTime=0;
 int FT=20;

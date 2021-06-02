@@ -69,10 +69,10 @@ void Asteroid::draw()
 {
     cout << "I'm asteroid::draw" << endl;
   predraw();
-//   glutSolidSphere(size*0.3,9,8);    
-//   glTranslatef(0,size*0.3,0);	
-//   glutSolidSphere(size*0.25,7,9);
-  glutSolidCube(size*0.3);	
+  glutSolidSphere(size*0.3,9,8);    
+  glTranslatef(0,size*0.3,0);	
+  glutSolidSphere(size*0.25,7,9);
+//   glutSolidCube(size*0.3);	
   
 //    glPolygonMode ( GL_FRONT_AND_BACK, GL_LINE ) ;
 //   glBegin(GL_POLYGON);

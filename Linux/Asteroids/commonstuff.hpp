@@ -52,7 +52,7 @@
 #define ASTEROID_SPEED 0.05
 #define BULLETSPEED 0.2
 #define SHIPSPEED 0.01
-#define NUMASTEROIDS 10
+#define NUMASTEROIDS 5
 #define MAXSHOTTIME 100
 
 #define ESC 27
