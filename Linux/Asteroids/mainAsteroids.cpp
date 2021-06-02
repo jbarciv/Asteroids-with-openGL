@@ -12,6 +12,8 @@
 #include "Ship.hpp"
 #include "ObjectsList.hpp"
 #include "Flame.hpp"
+using namespace std;
+
 
 //***********************
 // Prototipos de funciones 
@@ -57,7 +59,7 @@ Flame *theFlame=NULL;
 
 // Varias constantes usadas en el programa
 int shotTime=0;
-int nShips=3;
+int nShips=10;
 int score=0;
 int FlameTime=0;
 int FT=20;
@@ -113,10 +115,8 @@ int main(int argc,char* argv[])
 	    0.0, 1.0, 0.0);         // vector "UP"  (vertical positivo)
 
 
-  
   // Creacci�n de los objetos iniciales
   theShip = worldobjects.getShip();
-
   // ObjectsList es declarada est�tica, se inicializa "automaticamente" - contiene los asteroides
   
   // bucle infinito de Open GL
@@ -138,6 +138,7 @@ int main(int argc,char* argv[])
 // Imprime puntuacci�n y num. de naves
 void printdata()
 {
+
   int i,l;
   char buffer[50];
   
@@ -189,12 +190,13 @@ void gameover(int score)
 // Logica del juego: mueve los objeto mandando el mensaje "move"
 void myLogic()
 {
+
   int res;
 
-  // borra el proyectil despu�s de cierto tiempo si no ha dado con nada
+  // borra el proyectil despues de cierto tiempo si no ha dado con nada
   if(shotTime++ > MAXSHOTTIME)
     {
-      worldobjects.remove(theBullet);    
+      worldobjects.removes(theBullet);    
       theBullet = NULL;
       shotTime = 0;
     }
@@ -202,14 +204,14 @@ void myLogic()
   // Pide al mundo que mueve los objetos
   worldobjects.move();
 
-  // Pide si ha habido colisi�n, pasa referencia a proyectil y nave, retorna tipo de colisi�n y posici�n de la colisi�n
-  // res==0:  No ha colisic�n
+  // Pide si ha habido colision, pasa referencia a proyectil y nave, retorna tipo de colision y posicion de la colision
+  // res==0:  No ha colision
   // res==1:  Asteroide/Nave
-  // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/peque�o)
-  res = worldobjects.collisions(theBullet,theShip,expl_pos);  
+  // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeno)
+  res = worldobjects.collisions(theBullet, theShip, expl_pos);  
 
   // Explosion
-  if(res>0 || FlameTime>0)
+  if(res > 0 || FlameTime > 0)
     {
       FlameTime++;
       if(!theFlame)
@@ -217,33 +219,36 @@ void myLogic()
           theFlame = new Flame(expl_pos);
           worldobjects.add(theFlame);
         }else
-	        if(FlameTime>FT)
+	        if(FlameTime > FT)
 	        {
-	            worldobjects.remove(theFlame);
-	            theFlame=NULL;
+	            worldobjects.removes(theFlame);
+	            theFlame = NULL;
 	            FlameTime = 0;
 	        }
     }
   
-  if(res==1)    
+  if(res == 1)    
     {
       nShips--;
-      
-      // Esto habr�a que mejorarlo...
-      if(nShips==0) exit(1);
-      theShip->resetpos();
-      worldobjects.reposition(theShip);
-    }
+      // Esto habria que mejorarlo...
+      if(nShips == 0) exit(1);
 
-  if(res>=2)    
+      theShip -> resetpos();
+      worldobjects.reposition(theShip);
+      
+    }                                  
+
+  if(res >= 2)    
     {
       theBullet = NULL;
       shotTime = 0;
-      score += 100*(res-1);
+      score += 100*(res - 1);
     }
-
 }
- 
+
+//Thrust
+
+
 /**************************************************************/ 
 
 void OnDibuja(void)
@@ -253,7 +258,6 @@ void OnDibuja(void)
 
   // Manda el mensaje "draw" al mundo
   worldobjects.draw();    
-
   // imprime datos
   printdata();
  
@@ -276,41 +280,35 @@ void OnKeyboardDown(unsigned char key, int x, int y)
     case ESC:
       exit(1);
     case ' ':
-      // Si no hay proyectil, lo crea
-      if(!theBullet)
-	{
-	  theBullet=theShip->fire(); 
-	  worldobjects.add(theBullet);
-	}
-      
-      break;
-    case '-': theShip->thrust(SHIPSPEED); break;  // accelara
+    // Si no hay proyectil, lo crea
+        if(!theBullet)
+	    {
+	        theBullet=theShip->fire(); 
+	        worldobjects.add(theBullet);
+	    }
+        break;
+    case '-': theShip->thrust(SHIPSPEED); break;  // acelera
     case ',': theShip->hyperjump(); break;  // hyper jump (mueve la nave a una posici�n random
-
     }		
-
 }
-
 
 void OnSpecKeyboardDown(int key, int x, int y)
 { 
   switch(key)
     {
-
-    case GLUT_KEY_DOWN:
+    case GLUT_KEY_DOWN: 
       break;
-    case GLUT_KEY_UP:
+    case GLUT_KEY_UP: theShip->thrust(SHIPSPEED); // more intuitive movement
       break;
-    case GLUT_KEY_LEFT: theShip->rotate(0,-5,0);
+    case GLUT_KEY_LEFT: theShip->rotate(0,-20,0);
       break;
-    case GLUT_KEY_RIGHT: theShip->rotate(0,5,0);
+    case GLUT_KEY_RIGHT: theShip->rotate(0,20,0);
       break;
     case GLUT_KEY_PAGE_DOWN:
       break;
     case GLUT_KEY_PAGE_UP:
       break;
     }		
-
 }
 
 // No usada
@@ -327,7 +325,6 @@ void OnMouseBtn(int button, int state,int x, int y)
     printf("MOUSE!\n");
 }
 
- 
 // No usada
 void  OnMouseMoveBtn  (int x, int y)
 {

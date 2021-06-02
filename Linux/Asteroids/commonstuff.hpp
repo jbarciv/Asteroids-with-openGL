@@ -14,6 +14,7 @@
 #include "glut.h"
 #endif
 
+#include <iostream>
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,7 +22,7 @@
 #include <string.h>
 #include <algorithm>
 #include <list>
-using namespace std;
+
 
 #define X 0
 #define Y 1
@@ -30,11 +31,14 @@ using namespace std;
 #define BIG 3
 #define MEDIUM 2
 #define SMALL 1
+#define CONSTANT 0.3 // for Asteroid::getSize()
 
 #define R 0
 #define G 1
 #define B 2
 
+#define SIZE_ASTEROID 0.25
+#define SIZE_BULLET 0.1
 #define SIZEX 20
 #define SIZEY 20
 #define SIZEZ 0
@@ -47,8 +51,8 @@ using namespace std;
 
 #define ASTEROID_SPEED 0.05
 #define BULLETSPEED 0.2
-#define SHIPSPEED 0.01
-#define NUMASTEROIDS 15
+#define SHIPSPEED 0.005
+#define NUMASTEROIDS 10
 #define MAXSHOTTIME 100
 
 #define ESC 27

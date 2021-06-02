@@ -14,7 +14,7 @@ class Ship: public Shape {
   void draw();
   void rotate(float,float,float);
   Bullet* fire();
-  void thrust(float);
+  void thrust(double);
   void hyperjump();
   float getSize();
   void resetpos();

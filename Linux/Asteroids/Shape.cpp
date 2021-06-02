@@ -1,5 +1,6 @@
 
 #include "Shape.hpp"
+using namespace std;
 
 Shape::Shape()
 {
@@ -22,6 +23,7 @@ int Shape::getNo()
 
 void Shape::predraw()
 {
+    cout << "I'm Shape::predraw" << endl;
   glPushMatrix();
   glTranslatef(pos[X],pos[Y],pos[Z]);
   glRotatef(rot[X],1,0,0);
@@ -33,6 +35,7 @@ void Shape::predraw()
 
 void Shape::postdraw()
 {
+    cout << "I'm Shape::postdraw" << endl;
   glPopMatrix();
 }
 

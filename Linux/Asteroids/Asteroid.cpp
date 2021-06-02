@@ -1,7 +1,7 @@
 
 #include "commonstuff.hpp"
 #include "Asteroid.hpp"
-
+using namespace std;
 
 Asteroid::Asteroid(int t)
 {
@@ -67,6 +67,7 @@ Asteroid::Asteroid(int t, int s, float px, float py)
 
 void Asteroid::draw()
 {
+    cout << "I'm asteroid::draw" << endl;
   predraw();
   glutSolidSphere(size*0.3,9,8);
   glTranslatef(0,size*0.3,0);	
@@ -128,7 +129,7 @@ Asteroid *Asteroid::split()
  
 float Asteroid::getSize()
 {
-  return (0.3*size);
+  return (CONSTANT*size);
 }
 
 void Asteroid::reposition()
