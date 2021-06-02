@@ -1,6 +1,6 @@
 
 #include "commonstuff.hpp"
-#include "Ship.hpp"
+#include "Ovni.hpp"
 #include "Bullet.hpp"
 using namespace std;
 
@@ -52,7 +52,7 @@ void Ovni::draw()
 {
     cout << "I'm Ovni::draw" << endl;
   predraw();
-  glutSolidCone(0.25,1,10,10);
+  glutSolidTetrahedron();
   postdraw();
 }
   

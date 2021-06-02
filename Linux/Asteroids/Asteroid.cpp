@@ -69,6 +69,8 @@ void Asteroid::draw()
 {
     cout << "I'm asteroid::draw" << endl;
   predraw();
+//   glutSolidTetrahedron();
+//   glutSolidIcosahedron();
   glutSolidSphere(size*0.3,9,8);    
   glTranslatef(0,size*0.3,0);	
   glutSolidSphere(size*0.25,7,9);
