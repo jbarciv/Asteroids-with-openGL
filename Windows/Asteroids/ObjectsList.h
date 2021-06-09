@@ -26,6 +26,6 @@ class ObjectList: list<Shape*>
         int collisions(Bullet* bullet, Ship* ship, float*);
         void reposition(Ship* ship);
 
-}
+};
 
 #endif
