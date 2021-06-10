@@ -201,7 +201,7 @@ void myLogic()
       shotTime = 0;
     }
 
-  // Pide al mundo que mueve los objetos
+  // Pide al mundo que mueva los objetos
   worldobjects.move();
 
   // Pide si ha habido colision, pasa referencia a proyectil y nave, retorna tipo de colision y posicion de la colision
