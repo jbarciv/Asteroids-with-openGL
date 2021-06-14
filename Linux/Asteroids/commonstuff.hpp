@@ -22,6 +22,7 @@
 #include <string.h>
 #include <algorithm>
 #include <list>
+#include <time.h>
 
 
 #define X 0
@@ -29,6 +30,7 @@
 #define Z 2
 
 #define BIG 3
+#define UFO_SIZE 2.5
 #define MEDIUM 2
 #define SMALL 1
 #define CONSTANT 0.3 // for Asteroid::getSize()
@@ -50,6 +52,7 @@
 #define WINY 600
 
 #define ASTEROID_SPEED 0.05
+#define ALIEN_SPEED 0.1
 #define BULLETSPEED 0.2
 #define SHIPSPEED 0.005
 #define NUMASTEROIDS 10

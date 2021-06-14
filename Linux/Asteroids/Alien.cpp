@@ -4,6 +4,8 @@
 #include "Bullet.hpp"
 using namespace std;
 
+extern time_t ref;
+
 Alien::Alien()
 {
   cout << "soy un Alien" << endl;
@@ -43,12 +45,17 @@ Bullet* Alien::fire()
   return tmp;
 }
 
-//Podemos reciclar esta función haciendo que howmuch sea un valor random que cambie cad x segundos
-//desde la lógica del main
-void Alien::thrust(double howmuch)
+
+void Alien::move()
 { 
-  tspeed[X] += howmuch*sin(D2R*rot[Y]);
-  tspeed[Y] += howmuch*cos(D2R*rot[Y]);
+  //Cambia aleatoriamente de dirección cada 3 segundos
+  if (time(NULL)-ref > 3){
+    time(&ref);
+    rot[Y] = RAND_FRAC()*360;
+  }
+
+  tspeed[X] += ALIEN_SPEED*sin(D2R*rot[Y]);
+  tspeed[Y] += ALIEN_SPEED*cos(D2R*rot[Y]);
 }
 
 
