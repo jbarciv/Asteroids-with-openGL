@@ -2,6 +2,7 @@
 *.zip
 *.pdf
 Latex
+Resources
 
 ## Windows
 # ignore .object files
