@@ -69,7 +69,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
     {      
         if((*i) == theShip) continue;   // We skip theShip and the bullet
         if((*i) == bullet) continue;
-        float pos_a[3];
+        float pos_a[3];                 //includes Alien starships (same size that asteroids)
         (*i) -> getPos(pos_a);
         float size_a = (*i)->getSize();
         // cout << "Por ahora NO collision!" << endl;
@@ -113,6 +113,13 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
                     explos[0] = pos_a[0];
                     explos[1] = pos_a[1];
                     return (size_a == MEDIUM) ? 2 : 3;
+                }else if (size_a == UFO_SIZE)
+                {
+                    worldobjects.remove(*i);
+                    cout << "OVNI DERRIBADO, ALIEN ANIQUILADO" << endl;
+                    explos[0] = pos_a[0];
+                    explos[1] = pos_a[1];
+                    return 5;
                 }
             }
         }

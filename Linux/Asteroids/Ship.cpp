@@ -75,7 +75,7 @@ float Ship::getSize()
 
 void Ship::resetpos()
 {
- pos[X] = 0;
+  pos[X] = 0;
   pos[Y] = 0;
   pos[Z] = 0;
 

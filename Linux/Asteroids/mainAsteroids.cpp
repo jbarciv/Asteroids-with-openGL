@@ -12,6 +12,8 @@
 #include "Ship.hpp"
 #include "ObjectsList.hpp"
 #include "Flame.hpp"
+#include "Alien.hpp"
+#include <time.h>
 using namespace std;
 
 
@@ -56,6 +58,7 @@ ObjectsList worldobjects;
 Ship *theShip=NULL;
 Bullet *theBullet=NULL;
 Flame *theFlame=NULL;
+Alien *theUFO=NULL;
 
 // Varias constantes usadas en el programa
 int shotTime=0;
@@ -63,6 +66,8 @@ int nShips=3;
 int score=0;
 int FlameTime=0;
 int FT=20;
+time_t gameTimeInit;
+time_t ref = 0;
 
 
 //***********************
@@ -74,6 +79,7 @@ int main(int argc,char* argv[])
 {
 
   // inicializaciones
+  time(&gameTimeInit);
 
   //Creacion y definicion de la ventana
   glutInit(&argc, argv);
@@ -192,6 +198,7 @@ void myLogic()
 {
 
   int res;
+  
 
   // borra el proyectil despues de cierto tiempo si no ha dado con nada
   if(shotTime++ > MAXSHOTTIME)
@@ -200,8 +207,13 @@ void myLogic()
       theBullet = NULL;
       shotTime = 0;
     }
-
-  // Pide al mundo que mueve los objetos
+  if (time(NULL)-gameTimeInit > 50)
+  {
+    worldobjects.add(theUFO);
+    gameTimeInit = time(NULL) - 20;
+  }
+    
+  // Pide al mundo que mueva los objetos
   worldobjects.move();
 
   // Pide si ha habido colision, pasa referencia a proyectil y nave, retorna tipo de colision y posicion de la colision
@@ -238,12 +250,20 @@ void myLogic()
       
     }                                  
 
-  if(res >= 2)    
+  if(res >= 2 && res <= 4)    
     {
       theBullet = NULL;
       shotTime = 0;
       score += 100*(res - 1);
     }
+  
+  if (res == 5)
+    {
+      theBullet = NULL;
+      shotTime = 0;
+      score += 500;
+    }
+  
 }
 
 //Thrust
