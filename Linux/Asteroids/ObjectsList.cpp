@@ -18,6 +18,7 @@ ObjectsList::ObjectsList()
         Asteroid *asteroid = new Asteroid;
         worldobjects.push_front(asteroid);
     }
+    theUFO = new Alien;
 }
 
 ObjectsList::~ObjectsList()
@@ -27,16 +28,17 @@ ObjectsList::~ObjectsList()
 
 void ObjectsList::move()
 {
-    cout << "entro en ObjectsList::move " << endl;
+    // cout << "entro en ObjectsList::move " << endl;
 
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
         (*i)->move();
+
 }
 
 void ObjectsList::draw()
 {
-    cout << "Entro en ObjectsList::draw" << endl;
+    //cout << "Entro en ObjectsList::draw" << endl;
 
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
@@ -58,18 +60,28 @@ Ship* ObjectsList::getShip()
     return theShip;
 }
 
-int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
+Alien* ObjectsList::getUFO(){
+    return theUFO;
+}
+int ObjectsList::collisions(Bullet* bullet, Ship* ship,Alien* ufo, float* explos)
 {   
     cout << "Entro en ObjectsList::collision" << endl;
     float pos_s[3];
     ship -> getPos(pos_s);
     float size_s = ship->getSize();
+    float size_u;
+    float pos_u[3];
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
     {      
         if((*i) == theShip) continue;   // We skip theShip and the bullet
         if((*i) == bullet) continue;
-        float pos_a[3];                 //includes Alien starships (same size that asteroids)
+        if((*i) == ufo){
+            (*i) -> getPos(pos_u);
+            size_u = (*i) -> getSize();
+        } 
+
+        float pos_a[3];                
         (*i) -> getPos(pos_a);
         float size_a = (*i)->getSize();
         // cout << "Por ahora NO collision!" << endl;
@@ -84,6 +96,21 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
             explos[0] = pos_s[0];
             explos[1] = pos_s[1];
             worldobjects.remove(ship);
+            // cout << "YES COLLISION!" << endl;
+            return 1;
+        }
+        if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s)) 
+        {
+            // cout << "pos_s[x]=" <<  pos_s[0] << endl;
+            // cout << "pos_s[y]=" <<  pos_s[1] << endl;
+            // cout << "pos_a[x]=" <<  pos_a[0] << endl;
+            // cout << "pos_a[y]=" <<  pos_a[1] << endl;
+            // cout << "mydistance=" <<  mydistance(pos_a[0], pos_a[1], pos_s[0], pos_s[1]) << endl;
+            // cout << "size plus=" <<  (size_a + size_s) << endl;
+            explos[0] = pos_s[0];
+            explos[1] = pos_s[1];
+            worldobjects.remove(ship);
+            worldobjects.remove(ufo);
             // cout << "YES COLLISION!" << endl;
             return 1;
         }
@@ -113,14 +140,16 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, float* explos)
                     explos[0] = pos_a[0];
                     explos[1] = pos_a[1];
                     return (size_a == MEDIUM) ? 2 : 3;
-                }else if (size_a == UFO_SIZE)
-                {
-                    worldobjects.remove(*i);
-                    cout << "OVNI DERRIBADO, ALIEN ANIQUILADO" << endl;
-                    explos[0] = pos_a[0];
-                    explos[1] = pos_a[1];
-                    return 5;
-                }
+                } 
+                
+            }
+            if(mydistance(pos_u[0], pos_u[1], pos_b[0], pos_b[1]) < (size_u + size_b))
+            {
+                worldobjects.removes(ufo);
+                cout << "OVNI DERRIBADO, ALIEN ANIQUILADO" << endl;
+                explos[0] = pos_a[0];
+                explos[1] = pos_a[1];
+                return 5;
             }
         }
     }

@@ -123,6 +123,7 @@ int main(int argc,char* argv[])
 
   // Creacci�n de los objetos iniciales
   theShip = worldobjects.getShip();
+  theUFO = worldobjects.getUFO();
   // ObjectsList es declarada est�tica, se inicializa "automaticamente" - contiene los asteroides
   
   // bucle infinito de Open GL
@@ -207,10 +208,12 @@ void myLogic()
       theBullet = NULL;
       shotTime = 0;
     }
-  if (time(NULL)-gameTimeInit > 50)
+  if (time(NULL)-gameTimeInit > 30)
   {
+    cout <<"Meto el ovni" <<endl;
     worldobjects.add(theUFO);
     gameTimeInit = time(NULL) - 20;
+    cout << "y salgo" << endl; 
   }
     
   // Pide al mundo que mueva los objetos
@@ -220,7 +223,7 @@ void myLogic()
   // res==0:  No ha colision
   // res==1:  Asteroide/Nave
   // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeno)
-  res = worldobjects.collisions(theBullet, theShip, expl_pos);  
+  res = worldobjects.collisions(theBullet, theShip, theUFO, expl_pos);  
 
   // Explosion
   if(res > 0 || FlameTime > 0)

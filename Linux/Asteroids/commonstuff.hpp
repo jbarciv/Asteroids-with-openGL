@@ -30,7 +30,6 @@
 #define Z 2
 
 #define BIG 3
-#define UFO_SIZE 2.5
 #define MEDIUM 2
 #define SMALL 1
 #define CONSTANT 0.3 // for Asteroid::getSize()
@@ -39,6 +38,7 @@
 #define G 1
 #define B 2
 
+#define SIZE_UFO 0.9
 #define SIZE_ASTEROID 0.25
 #define SIZE_BULLET 0.1
 #define SIZEX 20
@@ -52,7 +52,7 @@
 #define WINY 600
 
 #define ASTEROID_SPEED 0.05
-#define ALIEN_SPEED 0.1
+#define ALIEN_SPEED 0.05
 #define BULLETSPEED 0.2
 #define SHIPSPEED 0.01
 #define NUMASTEROIDS 5

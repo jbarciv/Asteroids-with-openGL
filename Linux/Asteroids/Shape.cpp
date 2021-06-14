@@ -23,7 +23,7 @@ int Shape::getNo()
 
 void Shape::predraw()
 {
-    cout << "I'm Shape::predraw" << endl;
+    //cout << "I'm Shape::predraw" << endl;
   glPushMatrix();
   glTranslatef(pos[X],pos[Y],pos[Z]);
   glRotatef(rot[X],1,0,0);
@@ -35,13 +35,14 @@ void Shape::predraw()
 
 void Shape::postdraw()
 {
-    cout << "I'm Shape::postdraw" << endl;
+    //cout << "I'm Shape::postdraw" << endl;
   glPopMatrix();
 }
 
 void Shape::move()
 {
   int crash=0;
+
 
   //  crash = detect_collision(others);
 

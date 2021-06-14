@@ -13,7 +13,7 @@ class Alien: public Shape {
   void draw();
   void rotate(float,float,float);
   Bullet* fire();
-  void move();
+  void run();
   float getSize();
   void resetpos();
 };

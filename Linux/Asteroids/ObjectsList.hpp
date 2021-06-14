@@ -2,6 +2,7 @@
 #include "Asteroid.hpp"
 #include "Shape.hpp"
 #include "Bullet.hpp"
+#include "Alien.hpp"
 #include "Ship.hpp"
 #include "Flame.hpp"
 using namespace std;
@@ -17,6 +18,7 @@ class ObjectsList: public list<Shape*>
         Shape* head;
     public:
         Ship* theShip;
+        Alien* theUFO;
     public:
         ObjectsList();
         ~ObjectsList();
@@ -25,7 +27,8 @@ class ObjectsList: public list<Shape*>
         void add(Shape* s);
         void removes(Shape* s);
         Ship* getShip();
-        int collisions(Bullet* bullet, Ship* ship, float*);
+        Alien* getUFO();
+        int collisions(Bullet* bullet, Ship* ship, Alien* ufo, float*);
         void reposition(Ship* ship);
 };
 

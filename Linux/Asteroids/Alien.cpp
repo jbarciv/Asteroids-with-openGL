@@ -9,8 +9,8 @@ extern time_t ref;
 Alien::Alien()
 {
   cout << "soy un Alien" << endl;
-  pos[X] = -SIZEX2;
-  pos[Y] = RAND_FRAC()*(SIZEY) - SIZEY2;
+  pos[X] = 0;
+  pos[Y] = 0;
   pos[Z] = 0;
 
   rot[Z] = 0;
@@ -46,16 +46,15 @@ Bullet* Alien::fire()
 }
 
 
-void Alien::move()
+void Alien::run()
 { 
   //Cambia aleatoriamente de dirección cada 3 segundos
   if (time(NULL)-ref > 3){
     time(&ref);
     rot[Y] = RAND_FRAC()*360;
+    tspeed[X] = ALIEN_SPEED*sin(D2R*rot[Y]);
+    tspeed[Y] = ALIEN_SPEED*cos(D2R*rot[Y]);
   }
-
-  tspeed[X] += ALIEN_SPEED*sin(D2R*rot[Y]);
-  tspeed[Y] += ALIEN_SPEED*cos(D2R*rot[Y]);
 }
 
 
@@ -63,16 +62,18 @@ void Alien::draw()
 {
     cout << "I'm Alien::draw" << endl;
   predraw();
-  glutSolidCube(1.5);
-  glTranslatef(0,-0.5,0);
-  glutWireSphere(0.5,8,8);
+  glutSolidCube(SIZE_UFO);
+  // glTranslatef(0,-0.5,0);
+  // glutWireSphere(0.5,8,8);
   postdraw();
+  run();
+  fire();
 }
   
 
 float Alien::getSize()
 {
-  return (SIZE_ASTEROID);
+  return (SIZE_UFO);
 }
 
 
@@ -80,7 +81,7 @@ float Alien::getSize()
 //pero aun no se me ha ocurrido como hacerlo bien, para que aparezca cuando no haya un asteroide
 void Alien::resetpos()
 {
-  pos[X] = -SIZEX2;
+  pos[X] = 0;
   pos[Y] = 0;
   pos[Z] = 0;
 
