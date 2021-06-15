@@ -215,7 +215,6 @@ void myLogic()
     theUFO ->setTamano(dim);
     worldobjects.add(theUFO);
     theUFO -> setStatus(ACTIVE);
-    gameTimeInit = time(NULL) - 20;
     cout << "y salgo" << endl; 
   }
     
@@ -267,6 +266,7 @@ void myLogic()
     {
       theBullet = NULL;
       theUFO -> setStatus(DESTROYED);
+      gameTimeInit = time(NULL);
       shotTime = 0;
       score += dim*100;
     }
@@ -281,6 +281,7 @@ void myLogic()
     worldobjects.reposition(theShip);
 
     theUFO -> setStatus(DESTROYED);
+    gameTimeInit = time(NULL);
   }
   
 }
