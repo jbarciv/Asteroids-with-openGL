@@ -63,7 +63,7 @@ Ship* ObjectsList::getShip()
 Alien* ObjectsList::getUFO(){
     return theUFO;
 }
-int ObjectsList::collisions(Bullet* bullet, Ship* ship,Alien* ufo, float* explos)
+int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ufo, float* explos)
 {   
     cout << "Entro en ObjectsList::collision" << endl;
     float pos_s[3];
@@ -110,9 +110,9 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship,Alien* ufo, float* explos
             explos[0] = pos_s[0];
             explos[1] = pos_s[1];
             worldobjects.remove(ship);
-            worldobjects.remove(ufo);
+            worldobjects.push_back(ufo);
             // cout << "YES COLLISION!" << endl;
-            return 1;
+            return 6;
         }
         if(bullet)
         {   

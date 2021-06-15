@@ -38,6 +38,9 @@
 #define G 1
 #define B 2
 
+#define DESTROYED 0
+#define ACTIVE 1
+
 #define SIZE_UFO 0.9
 #define SIZE_ASTEROID 0.25
 #define SIZE_BULLET 0.1

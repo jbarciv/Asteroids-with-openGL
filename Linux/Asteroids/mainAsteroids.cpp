@@ -197,7 +197,7 @@ void gameover(int score)
 // Logica del juego: mueve los objeto mandando el mensaje "move"
 void myLogic()
 {
-
+  int dim;
   int res;
   
 
@@ -208,10 +208,13 @@ void myLogic()
       theBullet = NULL;
       shotTime = 0;
     }
-  if (time(NULL)-gameTimeInit > 30)
+  if (time(NULL)-gameTimeInit > 30 && theUFO -> getStatus() == DESTROYED)
   {
     cout <<"Meto el ovni" <<endl;
+    dim = (int)(RAND_FRAC()*2.99 + 1);
+    theUFO ->setTamano(dim);
     worldobjects.add(theUFO);
+    theUFO -> setStatus(ACTIVE);
     gameTimeInit = time(NULL) - 20;
     cout << "y salgo" << endl; 
   }
@@ -263,9 +266,22 @@ void myLogic()
   if (res == 5)
     {
       theBullet = NULL;
+      theUFO -> setStatus(DESTROYED);
       shotTime = 0;
-      score += 500;
+      score += dim*100;
     }
+  
+  if (res == 6)
+  {
+    nShips--;
+
+    if (nShips == 0) exit(1);
+
+    theShip -> resetpos();
+    worldobjects.reposition(theShip);
+
+    theUFO -> setStatus(DESTROYED);
+  }
   
 }
 

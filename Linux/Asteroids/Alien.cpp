@@ -28,8 +28,19 @@ Alien::Alien()
   color[R] = 0.2;
   color[G] = 0.4;
   color[B] = 0.3;
+
+  status = DESTROYED;
 }
 
+void Alien::setStatus(bool estado)
+{
+  status = estado;
+}
+
+bool Alien::getStatus ()
+{
+  return status;
+}
 
 void Alien::rotate(float rx, float ry, float rz)
 {
@@ -57,12 +68,16 @@ void Alien::run()
   }
 }
 
+void Alien::setTamano(int dim)
+{
+  tamano = dim;
+}
 
 void Alien::draw()
 {
-    cout << "I'm Alien::draw" << endl;
+  cout << "I'm Alien::draw" << endl;
   predraw();
-  glutSolidCube(SIZE_UFO);
+  glutSolidCube(tamano*SIZE_UFO);
   // glTranslatef(0,-0.5,0);
   // glutWireSphere(0.5,8,8);
   postdraw();
@@ -73,7 +88,7 @@ void Alien::draw()
 
 float Alien::getSize()
 {
-  return (SIZE_UFO);
+  return (tamano*SIZE_UFO);
 }
 
 

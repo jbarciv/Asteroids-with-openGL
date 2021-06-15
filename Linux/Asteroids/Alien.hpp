@@ -7,12 +7,16 @@
 
 class Alien: public Shape {
  private:
-  int status;
+  bool status;
+  int tamano;
  public:
   Alien();
+  void setStatus(bool);
+  bool getStatus();
   void draw();
   void rotate(float,float,float);
   Bullet* fire();
+  void setTamano(int);
   void run();
   float getSize();
   void resetpos();
