@@ -69,18 +69,15 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ufo, float* explo
     float pos_s[3];
     ship -> getPos(pos_s);
     float size_s = ship->getSize();
-    float size_u;
+    float size_u = ufo -> getSize();
     float pos_u[3];
+    ufo -> getPos(pos_u);
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
     {      
         if((*i) == theShip) continue;   // We skip theShip and the bullet
         if((*i) == bullet) continue;
-        if((*i) == ufo){
-            (*i) -> getPos(pos_u);
-            size_u = (*i) -> getSize();
-        } 
-
+    
         float pos_a[3];                
         (*i) -> getPos(pos_a);
         float size_a = (*i)->getSize();
