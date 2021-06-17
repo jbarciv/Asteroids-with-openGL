@@ -99,7 +99,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ufo, float* explo
             // cout << "YES COLLISION!" << endl;
             return 1;
         }
-        if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s)) 
+        if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s) && ufo->getStatus() == ACTIVE) 
         {
             // cout << "pos_s[x]=" <<  pos_s[0] << endl;
             // cout << "pos_s[y]=" <<  pos_s[1] << endl;
