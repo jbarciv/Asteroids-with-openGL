@@ -140,9 +140,10 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ufo, float* explo
                 } 
                 
             }
-            if(mydistance(pos_u[0], pos_u[1], pos_b[0], pos_b[1]) < (size_u + size_b))
+            if(mydistance(pos_u[0], pos_u[1], pos_b[0], pos_b[1]) < (size_u + size_b) && ufo->getStatus() == ACTIVE)
             {
                 worldobjects.removes(ufo);
+                ufo -> setStatus(DESTROYED);
                 worldobjects.removes(bullet);
                 cout << "OVNI DERRIBADO, ALIEN ANIQUILADO" << endl;
                 explos[0] = pos_a[0];
