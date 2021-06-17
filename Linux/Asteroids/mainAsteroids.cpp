@@ -208,7 +208,7 @@ void myLogic()
       theBullet = NULL;
       shotTime = 0;
     }
-  if (time(NULL)-gameTimeInit > 30 && theUFO -> getStatus() == DESTROYED)
+  if (time(NULL)-gameTimeInit > 15 && theUFO -> getStatus() == DESTROYED)
   {
     cout <<"Meto el ovni" <<endl;
     dim = (int)(RAND_FRAC()*2.99 + 1);
