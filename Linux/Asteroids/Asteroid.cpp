@@ -69,48 +69,50 @@ void Asteroid::draw()
 {
     cout << "I'm asteroid::draw" << endl;
   predraw();
-  glutSolidSphere(size*0.3,9,8);
+//   glutSolidTetrahedron();
+//   glutSolidIcosahedron();
+  glutSolidSphere(size*0.3,9,8);    
   glTranslatef(0,size*0.3,0);	
   glutSolidSphere(size*0.25,7,9);
-  //glutSolidCube(size*0.3);	
-  /*
-  //  glPolygonMode ( GL_FRONT_AND_BACK, GL_LINE ) ;
-  glBegin(GL_POLYGON);
-  if(type==1)
-    {
-      glVertex3f(0,0,0);
-      glVertex3f(size*0.3,size*0.4,0.1);
-      glVertex3f(size*0.5,0,0);
-      glVertex3f(size*0.2,size*0.4,0);
-      glVertex3f(size*0.5,size*0.7,0.2);
-      glVertex3f(size*0.5,size*0.4,0);
-      glVertex3f(0,size*0.5,0);
-    }
-  else 
-    if(type==2)
-      {
-	glVertex3f(0,0,0);
-	glVertex3f(size*0.3,size*0.4,0);
-	glVertex3f(size*0.5,0,0);
-	glVertex3f(size*0.3,size*0.4,0.1);
-	glVertex3f(size*0.5,size*0.7,0);
-	glVertex3f(size*0.4,size*0.4,-0.1);
-	glVertex3f(0,size*0.6,0);
-      }
-  else 
-    if(type==3)
-      {
-	glVertex3f(0,0,0.1);
-	glVertex3f(size*0.2,size*0.4,0);
-	glVertex3f(size*0.5,0,0.2);
-	glVertex3f(size*0.6,size*0.4,0);
-	glVertex3f(size*0.5,size*0.6,0);
-	glVertex3f(size*0.5,size*0.4,0);
-	glVertex3f(0,size*0.3,0.3);
-      }
+//   glutSolidCube(size*0.3);	
   
-  glEnd();
-  */	 
+//    glPolygonMode ( GL_FRONT_AND_BACK, GL_LINE ) ;
+//   glBegin(GL_POLYGON);
+//   if(type==1)
+//     {
+//       glVertex3f(0,0,0);
+//       glVertex3f(size*0.3,size*0.4,0.1);
+//       glVertex3f(size*0.5,0,0);
+//       glVertex3f(size*0.2,size*0.4,0);
+//       glVertex3f(size*0.5,size*0.7,0.2);
+//       glVertex3f(size*0.5,size*0.4,0);
+//       glVertex3f(0,size*0.5,0);
+//     }
+//   else 
+//     if(type==2)
+//       {
+// 	glVertex3f(0,0,0);
+// 	glVertex3f(size*0.3,size*0.4,0);
+// 	glVertex3f(size*0.5,0,0);
+// 	glVertex3f(size*0.3,size*0.4,0.1);
+// 	glVertex3f(size*0.5,size*0.7,0);
+// 	glVertex3f(size*0.4,size*0.4,-0.1);
+// 	glVertex3f(0,size*0.6,0);
+//       }
+//   else 
+//     if(type==3)
+//       {
+// 	glVertex3f(0,0,0.1);
+// 	glVertex3f(size*0.2,size*0.4,0);
+// 	glVertex3f(size*0.5,0,0.2);
+// 	glVertex3f(size*0.6,size*0.4,0);
+// 	glVertex3f(size*0.5,size*0.6,0);
+// 	glVertex3f(size*0.5,size*0.4,0);
+// 	glVertex3f(0,size*0.3,0.3);
+//       }
+  
+//   glEnd();
+   
 
   
   postdraw();

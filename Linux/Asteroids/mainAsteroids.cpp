@@ -12,6 +12,8 @@
 #include "Ship.hpp"
 #include "ObjectsList.hpp"
 #include "Flame.hpp"
+#include "Alien.hpp"
+#include <time.h>
 using namespace std;
 
 
@@ -56,13 +58,16 @@ ObjectsList worldobjects;
 Ship *theShip=NULL;
 Bullet *theBullet=NULL;
 Flame *theFlame=NULL;
+Alien *theUFO=NULL;
 
 // Varias constantes usadas en el programa
 int shotTime=0;
-int nShips=10;
+int nShips=3;
 int score=0;
 int FlameTime=0;
 int FT=20;
+time_t gameTimeInit;
+time_t ref = 0;
 
 
 //***********************
@@ -74,6 +79,7 @@ int main(int argc,char* argv[])
 {
 
   // inicializaciones
+  time(&gameTimeInit);
 
   //Creacion y definicion de la ventana
   glutInit(&argc, argv);
@@ -117,6 +123,7 @@ int main(int argc,char* argv[])
 
   // Creacci�n de los objetos iniciales
   theShip = worldobjects.getShip();
+  theUFO = worldobjects.getUFO();
   // ObjectsList es declarada est�tica, se inicializa "automaticamente" - contiene los asteroides
   
   // bucle infinito de Open GL
@@ -190,8 +197,9 @@ void gameover(int score)
 // Logica del juego: mueve los objeto mandando el mensaje "move"
 void myLogic()
 {
-
+  int dim;
   int res;
+  
 
   // borra el proyectil despues de cierto tiempo si no ha dado con nada
   if(shotTime++ > MAXSHOTTIME)
@@ -200,15 +208,24 @@ void myLogic()
       theBullet = NULL;
       shotTime = 0;
     }
-
-  // Pide al mundo que mueve los objetos
+  if (time(NULL)-gameTimeInit > 30 && theUFO -> getStatus() == DESTROYED)
+  {
+    cout <<"Meto el ovni" <<endl;
+    dim = (int)(RAND_FRAC()*2.99 + 1);
+    theUFO ->setTamano(dim);
+    worldobjects.add(theUFO);
+    theUFO -> setStatus(ACTIVE);
+    cout << "y salgo" << endl; 
+  }
+    
+  // Pide al mundo que mueva los objetos
   worldobjects.move();
 
   // Pide si ha habido colision, pasa referencia a proyectil y nave, retorna tipo de colision y posicion de la colision
   // res==0:  No ha colision
   // res==1:  Asteroide/Nave
   // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeno)
-  res = worldobjects.collisions(theBullet, theShip, expl_pos);  
+  res = worldobjects.collisions(theBullet, theShip, theUFO, expl_pos);  
 
   // Explosion
   if(res > 0 || FlameTime > 0)
@@ -238,12 +255,35 @@ void myLogic()
       
     }                                  
 
-  if(res >= 2)    
+  if(res >= 2 && res <= 4)    
     {
       theBullet = NULL;
       shotTime = 0;
       score += 100*(res - 1);
     }
+  
+  if (res == 5)
+    {
+      theBullet = NULL;
+      theUFO -> setStatus(DESTROYED);
+      gameTimeInit = time(NULL);
+      shotTime = 0;
+      score += dim*100;
+    }
+  
+  if (res == 6)
+  {
+    nShips--;
+
+    if (nShips == 0) exit(1);
+
+    theShip -> resetpos();
+    worldobjects.reposition(theShip);
+
+    theUFO -> setStatus(DESTROYED);
+    gameTimeInit = time(NULL);
+  }
+  
 }
 
 //Thrust
@@ -296,7 +336,7 @@ void OnSpecKeyboardDown(int key, int x, int y)
 { 
   switch(key)
     {
-    case GLUT_KEY_DOWN: 
+    case GLUT_KEY_DOWN:
       break;
     case GLUT_KEY_UP: theShip->thrust(SHIPSPEED); // more intuitive movement
       break;
