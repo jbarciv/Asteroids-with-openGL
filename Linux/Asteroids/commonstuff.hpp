@@ -13,6 +13,10 @@
 #include <windows.h>
 #include "glut.h"
 #endif
+#ifdef _WIN32
+#include <windows.h>
+#include <GL\glut.h>
+#endif
 
 #include <iostream>
 #include <math.h>
