@@ -28,15 +28,15 @@
 using namespace std;
 
 
-//***********************
-// Prototipos de funciones 
-//***********************
+///////////////////////////////////////
+///////// Function Prototype //////////
+///////////////////////////////////////
 
-// Callback de la logica del juego
+// Callback of the game logic
 void myLogic();
 
-//Callback de dibujo
-void OnDibuja(void);	
+//Callback of draw
+void OnDraw(void);	
 
 //Callbacks para teclado y raton
 void OnKeyboardDown(unsigned char key, int x, int y);
@@ -48,114 +48,108 @@ void OnSpecKeyboardDown(int key, int x, int y);
 void printdata();
 void gameover(int score);
 
-  
-//***********************
-// Variables globales
-//***********************
+///////////////////////////////////////
+//////// Global variables /////////////
+///////////////////////////////////////
 
-// Posicion y step de la camara
+// Position and step of the camara
 float cam_pos[6]={0, 0, 27};
 
-// posici�n de la explosi�n
+// explotion location
 float expl_pos[2]={-1000,-1000};
 
-// Modo del Mouse
+// Mouse mode
 int MODE=NONE;
 
-// Objetos globales
-
+// Blobal Objects
 ObjectsList worldobjects;
-// list<Shape*> worldobjects;
 Ship *theShip=NULL;
 Bullet *theBullet=NULL;
 Flame *theFlame=NULL;
 Alien *theUFO=NULL;
 Angel *theAngel=NULL;
 
-// Varias constantes usadas en el programa
+// Very used constants
 int shotTime=0;
 int nShips=3;
 int score=0;
 int FlameTime=0;
 int FT=20;
-time_t gameTimeInit;
+time_t timeUFO;
 time_t ref = 0;
 
-
-//***********************
-// Programa principal
-//***********************
-
+///////////////////////////////////////
+//////////// Main program /////////////
+///////////////////////////////////////
 
 int main(int argc,char* argv[])
 {
 
-  // inicializaciones
-  time(&gameTimeInit);
+  // Initializations
+  time(&timeUFO);
 
-  //Creacion y definicion de la ventana
+  // Creation and definition of the window
   glutInit(&argc, argv);
   glutInitWindowSize(WINX,WINY);
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
   glutCreateWindow("Asteroids");
 
-  //Habilita las luces, la renderizacion y el color de los materiales
+  // Enables lights, rendering, and color of materials
   glEnable(GL_LIGHT0);
   glEnable(GL_LIGHTING);
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_COLOR_MATERIAL);
   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);    
 	
-  //Define la proyeccion
+  // Define the projection
   glMatrixMode(GL_PROJECTION);
   gluPerspective( 40.0, WINX/WINY, 0.1, 50);
 
-  //Para definir el punto de vista
+  // To define the viewpoint
   glMatrixMode(GL_MODELVIEW);	
 
-  // Define call backs de GLUT
+  // Define call backs of GLUT
 
-  // Display function: contiene las instrucciones de dibujo
-  glutDisplayFunc(OnDibuja);
-    // Idle function: contiene la logica del juego
+  // Display function: contains the draw instrucctions
+  glutDisplayFunc(OnDraw);
+  // Idle function: contains the game logic
   glutIdleFunc(myLogic);
   
-  // Callbacks de teclado y rat�n
+  // Mouse and keyboard Callbacks  
   glutKeyboardFunc(OnKeyboardDown);
   glutSpecialFunc(OnSpecKeyboardDown);
   glutMotionFunc(OnMouseMoveBtn);
   glutMouseFunc(OnMouseBtn);
 
   
-  // Posicciona el punto de vista (c�mara)
-  gluLookAt(cam_pos[0],cam_pos[1],cam_pos[2],  // posicion del  ojo  
-	    0.0, 0.0, 0.0,		        // hacia que punto mira  
-	    0.0, 1.0, 0.0);         // vector "UP"  (vertical positivo)
+  // Position the viewpoint (camera)
+  gluLookAt(cam_pos[0],cam_pos[1],cam_pos[2],  // eye position  
+	    0.0, 0.0, 0.0,		                   // towards what point it looks  
+	    0.0, 1.0, 0.0);                        // "UP" vector (positive vertical)
 
 
-  // Creacci�n de los objetos iniciales
+  // Initial objects creation
   theShip = worldobjects.getShip();
   theUFO = worldobjects.getUFO();
   theAngel = worldobjects.getAngel();
-  // ObjectsList es declarada est�tica, se inicializa "automaticamente" - contiene los asteroides
+
+  // ObjectsList is statically declared, it is automatically initialized - it has the asteroides
   
-  // bucle infinito de Open GL
+  // infinite loog of Open GL
   glutMainLoop();
 
-  // Esto solo sirve para que el compilador no proteste, nunca se llegar� aqu�
+  // This is only for the compiler, it will never get here
   return 0;   
 
 }
 
-/************************** FIN DEL MAIN ************************************/
+/************************** END OF MAIN ************************************/
 
+///////////////////////////////////////
+///////////// Callbacks ///////////////
+///////////////////////////////////////
 
-//***********************
-// Callbacks
-//***********************
-
-
-// Imprime puntuacci�n y num. de naves
+// Puntuation and the number of Ships are printed
 void printdata()
 {
 
@@ -180,8 +174,6 @@ void printdata()
 
 }
 
-
-//no usada
 void gameover(int score)
 {
   int i,l;
@@ -206,76 +198,66 @@ void gameover(int score)
 
 }
 
-
-// Logica del juego: mueve los objeto mandando el mensaje "move"
+// Game logic: it moves the objects sending the "move" message
 void myLogic()
 {
   int dim;
   int res;
   
 
-  // borra el proyectil despues de cierto tiempo si no ha dado con nada
+  // The bullet is erased after a certain time if it has not found anything
   if(shotTime++ > MAXSHOTTIME)
-    {
-      worldobjects.removes(theBullet);    
-      theBullet = NULL;
-      shotTime = 0;
-    }
-  if (time(NULL)-gameTimeInit > 15 && theUFO -> getStatus() == DESTROYED)
   {
-    cout <<"Meto el ovni" <<endl;
+    worldobjects.removes(theBullet);    
+    theBullet = NULL;
+    shotTime = 0;
+  }
+  if (time(NULL)-timeUFO > 15 && theUFO -> getStatus() == DESTROYED)
+  {
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theUFO ->setSize(dim);
     worldobjects.add(theUFO);
     theUFO -> setStatus(ACTIVE);
-    cout << "y salgo" << endl; 
   }
 
-  if (time(NULL)-gameTimeInit > 40 && theAngel -> getStatus() == INACTIVE)
+  if (time(NULL)-timeUFO > 10 && theAngel -> getStatus() == INACTIVE)
   {
-    cout <<"Ha aparecido un angel" <<endl;
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theAngel ->setSize(dim);
     worldobjects.add(theAngel);
-    theUFO -> setStatus(ACTIVE);
-    cout << "angel creado" << endl; 
+    theUFO -> setStatus(ACTIVE); 
   }
-    
-  // Pide al mundo que mueva los objetos
+  // It asks the world to move the objects
   worldobjects.move();
 
-  // Pide si ha habido colision, pasa referencia a proyectil y nave, retorna tipo de colision y posicion de la colision
-  // res==0:  No ha colision
-  // res==1:  Asteroide/Nave
-  // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeno)
+  // It asks if there has been a collision, passing the reference to the Bullet and the Ship, returning the kind and the location of that (suppossed) collision.
+  // res == 0:  There is not collision
+  // res == 1:  Asteroid/Ship
+  // res >= 2 && res <= 4:  Asteroid/Bullet, it depends on the Asteroids size (big/medium/small)
   res = worldobjects.collisions(theBullet, theShip, theUFO, theAngel, expl_pos);  
 
   // Explosion
   if(res > 0 || FlameTime > 0)
+  {
+    FlameTime++;
+    if(!theFlame)
     {
-      FlameTime++;
-      if(!theFlame)
-        {
-          theFlame = new Flame(expl_pos);
-          worldobjects.add(theFlame);
-        }else
-	        if(FlameTime > FT)
-	        {
-	            worldobjects.removes(theFlame);
-	            theFlame = NULL;
-	            FlameTime = 0;
-	        }
-    }
+      theFlame = new Flame(expl_pos);
+      worldobjects.add(theFlame);
+    } else if(FlameTime > FT)
+      {
+        worldobjects.removes(theFlame);
+        theFlame = NULL;
+        FlameTime = 0;
+      }
+  }
   
   if(res == 1)    
     {
       nShips--;
-      // Esto habria que mejorarlo...
       if(nShips == 0) exit(1);
-
       theShip -> resetpos();
       worldobjects.reposition(theShip);
-      
     }                                  
 
   if(res >= 2 && res <= 4)    
@@ -289,7 +271,7 @@ void myLogic()
     {
       theBullet = NULL;
       theUFO -> setStatus(DESTROYED);
-      gameTimeInit = time(NULL);
+      timeUFO = time(NULL);
       shotTime = 0;
       score += dim*100;
     }
@@ -299,12 +281,10 @@ void myLogic()
     nShips--;
 
     if (nShips == 0) exit(1);
-
     theShip -> resetpos();
     worldobjects.reposition(theShip);
-
     theUFO -> setStatus(DESTROYED);
-    gameTimeInit = time(NULL);
+    timeUFO = time(NULL);
   }
   
   if (res==7)
@@ -312,52 +292,43 @@ void myLogic()
     nShips ++;
     theAngel -> setStatus(INACTIVE);
   }
-
 }
 
-//Thrust
-
-
-/**************************************************************/ 
-
-void OnDibuja(void)
+void OnDraw(void)
 { 
-  //Borrado de la pantalla	
+  // Clearing the screen
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-  // Manda el mensaje "draw" al mundo
+  // Send the message "draw" to the world
   worldobjects.draw();    
-  // imprime datos
+  // Prints the data
   printdata();
- 
-  //Al final, cambiar el buffer
+  // At the end, changes the buffer
   glutSwapBuffers();
-  glutPostRedisplay();//se le indica que redibuje la pantalla
-  /**************************************************************/}
-
-
+  // It redraws the window
+  glutPostRedisplay();
+}
 
 void OnKeyboardDown(unsigned char key, int x, int y)
 { 
   int mod;
 
-  mod=glutGetModifiers();
+  mod = glutGetModifiers();
 
   switch(key)
     {
     case 'q':
-    case ESC:
-      exit(1);
+    case ESC: exit(1);
     case ' ':
-    // Si no hay proyectil, lo crea
-        if(!theBullet)
+        if(!theBullet)                   // If there is not a bullet it is created
 	    {
 	        theBullet=theShip->fire(); 
 	        worldobjects.add(theBullet);
 	    }
         break;
-    case '-': theShip->thrust(SHIPSPEED); break;  // acelera
-    case ',': theShip->hyperjump(); break;  // hyper jump (mueve la nave a una posici�n random
+    case '-': theShip->thrust(SHIPSPEED);// Accelerates 
+        break;  
+    case ',': theShip->hyperjump();      // That is the Hyper Jump (moves the Ship to a random position) 
+        break;
     }		
 }
 
@@ -367,7 +338,7 @@ void OnSpecKeyboardDown(int key, int x, int y)
     {
     case GLUT_KEY_DOWN:
       break;
-    case GLUT_KEY_UP: theShip->thrust(SHIPSPEED); // more intuitive movement
+    case GLUT_KEY_UP: theShip->thrust(SHIPSPEED);
       break;
     case GLUT_KEY_LEFT: theShip->rotate(0,-20,0);
       break;
@@ -380,7 +351,7 @@ void OnSpecKeyboardDown(int key, int x, int y)
     }		
 }
 
-// No usada
+// It is not used
 void OnMouseBtn(int button, int state,int x, int y)
 {
   if(state==GLUT_DOWN)
@@ -391,21 +362,11 @@ void OnMouseBtn(int button, int state,int x, int y)
         MODE=ROT;
       else
         MODE=NONE;
-    printf("MOUSE!\n");
 }
 
-// No usada
+// It is not used
 void  OnMouseMoveBtn  (int x, int y)
 {
-
-  //  printf("MOUSE MOVES!\n");
-    
-  if(MODE==TRANS)
-    {
-     
-    }
-  else
-    {
-     
-    }
+  if(MODE==TRANS){ }
+  else{ }
 }

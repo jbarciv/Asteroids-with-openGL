@@ -1,14 +1,16 @@
+//////////////////////////////////////
+// Alien.cpp                     //
+// Methods of the Alies class       //
+//////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Alien.hpp"
 #include "Bullet.hpp"
-using namespace std;
 
 extern time_t ref;
 
 Alien::Alien()
 {
-  cout << "soy un Alien" << endl;
   pos[X] = 0;
   pos[Y] = 0;
   pos[Z] = 0;
@@ -56,10 +58,8 @@ Bullet* Alien::fire()
   return tmp;
 }
 
-
 void Alien::run()
 { 
-  //Cambia aleatoriamente de dirección cada 3 segundos
   if (time(NULL)-ref > 3){
     time(&ref);
     rot[Y] = RAND_FRAC()*360;
@@ -84,16 +84,12 @@ void Alien::draw()
   run();
   fire();
 }
-  
 
 float Alien::getSize()
 {
   return (tamano*SIZE_UFO);
 }
 
-
-//Creo que hay que modificar esta función para que los aliens aparezcan solo por los bordes...
-//pero aun no se me ha ocurrido como hacerlo bien, para que aparezca cuando no haya un asteroide
 void Alien::resetpos()
 {
   pos[X] = 0;

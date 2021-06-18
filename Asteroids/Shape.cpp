@@ -1,3 +1,7 @@
+///////////////////////////////////////////////////
+// Shape.cpp                                     //
+// Methods of the Shape class (pure virtual)     //
+///////////////////////////////////////////////////
 
 #include "Shape.hpp"
 using namespace std;

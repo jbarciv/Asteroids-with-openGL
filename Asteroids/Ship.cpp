@@ -1,3 +1,7 @@
+/////////////////////////////////////
+// Ship.cpp                        //
+// Methods of the Ship class       //
+/////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Ship.hpp"

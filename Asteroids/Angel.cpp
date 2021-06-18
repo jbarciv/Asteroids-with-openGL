@@ -1,4 +1,9 @@
+/////////////////////////////////////
+// Angel.cpp                    //
+// Methods of the Angel class      //
+/////////////////////////////////////
 
+#include "commonstuff.hpp"
 #include "Angel.hpp"
 
 extern time_t ref;

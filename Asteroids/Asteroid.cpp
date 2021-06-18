@@ -1,7 +1,10 @@
+/////////////////////////////////////////
+// Asteroid.cpp                        //
+// Methods of the Asteroids class      //
+/////////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Asteroid.hpp"
-using namespace std;
 
 Asteroid::Asteroid(int t)
 {
@@ -67,7 +70,6 @@ Asteroid::Asteroid(int t, int s, float px, float py)
 
 void Asteroid::draw()
 {
-    cout << "I'm asteroid::draw" << endl;
   predraw();
 //   glutSolidTetrahedron();
 //   glutSolidIcosahedron();
@@ -113,8 +115,6 @@ void Asteroid::draw()
   
 //   glEnd();
    
-
-  
   postdraw();
 }
  

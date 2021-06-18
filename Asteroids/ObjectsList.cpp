@@ -1,8 +1,10 @@
+/////////////////////////////////////////////////////////////////////
+// ObjectsList.cpp                                                 //
+// Linked list that manages the objects that interact in the game  //
+/////////////////////////////////////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "ObjectsList.hpp"
-
-using namespace std;
 
 extern int nShips;
 extern ObjectsList worldobjects;
@@ -68,7 +70,7 @@ Alien* ObjectsList::getUFO()
      return theAngel;
  }
 
-int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni,Angel* angel, float* explos)
+int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* angel, float* explos)
 {   
     float pos_s[3];
     ship -> getPos(pos_s);
@@ -160,7 +162,6 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni,Angel* angel
                 if( size_a == SMALL)
                 {
                     worldobjects.remove(*i);
-                    cout << "ASTEROIDE DESTRUIDO" << endl;
                     explos[0] = pos_a[0];   // Is given to expl_pos the asteroid position for the explosion
                     explos[1] = pos_a[1];
                     return 4;

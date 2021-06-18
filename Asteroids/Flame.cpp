@@ -1,3 +1,7 @@
+//////////////////////////////////////
+// Flame.cpp                     //
+// Methods of the Flame class       //
+//////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Flame.hpp" 

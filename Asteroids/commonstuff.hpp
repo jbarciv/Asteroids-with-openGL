@@ -1,3 +1,7 @@
+/////////////////////////////////////////////////////////////////////
+// commonstuff.hpp                                                 //
+// The more important libraries, constants and expressions defined //
+/////////////////////////////////////////////////////////////////////
 
 #ifndef _STUFF_
 #define _STUFF_
@@ -28,6 +32,8 @@
 #include <list>
 #include <time.h>
 
+using namespace std;
+
 
 #define X 0
 #define Y 1
@@ -36,7 +42,7 @@
 #define BIG 3
 #define MEDIUM 2
 #define SMALL 1
-#define CONSTANT 0.3 // for Asteroid::getSize()
+#define CONSTANT 0.3 // For Asteroid::getSize()
 
 #define R 0
 #define G 1

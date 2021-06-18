@@ -1,3 +1,7 @@
+/////////////////////////////////////////
+// ObjectsList.hpp                        //
+// Atributes and methods prototypes       //
+/////////////////////////////////////////
 
 #include "Asteroid.hpp"
 #include "Shape.hpp"

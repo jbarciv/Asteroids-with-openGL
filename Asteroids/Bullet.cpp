@@ -1,4 +1,7 @@
-
+//////////////////////////////////////
+// Bullet.cpp                     //
+// Methods of the Bullet class       //
+//////////////////////////////////////
 #include "commonstuff.hpp"
 #include "Bullet.hpp"
 
