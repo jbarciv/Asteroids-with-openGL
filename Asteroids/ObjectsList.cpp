@@ -59,7 +59,6 @@ Ship* ObjectsList::getShip()
 Alien* ObjectsList::getUFO(){
     return theUFO;
 }
-<<<<<<< HEAD:Linux/Asteroids/ObjectsList.cpp
 
 Angel* ObjectsList::getAngel(){
     return theAngel;
@@ -78,50 +77,14 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ufo, Angel* angel
     ufo -> getPos(pos_u);
     float pos_an[3];
     angel -> getPos(pos_an);
-=======
-int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, float* explos)
-{   
-    float pos_s[3];
-    ship -> getPos(pos_s);
-    float size_s = ship->getSize();
-
-    float pos_u[3];
-    ovni -> getPos(pos_u);
-    float size_u = ovni -> getSize();
-
-    if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s) && ovni->getStatus() == ACTIVE) 
-    {
-        explos[0] = pos_s[0];
-        explos[1] = pos_s[1];
-        worldobjects.remove(ship);
-        worldobjects.remove(ovni);
-        return 6;
-    }
-
-    if (bullet)
-    {
-        float pos_b[3];
-        bullet -> getPos(pos_b);
-        float size_b = bullet -> getSize();
-
-        if(mydistance(pos_u[0], pos_u[1], pos_b[0], pos_b[1]) < (size_u + size_b) && ovni->getStatus() == ACTIVE)
-        {
-            worldobjects.removes(ovni);
-            ovni -> setStatus(DESTROYED);
-            worldobjects.removes(bullet);
-            explos[0] = pos_b[0];
-            explos[1] = pos_b[1];
-            return 5;
-        }
-    }
->>>>>>> 033f69b06ee391c9371fda86a7f472204b4647e5:Asteroids/ObjectsList.cpp
 
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
     {      
-        if((*i) == theShip) continue;  // We skip theShip and the bullet
+        if((*i) == theShip) continue;  // We skip theShip, bullet, theUFO and theAngel.
         if((*i) == bullet) continue;
         if((*i) == theUFO) continue;
+        if((*i) == theAngel) continue;
     
         float pos_a[3];                
         (*i) -> getPos(pos_a);
@@ -135,7 +98,6 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, float* expl
             return 1;
         }
 
-<<<<<<< HEAD:Linux/Asteroids/ObjectsList.cpp
         if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s) && ufo->getStatus() == ACTIVE) 
         {
             // cout << "pos_s[x]=" <<  pos_s[0] << endl;
@@ -154,14 +116,12 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, float* expl
 
         if(mydistance(pos_an[0], pos_an[1], pos_s[0], pos_s[1]) < (size_an + size_s) && angel->getStatus() == ACTIVE)
         {
-            explos[0] = pos_s[0];
-            explos[1] = pos_s[1];
+            explos[0] = pos_an[0];
+            explos[1] = pos_an[1];
             worldobjects.remove(angel); // no se como funciona esto puede que este mal
             return 7;
         }
 
-=======
->>>>>>> 033f69b06ee391c9371fda86a7f472204b4647e5:Asteroids/ObjectsList.cpp
         if(bullet)
         {   
             float pos_b[3];

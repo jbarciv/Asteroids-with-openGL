@@ -61,7 +61,7 @@ void Angel::teleport()
   if (time(NULL)-ref > 10){
     time(&ref);
     rot[Y] = RAND_FRAC()*360;
-    pos[X] = ANGEL_SPEED*sin(D2R*rot[Y]); // esto esta mal, hay que poner un numero random en los limites de la ventana
-    pos[Y] = ANGEL_SPEED*cos(D2R*rot[Y]);
+    pos[X] = RAND_DOM(0, WINX);
+    pos[Y] = RAND_DOM(0, WINY);
 }
 }

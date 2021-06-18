@@ -287,10 +287,14 @@ void myLogic()
     worldobjects.reposition(theShip);
 
     theUFO -> setStatus(DESTROYED);
-    theAngel ->setStatus(INACTIVE);
     gameTimeInit = time(NULL);
   }
   
+  if (res==7)
+  {
+    nShips ++;
+    theAngel -> setStatus(INACTIVE);
+  }
 }
 
 //Thrust
