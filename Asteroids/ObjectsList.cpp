@@ -78,6 +78,10 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni,Angel* angel
     ovni -> getPos(pos_u);
     float size_u = ovni -> getSize();
 
+    float pos_an[3];
+    angel -> getPos(pos_an);
+    float size_an = angel -> getSize();
+
     if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s) && ovni->getStatus() == ACTIVE) 
     {
         explos[0] = pos_s[0];
@@ -87,6 +91,14 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni,Angel* angel
         return 6;
     }
 
+    if(mydistance(pos_an[0], pos_an[1], pos_s[0], pos_s[1]) < (size_an + size_s) && angel->getStatus() == ACTIVE) 
+    {
+        explos[0] = pos_s[0];
+        explos[1] = pos_s[1];
+        worldobjects.remove(angel);
+        return 7;
+    }
+    
     if (bullet)
     {
         float pos_b[3];
@@ -102,6 +114,16 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni,Angel* angel
             explos[1] = pos_b[1];
             return 5;
         }
+
+        if(mydistance(pos_an[0], pos_an[1], pos_b[0], pos_b[1]) < (size_an + size_b))
+            {
+                worldobjects.remove(bullet);
+                worldobjects.remove(angel);
+                angel -> setStatus(DESTROYED);
+                explos[0] = pos_an[0];
+                explos[1] = pos_an[1];
+                return 8;
+            }
     }
 
     list<Shape*>::iterator i;

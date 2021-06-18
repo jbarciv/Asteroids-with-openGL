@@ -295,6 +295,7 @@ void myLogic()
     nShips ++;
     theAngel -> setStatus(INACTIVE);
   }
+
 }
 
 //Thrust
