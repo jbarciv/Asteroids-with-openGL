@@ -7,8 +7,8 @@ LinuxLFLAGS= -lGL -lGLU -lglut -lm -Wall -g
 	g++   -c $< -w
 
 
-Linux:	Shape.o  Asteroid.o Bullet.o Flame.o  commonstuff.hpp Ship.o ObjectsList.o mainAsteroids.o Alien.o
-	g++ Shape.o  Bullet.o Ship.o Asteroid.o Flame.o  ObjectsList.o mainAsteroids.o Alien.o $(LinuxLFLAGS)  -o mainAsteroids -w
+Linux:	Shape.o  Asteroid.o Bullet.o Flame.o  Angel.o commonstuff.hpp Ship.o ObjectsList.o mainAsteroids.o Alien.o
+	g++ Shape.o  Bullet.o Ship.o Asteroid.o Flame.o Angel.o ObjectsList.o mainAsteroids.o Alien.o $(LinuxLFLAGS)  -o mainAsteroids -w
 
 STL:	Shape.o  Asteroid.o Bullet.o mainAsteroidsSTL.o commonstuff.hpp Ship.o ObjectsListSTL.o
 	g++ Shape.o  Bullet.o Ship.o Asteroid.o mainAsteroidsSTL.o ObjectsListSTL.o $(LDFLAGS)  -o AsteroidsGL -w

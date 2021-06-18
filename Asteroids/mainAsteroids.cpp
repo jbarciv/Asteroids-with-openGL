@@ -1,8 +1,25 @@
-//***********************
-// Asteroids Open GL
-// Claudio Rossi, Universidad Polit�cnica de Madrid 
-// (C) 2015 
-//***********************
+//////////////////////////////////////////////////////////////////////
+// mainAsteroids.cpp                                                //
+//                                                                  //
+// Based on Claudio Rossi implementation, Technical University of   //
+//                      Madrid (C) 2015                             //
+//                                                                  //
+//      ---> Programming an Asteroids Game with Open GL <---        //
+//                                                                  //
+//                                                                  //
+// History:                                                         //
+// 2021.05.15                                                       //
+// The main.cpp and most of the classes are given by                //
+// the author.                                                      //
+// 2021.05.25                                                       //
+// Josep Barbera - ObjectList class implemented                     //
+// 2021.05.30                                                       //
+// Gonzalo Quiros - Alien class implemented                         //
+// 2021.06.16                                                       //
+// Celia Ramos - Angel class implemented                            //
+// 2021.06.18                                                       //
+// Celia Ramos, Gonzalo Quiros, Josep Barbera - last version        //
+//////////////////////////////////////////////////////////////////////
 
 
 #include "commonstuff.hpp"
