@@ -55,13 +55,13 @@ void Angel::draw()
     glutSolidTeapot(tamano*SIZE_ANGEL);
     postdraw();
 }
-void Angel::move()
+void Angel::teleport()
 {
-      //Cambia aleatoriamente de dirección cada 4 segundos
-  if (time(NULL)-ref > 4){
+      //Cambia aleatoriamente de posicion cada 10 segundos
+  if (time(NULL)-ref > 10){
     time(&ref);
     rot[Y] = RAND_FRAC()*360;
-    tspeed[X] = ANGEL_SPEED*sin(D2R*rot[Y]);
-    tspeed[Y] = ANGEL_SPEED*cos(D2R*rot[Y]);
-    }
+    pos[X] = ANGEL_SPEED*sin(D2R*rot[Y]); // esto esta mal, hay que poner un numero random en los limites de la ventana
+    pos[Y] = ANGEL_SPEED*cos(D2R*rot[Y]);
+}
 }

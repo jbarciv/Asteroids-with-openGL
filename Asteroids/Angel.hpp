@@ -14,7 +14,7 @@ class Angel: public Shape{
     void setSize(int);
     float getSize();
     void draw();
-    void move();
+    void teleport();
     //void rotate(float,float,float);
     // deberia de cambiar posicion cada x tiempo
    // void resetpos();
