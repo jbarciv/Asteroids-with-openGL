@@ -16,7 +16,7 @@ class Alien: public Shape {
   void draw();
   void rotate(float,float,float);
   Bullet* fire();
-  void setTamano(int);
+  void setSize(int);
   void run();
   float getSize();
   void resetpos();

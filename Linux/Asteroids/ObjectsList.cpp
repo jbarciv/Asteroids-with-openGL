@@ -1,7 +1,7 @@
 
 #include "commonstuff.hpp"
 #include "ObjectsList.hpp"
-#include "Asteroid.hpp"
+
 using namespace std;
 
 extern int nShips;
@@ -12,6 +12,7 @@ ObjectsList::ObjectsList()
     n = 0; // List begins empty
     head = NULL; // it does not make sense with list<> template
     theShip = new Ship;
+    theAngel = new Angel;
     worldobjects.push_front(theShip);
     for(int i=0 ; i < NUMASTEROIDS; i++)
     {
@@ -63,15 +64,25 @@ Ship* ObjectsList::getShip()
 Alien* ObjectsList::getUFO(){
     return theUFO;
 }
-int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ufo, float* explos)
+
+Angel* ObjectsList::getAngel(){
+    return theAngel;
+
+}
+
+int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ufo, Angel* angel, float* explos)
 {   
     cout << "Entro en ObjectsList::collision" << endl;
-    float pos_s[3];
-    ship -> getPos(pos_s);
     float size_s = ship->getSize();
     float size_u = ufo -> getSize();
+    float size_an = angel -> getSize();
+    float pos_s[3];
+    ship -> getPos(pos_s);
     float pos_u[3];
     ufo -> getPos(pos_u);
+    float pos_an[3];
+    angel -> getPos(pos_an);
+
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
     {      
@@ -96,6 +107,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ufo, float* explo
             // cout << "YES COLLISION!" << endl;
             return 1;
         }
+
         if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s) && ufo->getStatus() == ACTIVE) 
         {
             // cout << "pos_s[x]=" <<  pos_s[0] << endl;
@@ -111,6 +123,15 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ufo, float* explo
             // cout << "YES COLLISION!" << endl;
             return 6;
         }
+
+        if(mydistance(pos_an[0], pos_an[1], pos_s[0], pos_s[1]) < (size_an + size_s) && angel->getStatus() == ACTIVE)
+        {
+            explos[0] = pos_s[0];
+            explos[1] = pos_s[1];
+            worldobjects.remove(angel); // no se como funciona esto puede que este mal
+            return 7;
+        }
+
         if(bullet)
         {   
             float pos_b[3];

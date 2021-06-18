@@ -1,6 +1,4 @@
 
-
-
 #include "commonstuff.hpp"
 
 // forward declaration

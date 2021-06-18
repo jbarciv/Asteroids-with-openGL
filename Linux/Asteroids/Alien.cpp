@@ -68,7 +68,7 @@ void Alien::run()
   }
 }
 
-void Alien::setTamano(int dim)
+void Alien::setSize(int dim)
 {
   tamano = dim;
 }
