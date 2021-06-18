@@ -1,3 +1,7 @@
+////////////////////////////////////////
+// Shape.hpp                          //
+// Class implementation for the Shape //
+////////////////////////////////////////
 
 #include "commonstuff.hpp"
 
@@ -16,7 +20,6 @@ class Shape {
   float rspeed[3];
   int mynumber;
   
-  //int detect_collision();
   void predraw();
   void postdraw();
 

@@ -1,3 +1,7 @@
+////////////////////////////////////////
+// Angel.hpp                          //
+// Class implementation for the Angel //
+////////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Shape.hpp"

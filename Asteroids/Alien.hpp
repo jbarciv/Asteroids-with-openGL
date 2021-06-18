@@ -1,3 +1,8 @@
+////////////////////////////////////////
+// Alien.hpp                          //
+// Class implementation for the Alien //
+////////////////////////////////////////
+
 #include "commonstuff.hpp"
 #include "Shape.hpp"
 #include "Bullet.hpp"

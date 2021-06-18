@@ -1,4 +1,7 @@
-
+///////////////////////////////////////
+// Ship.hpp                          //
+// Class implementation for the Ship //
+///////////////////////////////////////
 #include "commonstuff.hpp"
 #include "Shape.hpp"
 #include "Bullet.hpp"

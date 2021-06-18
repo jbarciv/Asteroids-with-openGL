@@ -1,3 +1,7 @@
+////////////////////////////////////////
+// Flame.hpp                          //
+// Class implementation for the Flame //
+////////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Shape.hpp"

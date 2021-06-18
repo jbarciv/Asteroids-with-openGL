@@ -1,3 +1,7 @@
+///////////////////////////////////////////
+// Asteroids.hpp                         //
+// Class implementation for the Asteroid //
+///////////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Shape.hpp"

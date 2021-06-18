@@ -1,3 +1,7 @@
+/////////////////////////////////////////
+// Bullet.hpp                          //
+// Class implementation for the Bullet //
+/////////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Shape.hpp"
