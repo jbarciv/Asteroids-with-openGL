@@ -1,0 +1,16 @@
+\section{Introducción}
+
+En esta memoria se presenta una posible implementación en ANSI C++ para gestionar un videojuego estilo \emph{Asteroids} mediante el uso de la librería gráfica multi-plataforma \textsc{OpenGL}.
+
+El entorno de programación utilizado ha sido \textsc{Visual Studio Code}. Se ha gestionado el trabajo mediante el uso de GitHub y la extensión \emph{Live Share} que ofrece VSCode.
+
+El videojuego elegido es el famoso juego arcade \emph{Asteroids} de Atari de 1979 \cite{wiki_atari}. Se han implementado las clases con sus atributos y métodos necesarios así como la lógica del juego para su correcto funcionamiento.
+Los requisitos cubiertos a grandes rasgos han sido:
+\begin{itemize}
+    \item Creación de una clase \emph{ObjectList} que gestiona una lista enlazada de los objetos del juego.
+    \item Creación de la clase Alien, necesaria para instanciar el objeto \emph{theUFO}.
+    \item Integración del Ovni en la lógica del juego.
+    \item Ajuste del sistema de puntuaciones.
+\end{itemize}
+
+Además de estos requisitos, se ha implementado alguna característica extra como que de un Ovni aparezca otro algunas veces cuando este sea destruido, o una nueva clase llamada \#angel\# que otorga vidas al ser capturado por la nave. Dichos extras otorgan emoción al juego.

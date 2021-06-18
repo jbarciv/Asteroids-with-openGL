@@ -1,17 +1,15 @@
 ## Main folder
-*.zip
-*.pdf
-Latex
-Resources
+# *.zip
+
 
 ## Windows
 # ignore .object files
-Windows/*.o
-Windows/tempCodeRunnerFile.*
+# Windows/*.o
+# Windows/tempCodeRunnerFile.*
 
 ## Linux
 # ignore .object files
-Linux/*.o
-Linux/tempCodeRunnerFile.*
-Linux/.vscode
+# Linux/*.o
+# Linux/tempCodeRunnerFile.*
+# Linux/.vscode
 

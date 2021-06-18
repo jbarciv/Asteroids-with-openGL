@@ -1,0 +1,10 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{1}{section.1}%
+\contentsline {section}{\numberline {2}Diagramas}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Diagramas de Clases (UML)}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Diagramas de comunicaci\IeC {\'o}n}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Descripci\IeC {\'o}n de funciones y estructuras del juego}{3}{section.3}%
+\contentsline {section}{\numberline {4}Pruebas}{3}{section.4}%
+\contentsline {section}{\numberline {5}Gu\IeC {\'\i }a de uso}{3}{section.5}%
+\contentsline {section}{\numberline {6}Reparto de Roles}{3}{section.6}%
+\contentsline {section}{\numberline {7}Propuestas de mejora y valoraci\IeC {\'o}n personal}{3}{section.7}%
