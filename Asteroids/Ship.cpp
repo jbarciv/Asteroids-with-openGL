@@ -44,7 +44,7 @@ void Ship::rotate(float rx, float ry, float rz)
 
  void Ship::thrust(double howmuch)
  { 
-   tspeed[X] += howmuch*sin(D2R*rot[Y]);
+   tspeed[X] += howmuch*sin(D2R*rot[Y]); //no seria rot[X]?
    tspeed[Y] += howmuch*cos(D2R*rot[Y]);
 }
 

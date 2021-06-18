@@ -6,13 +6,7 @@
 
 
 #include "commonstuff.hpp"
-#include "Shape.hpp"
-#include "Asteroid.hpp"
-#include "Bullet.hpp"
-#include "Ship.hpp"
 #include "ObjectsList.hpp"
-#include "Flame.hpp"
-#include "Alien.hpp"
 #include <time.h>
 using namespace std;
 
@@ -59,6 +53,7 @@ Ship *theShip=NULL;
 Bullet *theBullet=NULL;
 Flame *theFlame=NULL;
 Alien *theUFO=NULL;
+Angel *theAngel=NULL;
 
 // Varias constantes usadas en el programa
 int shotTime=0;
@@ -101,7 +96,7 @@ int main(int argc,char* argv[])
   //Para definir el punto de vista
   glMatrixMode(GL_MODELVIEW);	
 
-  // Define call backs te GLUT
+  // Define call backs de GLUT
 
   // Display function: contiene las instrucciones de dibujo
   glutDisplayFunc(OnDibuja);
@@ -124,6 +119,7 @@ int main(int argc,char* argv[])
   // Creacci�n de los objetos iniciales
   theShip = worldobjects.getShip();
   theUFO = worldobjects.getUFO();
+  theAngel = worldobjects.getAngel();
   // ObjectsList es declarada est�tica, se inicializa "automaticamente" - contiene los asteroides
   
   // bucle infinito de Open GL
@@ -212,10 +208,20 @@ void myLogic()
   {
     cout <<"Meto el ovni" <<endl;
     dim = (int)(RAND_FRAC()*2.99 + 1);
-    theUFO ->setTamano(dim);
+    theUFO ->setSize(dim);
     worldobjects.add(theUFO);
     theUFO -> setStatus(ACTIVE);
     cout << "y salgo" << endl; 
+  }
+
+  if (time(NULL)-gameTimeInit > 40 && theAngel -> getStatus() == INACTIVE)
+  {
+    cout <<"Ha aparecido un angel" <<endl;
+    dim = (int)(RAND_FRAC()*2.99 + 1);
+    theAngel ->setSize(dim);
+    worldobjects.add(theAngel);
+    theUFO -> setStatus(ACTIVE);
+    cout << "angel creado" << endl; 
   }
     
   // Pide al mundo que mueva los objetos
@@ -225,7 +231,7 @@ void myLogic()
   // res==0:  No ha colision
   // res==1:  Asteroide/Nave
   // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeno)
-  res = worldobjects.collisions(theBullet, theShip, theUFO, expl_pos);  
+  res = worldobjects.collisions(theBullet, theShip, theUFO, theAngel, expl_pos);  
 
   // Explosion
   if(res > 0 || FlameTime > 0)
@@ -281,6 +287,7 @@ void myLogic()
     worldobjects.reposition(theShip);
 
     theUFO -> setStatus(DESTROYED);
+    theAngel ->setStatus(INACTIVE);
     gameTimeInit = time(NULL);
   }
   
