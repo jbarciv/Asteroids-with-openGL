@@ -6,7 +6,6 @@ using namespace std;
 
 Ship::Ship()
 {
-  cout << "soy un Ship" << endl;
   pos[X] = 0;
   pos[Y] = 0;
   pos[Z] = 0;
@@ -61,7 +60,6 @@ void Ship::hyperjump()
 
 void Ship::draw()
 {
-    cout << "I'm Ship::draw" << endl;
   predraw();
   glutSolidCone(0.25,1,10,10);
   postdraw();

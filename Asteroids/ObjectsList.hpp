@@ -6,7 +6,6 @@
 #include "Alien.hpp"
 #include "Ship.hpp"
 #include "Flame.hpp"
- #include "Angel.hpp"
 
 using namespace std;
 

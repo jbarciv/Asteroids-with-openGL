@@ -1,7 +1,6 @@
 
 #include "commonstuff.hpp"
 #include "ObjectsList.hpp"
-#include "Angel.hpp"
 
 using namespace std;
 

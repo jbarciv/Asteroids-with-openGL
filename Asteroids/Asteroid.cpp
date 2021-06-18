@@ -30,8 +30,6 @@ Asteroid::Asteroid(int t)
   color[R] = 0.9;
   color[G] = 0.2;
   color[B] = 0.1;
-
-  //  printf("Mi no is %d",mynumber);
 }
 
 
@@ -67,7 +65,6 @@ Asteroid::Asteroid(int t, int s, float px, float py)
 
 void Asteroid::draw()
 {
-    cout << "I'm asteroid::draw" << endl;
   predraw();
 //   glutSolidTetrahedron();
 //   glutSolidIcosahedron();

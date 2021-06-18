@@ -13,7 +13,6 @@
 #include "Alien.hpp"
 #include "Ship.hpp"
 #include "Flame.hpp"
-#include "Angel.hpp"
 #include <time.h>
 using namespace std;
 
@@ -60,7 +59,6 @@ Ship *theShip=NULL;
 Bullet *theBullet=NULL;
 Flame *theFlame=NULL;
 Alien *theUFO=NULL;
-Angel *theAngel=NULL;
 
 // Varias constantes usadas en el programa
 int shotTime=0;
@@ -211,7 +209,7 @@ void myLogic()
       shotTime = 0;
     }
 
-  if (time(NULL)-timeUFO > 30 && theUFO -> getStatus() == DESTROYED)
+  if (time(NULL)-timeUFO > 10 && theUFO -> getStatus() == DESTROYED)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1); // The UFO dimensions are random
     theUFO ->setSize(dim);
@@ -269,6 +267,7 @@ void myLogic()
       theUFO -> setStatus(DESTROYED);
       timeUFO = time(NULL);
       shotTime = 0;
+      dim = theUFO -> getSize();
       score += dim*100;
     }
   
