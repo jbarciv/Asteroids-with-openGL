@@ -8,7 +8,6 @@ extern time_t ref;
 
 Alien::Alien()
 {
-  cout << "soy un Alien" << endl;
   pos[X] = 0;
   pos[Y] = 0;
   pos[Z] = 0;
@@ -56,7 +55,6 @@ Bullet* Alien::fire()
   return tmp;
 }
 
-
 void Alien::run()
 { 
   //Cambia aleatoriamente de dirección cada 3 segundos
@@ -75,7 +73,6 @@ void Alien::setSize(int dim)
 
 void Alien::draw()
 {
-  cout << "I'm Alien::draw" << endl;
   predraw();
   glutSolidCube(tamano*SIZE_UFO);
   // glTranslatef(0,-0.5,0);
@@ -85,15 +82,11 @@ void Alien::draw()
   fire();
 }
   
-
 float Alien::getSize()
 {
   return (tamano*SIZE_UFO);
 }
 
-
-//Creo que hay que modificar esta función para que los aliens aparezcan solo por los bordes...
-//pero aun no se me ha ocurrido como hacerlo bien, para que aparezca cuando no haya un asteroide
 void Alien::resetpos()
 {
   pos[X] = 0;

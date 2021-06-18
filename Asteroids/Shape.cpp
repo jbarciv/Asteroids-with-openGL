@@ -15,7 +15,6 @@ void  Shape::getPos(float *p)
   p[Z] = pos[Z];
 }
 
-
 int Shape::getNo()
 {
   return mynumber;
@@ -23,26 +22,22 @@ int Shape::getNo()
 
 void Shape::predraw()
 {
-    //cout << "I'm Shape::predraw" << endl;
   glPushMatrix();
   glTranslatef(pos[X],pos[Y],pos[Z]);
   glRotatef(rot[X],1,0,0);
   glRotatef(rot[Y],0,1,0);
   glRotatef(rot[Z],0,0,1);
-
   glColor3f(color[R],color[G],color[B]);
 }
 
 void Shape::postdraw()
 {
-    //cout << "I'm Shape::postdraw" << endl;
   glPopMatrix();
 }
 
 void Shape::move()
 {
   int crash=0;
-
 
   //  crash = detect_collision(others);
 
@@ -71,7 +66,5 @@ void Shape::move()
       if(rot[X]<0) rot[X] += 360;
       if(rot[Y]<0) rot[Y] += 360;
       if(rot[Z]<0) rot[Z] += 360;
-	
     }
-  
 }

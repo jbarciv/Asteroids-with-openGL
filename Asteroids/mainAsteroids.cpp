@@ -7,6 +7,13 @@
 
 #include "commonstuff.hpp"
 #include "ObjectsList.hpp"
+#include "Asteroid.hpp"
+#include "Shape.hpp"
+#include "Bullet.hpp"
+#include "Alien.hpp"
+#include "Ship.hpp"
+#include "Flame.hpp"
+#include "Angel.hpp"
 #include <time.h>
 using namespace std;
 
@@ -61,7 +68,7 @@ int nShips=3;
 int score=0;
 int FlameTime=0;
 int FT=20;
-time_t gameTimeInit;
+time_t timeUFO;
 time_t ref = 0;
 
 
@@ -74,7 +81,7 @@ int main(int argc,char* argv[])
 {
 
   // inicializaciones
-  time(&gameTimeInit);
+  time(&timeUFO);
 
   //Creacion y definicion de la ventana
   glutInit(&argc, argv);
@@ -119,13 +126,13 @@ int main(int argc,char* argv[])
   // Creacci�n de los objetos iniciales
   theShip = worldobjects.getShip();
   theUFO = worldobjects.getUFO();
-  theAngel = worldobjects.getAngel();
-  // ObjectsList es declarada est�tica, se inicializa "automaticamente" - contiene los asteroides
+
+  // ObjectsList es declarada estatica, se inicializa "automaticamente" - contiene los asteroides
   
   // bucle infinito de Open GL
   glutMainLoop();
 
-  // Esto solo sirve para que el compilador no proteste, nunca se llegar� aqu�
+  // Esto solo sirve para que el compilador no proteste, nunca se llegara aqui
   return 0;   
 
 }
@@ -138,7 +145,7 @@ int main(int argc,char* argv[])
 //***********************
 
 
-// Imprime puntuacci�n y num. de naves
+// Imprime puntuacion y num. de naves
 void printdata()
 {
 
@@ -196,32 +203,20 @@ void myLogic()
   int dim;
   int res;
   
-
-  // borra el proyectil despues de cierto tiempo si no ha dado con nada
+  // The bullet is erased after some time if it does not collision
   if(shotTime++ > MAXSHOTTIME)
     {
       worldobjects.removes(theBullet);    
       theBullet = NULL;
       shotTime = 0;
     }
-  if (time(NULL)-gameTimeInit > 15 && theUFO -> getStatus() == DESTROYED)
-  {
-    cout <<"Meto el ovni" <<endl;
-    dim = (int)(RAND_FRAC()*2.99 + 1);
-    theUFO ->setSize(dim);
-    worldobjects.add(theUFO);
-    theUFO -> setStatus(ACTIVE);
-    cout << "y salgo" << endl; 
-  }
 
-  if (time(NULL)-gameTimeInit > 40 && theAngel -> getStatus() == INACTIVE)
+  if (time(NULL)-timeUFO > 30 && theUFO -> getStatus() == DESTROYED)
   {
-    cout <<"Ha aparecido un angel" <<endl;
-    dim = (int)(RAND_FRAC()*2.99 + 1);
-    theAngel ->setSize(dim);
-    worldobjects.add(theAngel);
+    dim = (int)(RAND_FRAC()*2.99 + 1); // The UFO dimensions are random
+    theUFO ->setSize(dim);
+    worldobjects.add(theUFO);          // The UFO is added to the list 
     theUFO -> setStatus(ACTIVE);
-    cout << "angel creado" << endl; 
   }
     
   // Pide al mundo que mueva los objetos
@@ -231,7 +226,7 @@ void myLogic()
   // res==0:  No ha colision
   // res==1:  Asteroide/Nave
   // res>=2:  Asteroide/Proyectil, depende del tipo de asteroide (grande/mediano/pequeno)
-  res = worldobjects.collisions(theBullet, theShip, theUFO, theAngel, expl_pos);  
+  res = worldobjects.collisions(theBullet, theShip, theUFO, expl_pos);  
 
   // Explosion
   if(res > 0 || FlameTime > 0)
@@ -253,7 +248,7 @@ void myLogic()
   if(res == 1)    
     {
       nShips--;
-      // Esto habria que mejorarlo...
+      
       if(nShips == 0) exit(1);
 
       theShip -> resetpos();
@@ -272,7 +267,7 @@ void myLogic()
     {
       theBullet = NULL;
       theUFO -> setStatus(DESTROYED);
-      gameTimeInit = time(NULL);
+      timeUFO = time(NULL);
       shotTime = 0;
       score += dim*100;
     }
@@ -287,8 +282,7 @@ void myLogic()
     worldobjects.reposition(theShip);
 
     theUFO -> setStatus(DESTROYED);
-    theAngel ->setStatus(INACTIVE);
-    gameTimeInit = time(NULL);
+    timeUFO = time(NULL);
   }
   
 }
