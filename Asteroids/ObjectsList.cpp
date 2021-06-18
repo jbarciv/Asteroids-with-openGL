@@ -9,8 +9,8 @@ extern ObjectsList worldobjects;
 
 ObjectsList::ObjectsList()
 {   
-    n = 0;          // List begins empty
-    head = NULL;    // It does not make sense with list< > template
+    n = 0;              // List begins empty
+    head = NULL;        // It does not make sense with list< > template
     theShip = new Ship;
     worldobjects.push_front(theShip);
     for(int i=0 ; i < NUMASTEROIDS; i++)
@@ -18,7 +18,7 @@ ObjectsList::ObjectsList()
         Asteroid *asteroid = new Asteroid;
         worldobjects.push_front(asteroid);
     }
-    theUFO = new Alien;
+    theUFO = new Alien; // theUFO is created but not included
 }
 
 ObjectsList::~ObjectsList()
@@ -31,7 +31,6 @@ void ObjectsList::move()
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
         (*i)->move();
-
 }
 
 void ObjectsList::draw()
@@ -156,6 +155,8 @@ void ObjectsList::reposition(Ship* ship)
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
     {      
         if((*i) == theShip) continue;   // We skip theShip and the bullets
+        // if((*i) == bullet) continue; pensarlo buen
+        
 
         float pos_a[3];
         (*i) -> getPos(pos_a);
