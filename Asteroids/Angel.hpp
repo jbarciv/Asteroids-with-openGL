@@ -23,4 +23,4 @@ class Angel: public Shape{
 // la idea es que aparezca estatica en algun lugar aleatorio
 // cercano al marco de la ventana y si llevas la nave encima
 // y te chocas aumenta en 1 tu vida y te da x puntos pero si la 
-// disparas te resta
+// disparas te resta...(chema): más que te reste... que lo destruyes y te quedas sin...

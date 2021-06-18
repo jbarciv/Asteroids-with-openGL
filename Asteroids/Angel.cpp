@@ -63,5 +63,5 @@ void Angel::move()
     rot[Y] = RAND_FRAC()*360;
     tspeed[X] = ANGEL_SPEED*sin(D2R*rot[Y]);
     tspeed[Y] = ANGEL_SPEED*cos(D2R*rot[Y]);
-}
+    }
 }
