@@ -80,7 +80,7 @@ int main(int argc,char* argv[])
   glutInit(&argc, argv);
   glutInitWindowSize(WINX,WINY);
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-  glutCreateWindow("Asteroids the Game");
+  glutCreateWindow("Asteroids");
 
   //Habilita las luces, la renderizacion y el color de los materiales
   glEnable(GL_LIGHT0);
