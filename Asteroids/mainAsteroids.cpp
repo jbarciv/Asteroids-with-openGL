@@ -283,7 +283,7 @@ void myLogic()
   
   if (res == 6) // res == 6: Angel/Ship
   {
-    nShips++; // We receive a extra life
+    nShips++; // We get an extra life
     theAngel -> setStatus(INACTIVE);
     timeAngel = time(NULL);
   }
