@@ -301,8 +301,6 @@ void myLogic()
   }
 }
 
-
-
 void OnDraw(void)
 { 
   // Clearing the screen
