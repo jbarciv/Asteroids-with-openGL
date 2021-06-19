@@ -3,8 +3,10 @@
 \contentsline {section}{\numberline {2}Diagramas}{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Diagramas de Clases (UML)}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Diagramas de comunicaci\IeC {\'o}n}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Creaci\IeC {\'o}n de los objetos}{3}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Comportamiento de un asteroide tras una colisi\IeC {\'o}n}{4}{subsubsection.2.2.2}%
 \contentsline {section}{\numberline {3}Descripci\IeC {\'o}n de funciones y estructuras del juego}{4}{section.3}%
 \contentsline {section}{\numberline {4}Pruebas}{4}{section.4}%
-\contentsline {section}{\numberline {5}Gu\IeC {\'\i }a de uso}{4}{section.5}%
-\contentsline {section}{\numberline {6}Reparto de Roles}{4}{section.6}%
-\contentsline {section}{\numberline {7}Propuestas de mejora y valoraci\IeC {\'o}n personal}{4}{section.7}%
+\contentsline {section}{\numberline {5}Gu\IeC {\'\i }a de uso}{5}{section.5}%
+\contentsline {section}{\numberline {6}Reparto de Roles}{5}{section.6}%
+\contentsline {section}{\numberline {7}Propuestas de mejora y valoraci\IeC {\'o}n personal}{5}{section.7}%

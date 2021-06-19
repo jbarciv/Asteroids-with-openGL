@@ -7,7 +7,7 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 Database file #1: mybib.bib
 You've used 1 entry,
             2118 wiz_defined-function locations,
-            502 strings with 3766 characters,
+            502 strings with 3760 characters,
 and the built_in function-call counts, 219 in all, are:
 = -- 17
 > -- 7
