@@ -60,11 +60,12 @@ int MODE=NONE;
 
 // Global Objects
 ObjectsList worldobjects;
-Ship *theShip=NULL;
-Bullet *theBullet=NULL;
-Flame *theFlame=NULL;
-Alien *theUFO=NULL;
-Angel *theAngel=NULL;
+Ship *theShip = NULL;
+Bullet *theBullet = NULL;
+Bullet *theUFOBUllet = NULL;
+Flame *theFlame = NULL;
+Alien *theUFO = NULL;
+Angel *theAngel = NULL;
 
 // Very used constants
 int shotTime=0;
@@ -206,6 +207,7 @@ void myLogic()
     theBullet = NULL;
     shotTime = 0;
   }
+  
   if (time(NULL)-timeUFO > 20 && theUFO -> getStatus() == DESTROYED)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
