@@ -47,4 +47,3 @@ float Flame::getSize()
 {
   return (0.25);
 }
-

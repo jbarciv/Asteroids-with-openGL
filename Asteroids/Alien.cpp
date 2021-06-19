@@ -11,8 +11,8 @@ extern time_t ref;
 
 Alien::Alien()
 {
-  pos[X] = 0;
-  pos[Y] = 0;
+  pos[X] = RAND_DOM(0,SIZEX);
+  pos[Y] = RAND_DOM(0,SIZEY);
   pos[Z] = 0;
 
   rot[Z] = 0;
@@ -90,25 +90,8 @@ float Alien::getSize()
   return (tamano*SIZE_UFO);
 }
 
-void Alien::resetpos()
+void Alien::reposition()
 {
-  pos[X] = 0;
-  pos[Y] = 0;
-  pos[Z] = 0;
-
-  rot[Z] = 0;
-  rot[X] = -90;
-  rot[Y] = 0;
-
-  rspeed[X] = 0;
-  rspeed[Y] = 0;
-  rspeed[Z] = 0;
-
-  tspeed[X] = 0;
-  tspeed[Y] = 0;
-  tspeed[Z] = 0;
-
-  color[R] = 0.2;
-  color[G] = 0.4;
-  color[B] = 0.3;
+  pos[X] += 1+3*RAND_FRAC();
+  pos[Y] += 1+3*RAND_FRAC();
 }

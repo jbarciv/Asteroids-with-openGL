@@ -24,7 +24,7 @@ class Alien: public Shape {
   void setSize(int);
   void run();
   float getSize();
-  void resetpos();
+  void reposition();
 };
 
 #endif

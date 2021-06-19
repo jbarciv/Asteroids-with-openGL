@@ -19,4 +19,5 @@ class Angel: public Shape{
     float getSize();
     void draw();
     void teleport();
+    void reposition();
 };
