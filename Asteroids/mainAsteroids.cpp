@@ -62,17 +62,16 @@ int MODE=NONE;
 ObjectsList worldobjects;
 Ship *theShip = NULL;
 Bullet *theBullet = NULL;
-Bullet *theUFOBUllet = NULL;
 Flame *theFlame = NULL;
 Alien *theUFO = NULL;
 Angel *theAngel = NULL;
 
 // Very used constants
-int shotTime=0;
-int nShips=20;
-int score=0;
-int FlameTime=0;
-int FT=20;
+int shotTime = 0;
+int nShips = 20;
+int score = 0;
+int FlameTime = 0;
+int FT = 20;
 time_t timeUFO;
 time_t timeAngel = 0;;
 time_t ref = 0;
@@ -207,8 +206,8 @@ void myLogic()
     theBullet = NULL;
     shotTime = 0;
   }
-  
-  if (time(NULL)-timeUFO > 20 && theUFO -> getStatus() == DESTROYED)
+
+  if (time(NULL)-timeUFO > 30 && theUFO -> getStatus() == DESTROYED)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theUFO ->setSize(dim);
@@ -237,6 +236,7 @@ void myLogic()
   // res == 6: Angel/Ship
   // res == 7: UFO/Bullet
   // res == 8: Angel/Bullet
+  // res == 9: UFOBullet/Ship
 
   res = worldobjects.collisions(theBullet, theShip, theUFO, theAngel, expl_pos);  
   
@@ -262,6 +262,7 @@ void myLogic()
       if(nShips == 0) exit(1); // The Game ends
       theShip -> resetpos();
       worldobjects.reposition(theShip, theUFO, theAngel);
+      score -= 150;
     }                                  
 
   if(res >= 2 && res <= 4)    
@@ -293,7 +294,7 @@ void myLogic()
     theUFO -> setStatus(DESTROYED);
     timeUFO = time(NULL);
     dim = theUFO ->getSize();
-    score += dim*100;
+    score += 1000;
   }
 
   if (res == 8) //res == 8: Angel/Bullet
@@ -332,7 +333,7 @@ void OnKeyboardDown(unsigned char key, int x, int y)
     case ' ':
         if(!theBullet)                   // If there is not a bullet it is created
 	    {
-	        theBullet=theShip->fire(); 
+	        theBullet = theShip->fire(); 
 	        worldobjects.add(theBullet);
 	    }
         break;

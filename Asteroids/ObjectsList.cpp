@@ -87,7 +87,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
     {      
-        if((*i) == theShip) continue;  // We skip theShip, bullet, theUFO and theAngel
+        if((*i) == theShip) continue;  // We skip theShip, bullet, UFObullet, theUFO and theAngel
         if((*i) == bullet) continue;
         if((*i) == theUFO) continue;
         if((*i) == theAngel) continue;
@@ -173,6 +173,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
             return 7;
         }
 
+        // Checking the distance/collision between the bullet and theAngel
         if(mydistance(pos_an[0], pos_an[1], pos_b[0], pos_b[1]) < (size_an + size_b) && angel->getStatus() == ACTIVE)
         {
             explos[0] = pos_an[0];

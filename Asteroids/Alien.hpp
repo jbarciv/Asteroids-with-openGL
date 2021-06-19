@@ -20,7 +20,6 @@ class Alien: public Shape {
   bool getStatus();
   void draw();
   void rotate(float,float,float);
-  Bullet* fire();
   void setSize(int);
   void run();
   float getSize();

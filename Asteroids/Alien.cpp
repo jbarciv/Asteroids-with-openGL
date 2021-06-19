@@ -39,7 +39,7 @@ void Alien::setStatus(bool estado)
   status = estado;
 }
 
-bool Alien::getStatus ()
+bool Alien::getStatus()
 {
   return status;
 }
@@ -47,15 +47,6 @@ bool Alien::getStatus ()
 void Alien::rotate(float rx, float ry, float rz)
 {
   rot[X] += rx;  rot[Y] += ry;  rot[Z] += rz;
-}
-
-Bullet* Alien::fire()
-{
-  Bullet *tmp;
-  float direction = RAND_FRAC()*360;
-  tmp = new Bullet(pos[X],pos[Y],BULLETSPEED*sin(D2R*direction),BULLETSPEED*cos(D2R*direction));
-
-  return tmp;
 }
 
 void Alien::run()
@@ -82,7 +73,6 @@ void Alien::draw()
   // glutWireSphere(0.5,8,8);
   postdraw();
   run();
-  fire();
 }
 
 float Alien::getSize()
