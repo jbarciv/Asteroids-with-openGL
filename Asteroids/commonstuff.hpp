@@ -72,8 +72,6 @@ using namespace std;
 //#define ANGEL_SPEED 0.0005
 #define BULLETSPEED 0.02
 #define SHIPSPEED 0.001
-#endif
-
 #else
 #define ASTEROID_SPEED 0.05
 #define ALIEN_SPEED 0.05

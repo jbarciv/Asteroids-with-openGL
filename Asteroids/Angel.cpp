@@ -53,19 +53,17 @@ float Angel::getSize()
     return (tamano*SIZE_ANGEL);
 }
 
+void Angel::teleport()
+{
+    rot[Y] = RAND_FRAC()*360;
+    pos[X] = RAND_DOM(0, WINX);
+    pos[Y] = RAND_DOM(0, WINY);
+}
+
 void Angel::draw()
 {
     predraw();
     glutSolidTeapot(tamano*SIZE_ANGEL);
     postdraw();
-}
-void Angel::teleport()
-{
-  if (time(NULL)-ref > 10)
-  {
-    time(&ref);
-    rot[Y] = RAND_FRAC()*360;
-    pos[X] = RAND_DOM(0, WINX);
-    pos[Y] = RAND_DOM(0, WINY);
-  }
+    //teleport();
 }

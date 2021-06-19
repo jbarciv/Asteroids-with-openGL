@@ -83,7 +83,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
     angel -> getPos(pos_an);
     float size_an = angel -> getSize();
 
-    if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s) && ovni->getStatus() == ACTIVE) 
+    if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s) && ovni -> getStatus() == ACTIVE) 
     {
         explos[0] = pos_s[0];
         explos[1] = pos_s[1];
@@ -92,12 +92,13 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
         return 6;
     }
 
-    if(mydistance(pos_an[0], pos_an[1], pos_s[0], pos_s[1]) < (size_an + size_s) && angel->getStatus() == ACTIVE) 
+    if(mydistance(pos_an[0], pos_an[1], pos_s[0], pos_s[1]) < (size_an + size_s) && angel -> getStatus() == ACTIVE) 
     {
+        angel -> setStatus(INACTIVE);
         explos[0] = pos_s[0];
         explos[1] = pos_s[1];
         worldobjects.removes(angel);
-        angel -> setStatus(INACTIVE);
+        angel -> teleport();
         return 7;
     }
     

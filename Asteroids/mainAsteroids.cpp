@@ -206,6 +206,7 @@ void myLogic()
     theBullet = NULL;
     shotTime = 0;
   }
+  
   if (time(NULL)-timeUFO > 30 && theUFO -> getStatus() == DESTROYED)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
@@ -214,20 +215,12 @@ void myLogic()
     theUFO -> setStatus(ACTIVE);
   }
 
-  if (time(NULL)-timeAngel > 40 && theAngel -> getStatus() == INACTIVE)
+  if (time(NULL)-timeAngel > 10 && theAngel -> getStatus() == INACTIVE)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theAngel ->setSize(dim);
     worldobjects.add(theAngel);
     theAngel -> setStatus(ACTIVE);
-  }
-
-    if (time(NULL)-timeUFO > 10 && theAngel -> getStatus() == INACTIVE)
-  {
-    dim = (int)(RAND_FRAC()*2.99 + 1);
-    theAngel ->setSize(dim);
-    worldobjects.add(theAngel);
-    theAngel -> setStatus(ACTIVE); 
   }
 
 
@@ -295,6 +288,7 @@ void myLogic()
   {
     nShips++;
     theAngel -> setStatus(INACTIVE);
+    worldobjects.reposition(theShip);
   }
 }
 
