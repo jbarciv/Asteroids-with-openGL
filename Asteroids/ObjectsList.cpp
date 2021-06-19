@@ -121,7 +121,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
             {
                 worldobjects.remove(bullet);
                 worldobjects.remove(angel);
-                angel -> setStatus(DESTROYED);
+                angel -> setStatus(INACTIVE);
                 explos[0] = pos_an[0];
                 explos[1] = pos_an[1];
                 return 8;
