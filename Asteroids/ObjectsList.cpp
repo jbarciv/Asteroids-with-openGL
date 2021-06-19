@@ -186,9 +186,19 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
     return 0; // If there in not any collision
 }
 
-void ObjectsList::reposition(Ship* ship)
+void ObjectsList::reposition(Ship* ship, Alien* ovni, Angel* angel)
 {
-    float size_s = ship->getSize();
+    float pos_s[3];                     // The Ship position is saved in "pos_s" 
+    ship -> getPos(pos_s);
+    float size_s = ship->getSize();     // The Ship size is saved in "size_s"
+
+    float pos_u[3];                     // The UFO position is saved in "pos_u"
+    ovni -> getPos(pos_u);
+    float size_u = ovni -> getSize();   // The UFI size is saved in "size_u"
+
+    float pos_an[3];                    // The Angel position is saved in "pos_an"
+    angel -> getPos(pos_an);
+    float size_an = angel -> getSize(); // The Angel size is saved in "size_an"
 
     list<Shape*>::iterator i;
     for(i = worldobjects.begin() ; i != worldobjects.end() ; i++)
@@ -200,17 +210,23 @@ void ObjectsList::reposition(Ship* ship)
         float size_a = (*i)->getSize();
 
         if((*i) == theUFO)
-        {
-            Alien *x = new Alien;     // Cast from Shape* to Alien*
-            x = (Alien*) (*i);
-            x->reposition();
+        {   
+            if(mydistance(pos_u[0], pos_u[1], 0.0, 0.0) < (size_u + size_s) && ovni->getStatus() == ACTIVE)
+            {
+                Alien *x = new Alien;     // Cast from Shape* to Alien*
+                x = (Alien*) (*i);
+                x->reposition();
+            }
         }
 
         if((*i) == theAngel)
         {
-            Angel *x = new Angel;     // Cast from Shape* to Alien*
-            x = (Angel*) (*i);
-            x->reposition();
+            if(mydistance(pos_an[0], pos_an[1], 0.0, 0.0) < (size_an + size_s) && angel->getStatus() == ACTIVE)
+            {
+                Angel *x = new Angel;     // Cast from Shape* to Alien*
+                x = (Angel*) (*i);
+                x->reposition();
+            }
         }
 
         if(mydistance(pos_a[0], pos_a[1], 0.0, 0.0) < (size_a + size_s)) 

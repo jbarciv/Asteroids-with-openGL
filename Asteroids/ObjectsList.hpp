@@ -36,7 +36,7 @@ class ObjectsList: public list<Shape*>
         Alien* getUFO();
         Angel* getAngel();
         int collisions(Bullet* bullet, Ship* ship, Alien* ufo, Angel* angel, float*);
-        void reposition(Ship* ship);
+        void reposition(Ship* ship, Alien* ovni, Angel* angel);
 };
 
 #endif

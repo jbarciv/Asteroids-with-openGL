@@ -68,7 +68,7 @@ Angel *theAngel=NULL;
 
 // Very used constants
 int shotTime=0;
-int nShips=100;
+int nShips=20;
 int score=0;
 int FlameTime=0;
 int FT=20;
@@ -206,7 +206,7 @@ void myLogic()
     theBullet = NULL;
     shotTime = 0;
   }
-  if (time(NULL)-timeUFO > 25 && theUFO -> getStatus() == DESTROYED)
+  if (time(NULL)-timeUFO > 20 && theUFO -> getStatus() == DESTROYED)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theUFO ->setSize(dim);
@@ -214,8 +214,9 @@ void myLogic()
     theUFO -> setStatus(ACTIVE);
   }
 
-  if (time(NULL)-timeAngel > 30 && theAngel -> getStatus() == INACTIVE)
+  if (time(NULL)-timeAngel > 40 && theAngel -> getStatus() == INACTIVE)
   {
+    theAngel -> resetpos();
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theAngel ->setSize(dim);
     worldobjects.add(theAngel);
@@ -225,7 +226,8 @@ void myLogic()
   // It asks the world to move the objects
   worldobjects.move();
 
-  // It asks if there has been a collision, passing the reference to the Bullet and the Ship, returning the kind and the location of that (suppossed) collision.
+  // It asks if there has been a collision, passing the reference to the Bullet and the Ship, 
+  // returning the kind and the location of that (suppossed) collision.
   // res == 0:  There is not collision
   // res == 1:  Asteroid/Ship
   // res >= 2 && res <= 4:  Asteroid/Bullet, it depends on the Asteroids size (big/medium/small)
@@ -237,7 +239,7 @@ void myLogic()
   res = worldobjects.collisions(theBullet, theShip, theUFO, theAngel, expl_pos);  
   
   // First the explosion is checked
-  if(res > 0 || FlameTime > 0)
+  if(res > 0 && res != 6 || FlameTime > 0) // There is not explosion with the Angel/Ship collision
   {
     FlameTime++;
     if(!theFlame)
@@ -257,7 +259,7 @@ void myLogic()
       nShips--;
       if(nShips == 0) exit(1); // The Game ends
       theShip -> resetpos();
-      worldobjects.reposition(theShip);
+      worldobjects.reposition(theShip, theUFO, theAngel);
     }                                  
 
   if(res >= 2 && res <= 4)    

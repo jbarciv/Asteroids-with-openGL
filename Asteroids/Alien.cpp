@@ -11,8 +11,8 @@ extern time_t ref;
 
 Alien::Alien()
 {
-  pos[X] = RAND_DOM(0,SIZEX);
-  pos[Y] = RAND_DOM(0,SIZEY);
+  pos[X] = RAND_DOM(0, SIZEX);
+  pos[Y] = RAND_DOM(0, SIZEY);
   pos[Z] = 0;
 
   rot[Z] = 0;
