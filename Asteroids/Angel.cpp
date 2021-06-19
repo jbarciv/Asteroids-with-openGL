@@ -26,9 +26,9 @@ Angel::Angel()
   tspeed[Y] = 0;
   tspeed[Z] = 0;
 
-  color[R] = 1; 
-  color[G] = 0.0;
-  color[B] = 0.0;
+  color[R] = 0.4; 
+  color[G] = 0.1;
+  color[B] = 0.3;
 
   status = INACTIVE;
 }
