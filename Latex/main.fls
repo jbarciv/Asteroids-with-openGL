@@ -1295,6 +1295,13 @@ INPUT ./fotos/UML.PNG
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmti10.tfm
+INPUT ./fotos/asteroid.png
+INPUT ./fotos/asteroid.png
+INPUT fotos/asteroid.png
+INPUT ./fotos/asteroid.png
+INPUT ./fotos/asteroid.png
+INPUT ./fotos/asteroid.png
+INPUT ./fotos/asteroid.png
 INPUT ./4_Funciones.tex
 INPUT 4_Funciones.tex
 INPUT ./4_Funciones.tex
@@ -1332,6 +1339,10 @@ INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb

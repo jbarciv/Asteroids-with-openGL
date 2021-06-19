@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1623998755 "main.aux" "main.bbl" "main" 1623999243
+["bibtex main"] 1624123263 "main.aux" "main.bbl" "main" 1624123265
   "/usr/local/share/miktex-texmf/bibtex/bst/bibtex/abbrv.bst" 1623928681 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "main.aux" 1623999196 2448 6ccd64d400acc44de7072a8e6a3a3446 "pdflatex"
+  "main.aux" 1624123265 2691 8c23f9774129bc440dfcaae79dec5c41 "pdflatex"
   "mybib.bib" 1623953309 205 f3afe5bff3d32be94ead4b063ac129dc ""
   (generated)
-  "main.bbl"
   "main.blg"
-["pdflatex"] 1623999195 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1623999243
-  "/dev/null" 1623268430 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "main.bbl"
+["pdflatex"] 1624123263 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1624123265
+  "/dev/null" 1624109506 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/home/josep/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk" 1623997839 9292 3bc5e119a2f8dbdf8203c421f3cab733 ""
   "/home/josep/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1623928843 6547252 fbc79642acd143cb86f79ef0f11ac069 ""
   "/home/josep/.miktex/texmfs/data/pdftex/config/pdftex.map" 1623953332 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
@@ -108,6 +108,8 @@
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1623928679 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1623928679 36554 b67dc2cfa451409e100b3fcf5f506509 ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1623928679 32001 6aeea3afe875097b1eb0da29acd61e28 ""
+  "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1623928679 36741 fa121aac0049305630cf160b86157ee4 ""
+  "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1623928679 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1623928679 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1623928679 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1623928679 32362 179c33bbf43f19adbb3825bb4e36e57a ""
@@ -178,7 +180,7 @@
   "/usr/local/share/miktex-texmf/tex/latex/xkeyval/xkeyval.sty" 1623928714 4902 efb3d66683a2da2a232f71e3a571a899 ""
   "1_Resumen.tex" 1623948887 19 7ad4502b87a3121642fdc7315361f406 ""
   "2_Introduccion.tex" 1623997400 1302 7684ab65a81cf6282e1445c9f453b579 ""
-  "3_Diagramas.tex" 1623999242 1413 ab2ad3902dc5b265ee5605a65c7c9be1 ""
+  "3_Diagramas.tex" 1624123260 2903 9c862951094e75c89dabb4271a5ffad4 ""
   "4_Funciones.tex" 1623951735 61 5e60c72ebb021b4676b55436478b185b ""
   "5_Pruebas.tex" 1623951640 18 e2986134c60ad2693bd3bdda8d165730 ""
   "6_GuiaDeUso.tex" 1623951812 23 a1363f6e14cea65e16d89cd4711ef990 ""
@@ -187,14 +189,15 @@
   "commonstuff.tex" 1623952184 3115 ba0a298eb69fedc4dfb821350de9de76 ""
   "fotos/Logo_azul.png" 1583603027 92223 01dbb39395dbf95abc72cac46df24276 ""
   "fotos/UML.PNG" 1623917851 43386 4916b2c5fbb9b226122a12163d6654bf ""
-  "main.aux" 1623999196 2448 6ccd64d400acc44de7072a8e6a3a3446 "pdflatex"
-  "main.bbl" 1623998755 143 986ad5c131f062ad59690fb6d50be159 "bibtex main"
-  "main.out" 1623999196 1471 6bcd3335ea3d810be29b818e6b5d461c "pdflatex"
+  "fotos/asteroid.png" 1624122913 112932 fcc4dcda63df33feef192d517127c91f ""
+  "main.aux" 1624123265 2691 8c23f9774129bc440dfcaae79dec5c41 "pdflatex"
+  "main.bbl" 1624123263 143 986ad5c131f062ad59690fb6d50be159 "bibtex main"
+  "main.out" 1624123265 1471 6bcd3335ea3d810be29b818e6b5d461c "pdflatex"
   "main.tex" 1623953440 3225 869a3449726993e3de37d1a4b6b17602 ""
-  "main.toc" 1623999196 789 f13d9fb6973ecdff1d0b14734a6fb128 "pdflatex"
+  "main.toc" 1624123265 789 142505489d9b4cb3a34974d1bd566b01 "pdflatex"
   (generated)
-  "main.pdf"
   "main.toc"
-  "main.out"
   "main.log"
+  "main.pdf"
+  "main.out"
   "main.aux"

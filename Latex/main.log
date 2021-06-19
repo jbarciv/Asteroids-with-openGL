@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.17)  18 JUN 2021 08:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.17)  19 JUN 2021 19:21
 entering extended mode
 **"/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex"
 (/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex
@@ -810,7 +810,18 @@ File: fotos/UML.PNG Graphic file (type png)
 <use fotos/UML.PNG>
 Package pdftex.def Info: fotos/UML.PNG  used on input line 7.
 (pdftex.def)             Requested size: 426.79135pt x 345.07916pt.
- [2 <./fotos/UML.PNG>]) (4_Funciones.tex) (5_Pruebas.tex) (6_GuiaDeUso.tex) (7_Roles.tex) (8_Evaluacion.tex) (main.bbl [3]) [4] (main.aux
+ [2 <./fotos/UML.PNG>]
+<fotos/asteroid.png, id=81, 1285.80376pt x 371.88937pt>
+File: fotos/asteroid.png Graphic file (type png)
+<use fotos/asteroid.png>
+Package pdftex.def Info: fotos/asteroid.png  used on input line 20.
+(pdftex.def)             Requested size: 426.79135pt x 123.43886pt.
+)
+Overfull \hbox (8.94983pt too wide) in paragraph at lines 25--73
+\OT1/cmr/m/sc/12 NUMASTEROIDS \OT1/cmr/m/n/12 definido en \OT1/cmr/m/it/12 commonstuff.hpp\OT1/cmr/m/n/12 . Los asteroides son inmediatamente
+ []
+
+(4_Funciones.tex) (5_Pruebas.tex [3 <./fotos/asteroid.png (PNG copy)>]) (6_GuiaDeUso.tex) (7_Roles.tex) (8_Evaluacion.tex) (main.bbl) [4] (main.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 )
@@ -818,17 +829,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 6BCD3335EA3D810BE29B818E6B5D461C;1471.
  ) 
 Here is how much of TeX's memory you used:
- 20552 strings out of 480799
- 314816 string characters out of 2900780
- 760200 words of memory out of 3000000
- 37808 multiletter control sequences out of 15000+600000
+ 20569 strings out of 480799
+ 315095 string characters out of 2900780
+ 760257 words of memory out of 3000000
+ 37823 multiletter control sequences out of 15000+600000
  416025 words of font info for 72 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 65i,6n,70p,758b,586s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/josep/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (5 pages, 268854 bytes).
+ 65i,6n,70p,1111b,586s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/josep/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on main.pdf (5 pages, 406171 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 16 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 17 named destinations out of 1000 (max. 500000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
