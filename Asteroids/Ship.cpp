@@ -6,11 +6,9 @@
 #include "commonstuff.hpp"
 #include "Ship.hpp"
 #include "Bullet.hpp"
-using namespace std;
 
 Ship::Ship()
 {
-  cout << "soy un Ship" << endl;
   pos[X] = 0;
   pos[Y] = 0;
   pos[Z] = 0;
@@ -48,29 +46,22 @@ void Ship::rotate(float rx, float ry, float rz)
 
  void Ship::thrust(double howmuch)
  { 
-   tspeed[X] += howmuch*sin(D2R*rot[Y]); //no seria rot[X]?
+   tspeed[X] += howmuch*sin(D2R*rot[Y]); 
    tspeed[Y] += howmuch*cos(D2R*rot[Y]);
 }
-
 
 void Ship::hyperjump()
 {
   pos[X] = RAND_DOM(0,(SIZEX-2))-SIZEX2;
   pos[Y] = RAND_DOM(0,(SIZEY-2))-SIZEY2;
-
-//   printf("ship @ %f %f\n",pos[X],pos[Y]);
-  //rot[Y] =  RAND_DOM(0,359);
 }
-
 
 void Ship::draw()
 {
-    cout << "I'm Ship::draw" << endl;
   predraw();
   glutSolidCone(0.25,1,10,10);
   postdraw();
 }
-  
 
 float Ship::getSize()
 {

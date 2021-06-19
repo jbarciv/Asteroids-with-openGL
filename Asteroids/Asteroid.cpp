@@ -33,10 +33,7 @@ Asteroid::Asteroid(int t)
   color[R] = 0.9;
   color[G] = 0.2;
   color[B] = 0.1;
-
-  //  printf("Mi no is %d",mynumber);
 }
-
 
 Asteroid::Asteroid(int t, int s, float px, float py)
 {
@@ -67,17 +64,17 @@ Asteroid::Asteroid(int t, int s, float px, float py)
   color[B] = 0.1;
 }
 
-
 void Asteroid::draw()
 {
   predraw();
-//   glutSolidTetrahedron();
-//   glutSolidIcosahedron();
+
   glutSolidSphere(size*0.3,9,8);    
   glTranslatef(0,size*0.3,0);	
   glutSolidSphere(size*0.25,7,9);
+
+//   glutSolidTetrahedron();
+//   glutSolidIcosahedron();
 //   glutSolidCube(size*0.3);	
-  
 //    glPolygonMode ( GL_FRONT_AND_BACK, GL_LINE ) ;
 //   glBegin(GL_POLYGON);
 //   if(type==1)
@@ -112,12 +109,10 @@ void Asteroid::draw()
 // 	glVertex3f(size*0.5,size*0.4,0);
 // 	glVertex3f(0,size*0.3,0.3);
 //       }
-  
 //   glEnd();
-   
+
   postdraw();
 }
- 
 
 Asteroid *Asteroid::split()
 {

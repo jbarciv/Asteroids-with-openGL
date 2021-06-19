@@ -75,9 +75,9 @@ void Alien::setSize(int dim)
 
 void Alien::draw()
 {
-  cout << "I'm Alien::draw" << endl;
   predraw();
-  glutSolidCube(tamano*SIZE_UFO);
+  // glutSolidCube(tamano*SIZE_UFO);
+  glutSolidIcosahedron();
   // glTranslatef(0,-0.5,0);
   // glutWireSphere(0.5,8,8);
   postdraw();

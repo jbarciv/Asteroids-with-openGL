@@ -191,7 +191,6 @@ void ObjectsList::reposition(Ship* ship)
         if((*i) == theShip) continue;   // We skip theShip and the bullets
         // if((*i) == bullet) continue; pensarlo buen
         
-
         float pos_a[3];
         (*i) -> getPos(pos_a);
         float size_a = (*i)->getSize();

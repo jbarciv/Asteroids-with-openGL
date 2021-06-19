@@ -20,8 +20,3 @@ class Angel: public Shape{
     void draw();
     void teleport();
 };
-
-// la idea es que aparezca estatica en algun lugar aleatorio
-// y si llevas la nave encima
-// y te chocas aumenta en 1 tu vida y te da x puntos pero si la 
-// disparas lo destruyes y te quedas sin...

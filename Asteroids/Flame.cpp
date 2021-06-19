@@ -1,12 +1,10 @@
 //////////////////////////////////////
-// Flame.cpp                     //
+// Flame.cpp                        //
 // Methods of the Flame class       //
 //////////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Flame.hpp" 
-
-
 
 Flame::Flame(float *p)
 {
@@ -34,20 +32,16 @@ Flame::Flame(float *p)
   dir = 1;
 }
 
-
-
-
 void Flame::draw()
 {
-  size +=dir;
-  if (size>5) dir = -1;
-  if (size< 1) dir = 1;
+  size += dir;
+  if (size > 5) dir = -1;
+  if (size < 1) dir = 1;
   
   predraw();
   glutSolidTorus(0.1*size,0.25*size,20,20);	
   postdraw();
-}
-  
+} 
 
 float Flame::getSize()
 {
