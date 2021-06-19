@@ -228,15 +228,15 @@ void myLogic()
     theAngel -> setStatus(ACTIVE);
   }
 
-  // if (time(NULL)-timeUFO > 10 && theAngel -> getStatus() == INACTIVE)
-  // {
-  //   dim = (int)(RAND_FRAC()*2.99 + 1);
-  //   theAngel ->setSize(dim);
-  //   worldobjects.add(theAngel);
-  //   theAngel -> setStatus(ACTIVE); 
-  // }
+    if (time(NULL)-timeUFO > 10 && theAngel -> getStatus() == INACTIVE)
+  {
+    dim = (int)(RAND_FRAC()*2.99 + 1);
+    theAngel ->setSize(dim);
+    worldobjects.add(theAngel);
+    theAngel -> setStatus(ACTIVE); 
+  }
 
-  
+
   // It asks the world to move the objects
   worldobjects.move();
 
