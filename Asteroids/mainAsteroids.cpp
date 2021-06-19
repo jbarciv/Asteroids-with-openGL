@@ -58,7 +58,7 @@ float expl_pos[2]={-1000,-1000};
 // Mouse mode
 int MODE=NONE;
 
-// Blobal Objects
+// Global Objects
 ObjectsList worldobjects;
 Ship *theShip=NULL;
 Bullet *theBullet=NULL;
@@ -68,7 +68,7 @@ Angel *theAngel=NULL;
 
 // Very used constants
 int shotTime=0;
-int nShips=3;
+int nShips=300;
 int score=0;
 int FlameTime=0;
 int FT=20;
@@ -219,8 +219,18 @@ void myLogic()
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theAngel ->setSize(dim);
     worldobjects.add(theAngel);
-    theUFO -> setStatus(ACTIVE); 
+    theAngel -> setStatus(ACTIVE);
   }
+
+  // if (time(NULL)-timeUFO > 10 && theAngel -> getStatus() == INACTIVE)
+  // {
+  //   dim = (int)(RAND_FRAC()*2.99 + 1);
+  //   theAngel ->setSize(dim);
+  //   worldobjects.add(theAngel);
+  //   theAngel -> setStatus(ACTIVE); 
+  // }
+
+  
   // It asks the world to move the objects
   worldobjects.move();
 
