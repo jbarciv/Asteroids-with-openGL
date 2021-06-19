@@ -225,7 +225,8 @@ void myLogic()
   // It asks the world to move the objects
   worldobjects.move();
 
-  // It asks if there has been a collision, passing the reference to the Bullet and the Ship, returning the kind and the location of that (suppossed) collision.
+  // It asks if there has been a collision, passing the reference to the Bullet and the Ship, 
+  // returning the kind and the location of that (suppossed) collision.
   // res == 0:  There is not collision
   // res == 1:  Asteroid/Ship
   // res >= 2 && res <= 4:  Asteroid/Bullet, it depends on the Asteroids size (big/medium/small)
@@ -237,7 +238,7 @@ void myLogic()
   res = worldobjects.collisions(theBullet, theShip, theUFO, theAngel, expl_pos);  
   
   // First the explosion is checked
-  if(res > 0 || FlameTime > 0)
+  if(res > 0 && res != 6 || FlameTime > 0) // There is not explosion with the Angel/Ship collision
   {
     FlameTime++;
     if(!theFlame)
