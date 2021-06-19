@@ -68,7 +68,7 @@ Angel *theAngel=NULL;
 
 // Very used constants
 int shotTime=0;
-int nShips=300;
+int nShips=100;
 int score=0;
 int FlameTime=0;
 int FT=20;
@@ -206,7 +206,6 @@ void myLogic()
     theBullet = NULL;
     shotTime = 0;
   }
-  
   if (time(NULL)-timeUFO > 30 && theUFO -> getStatus() == DESTROYED)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
@@ -223,7 +222,6 @@ void myLogic()
     theAngel -> setStatus(ACTIVE);
   }
 
-
   // It asks the world to move the objects
   worldobjects.move();
 
@@ -231,9 +229,14 @@ void myLogic()
   // res == 0:  There is not collision
   // res == 1:  Asteroid/Ship
   // res >= 2 && res <= 4:  Asteroid/Bullet, it depends on the Asteroids size (big/medium/small)
-  res = worldobjects.collisions(theBullet, theShip, theUFO, theAngel, expl_pos);  
+  // res == 5: UFO/Ship
+  // res == 6: Angel/Ship
+  // res == 7: UFO/Bullet
+  // res == 8: Angel/Bullet
 
-  // Explosion
+  res = worldobjects.collisions(theBullet, theShip, theUFO, theAngel, expl_pos);  
+  
+  // First the explosion is checked
   if(res > 0 || FlameTime > 0)
   {
     FlameTime++;
@@ -248,11 +251,11 @@ void myLogic()
         FlameTime = 0;
       }
   }
-  
-  if(res == 1)    
+
+  if(res == 1)  // res == 1:  Asteroid/Ship
     {
       nShips--;
-      if(nShips == 0) exit(1);
+      if(nShips == 0) exit(1); // The Game ends
       theShip -> resetpos();
       worldobjects.reposition(theShip);
     }                                  
@@ -264,31 +267,37 @@ void myLogic()
       score += 100*(res - 1);
     }
   
-  if (res == 5)
+  if (res == 5) // res == 5: UFO/Ship
     {
-      theBullet = NULL;
+      nShips--;
+      if (nShips == 0) exit(1);// The Game ends
       theUFO -> setStatus(DESTROYED);
       timeUFO = time(NULL);
-      shotTime = 0;
-      score += dim*100;
+      dim = theUFO ->getSize();
+      score -= dim*100;
     }
   
-  if (res == 6)
+  if (res == 6) // res == 6: Angel/Ship
   {
-    nShips--;
-
-    if (nShips == 0) exit(1);
-    theShip -> resetpos();
-    worldobjects.reposition(theShip);
-    theUFO -> setStatus(DESTROYED);
-    timeUFO = time(NULL);
+    nShips++; // We receive a extra life
+    theAngel -> setStatus(INACTIVE);
+    timeAngel = time(NULL);
   }
   
-  if (res == 7)
+  if (res == 7) // res == 7: UFO/Bullet
   {
-    nShips++;
-    theAngel -> setStatus(INACTIVE);
-    worldobjects.reposition(theShip);
+    theUFO -> setStatus(DESTROYED);
+    timeUFO = time(NULL);
+    dim = theUFO ->getSize();
+    score += dim*100;
+  }
+
+  if (res == 8) //res == 8: Angel/Bullet
+  {
+    theAngel -> setStatus(DESTROYED);
+    timeAngel = time(NULL);
+    dim = theAngel->getSize();
+    score -= dim*10;
   }
 }
 

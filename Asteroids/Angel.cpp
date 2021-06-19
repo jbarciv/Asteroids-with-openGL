@@ -6,12 +6,10 @@
 #include "commonstuff.hpp"
 #include "Angel.hpp"
 
-extern time_t ref;
-
 Angel::Angel()
  {
-  pos[X] = 0;
-  pos[Y] = 0;
+  pos[X] = RAND_DOM(0,SIZEX);
+  pos[Y] = RAND_DOM(0,SIZEY);
   pos[Z] = 0;
 
   rot[Z] = 0;
@@ -26,9 +24,15 @@ Angel::Angel()
   tspeed[Y] = 0;
   tspeed[Z] = 0;
 
+<<<<<<< HEAD
   color[R] = 0.4; 
   color[G] = 0.1;
   color[B] = 0.3;
+=======
+  color[R] = 1; 
+  color[G] = 0.0;
+  color[B] = 1;
+>>>>>>> 8ad77efd458bf00eff9f38620f6197c0ce1c84f7
 
   status = INACTIVE;
 }
@@ -65,5 +69,11 @@ void Angel::draw()
     predraw();
     glutSolidTeapot(tamano*SIZE_ANGEL);
     postdraw();
-    
+}
+
+void Angel::reposition()
+{
+  pos[X] += 1+3*RAND_FRAC();
+  pos[Y] += 1+3*RAND_FRAC();
+
 }
