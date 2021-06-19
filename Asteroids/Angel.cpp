@@ -33,7 +33,6 @@ Angel::Angel()
   status = INACTIVE;
 }
 
-
 void Angel::setStatus(bool estado)
 {
   status = estado;
@@ -62,11 +61,11 @@ void Angel::draw()
 }
 void Angel::teleport()
 {
-      //Cambia aleatoriamente de posicion cada 10 segundos
-  if (time(NULL)-ref > 10){
+  if (time(NULL)-ref > 10)
+  {
     time(&ref);
     rot[Y] = RAND_FRAC()*360;
     pos[X] = RAND_DOM(0, WINX);
     pos[Y] = RAND_DOM(0, WINY);
-}
+  }
 }

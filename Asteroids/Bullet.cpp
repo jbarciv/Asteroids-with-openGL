@@ -1,7 +1,7 @@
-//////////////////////////////////////
-// Bullet.cpp                     //
-// Methods of the Bullet class       //
-//////////////////////////////////////
+/////////////////////////////////////
+// Bullet.cpp                      //
+// Methods of the Bullet class     //
+/////////////////////////////////////
 #include "commonstuff.hpp"
 #include "Bullet.hpp"
 
@@ -34,7 +34,6 @@ void Bullet::draw()
   glutSolidSphere(0.1,5,5);	
   postdraw();
 }
-
 
 float Bullet::getSize()
 {

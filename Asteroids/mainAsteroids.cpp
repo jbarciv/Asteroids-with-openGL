@@ -21,12 +21,10 @@
 // Celia Ramos, Gonzalo Quiros, Josep Barbera - last version        //
 //////////////////////////////////////////////////////////////////////
 
-
 #include "commonstuff.hpp"
 #include "ObjectsList.hpp"
 #include <time.h>
 using namespace std;
-
 
 ///////////////////////////////////////
 ///////// Function Prototype //////////
@@ -43,7 +41,6 @@ void OnKeyboardDown(unsigned char key, int x, int y);
 void OnMouseBtn(int button, int state,int x, int y);
 void OnMouseMoveBtn(int x, int y);
 void OnSpecKeyboardDown(int key, int x, int y);
-
 
 void printdata();
 void gameover(int score);
@@ -140,7 +137,6 @@ int main(int argc,char* argv[])
 
   // This is only for the compiler, it will never get here
   return 0;   
-
 }
 
 /************************** END OF MAIN ************************************/
@@ -165,13 +161,12 @@ void printdata()
   glColor3f(1.0f, 1.0f, 1.0f);
   glRasterPos3f(-9, 9,-0.1);
   for( i=0; i < l; i++) 
-    {
-      glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, buffer[i]); // Print a character on the screen
-    }
+  {
+    glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, buffer[i]); // Print a character on the screen
+  }
   glEnable(GL_LIGHTING);
 
   glPopMatrix();
-
 }
 
 void gameover(int score)
@@ -181,21 +176,19 @@ void gameover(int score)
   
   glPushMatrix();
 
-    sprintf(buffer,"GAME OVER! Points: %d",score);
+  sprintf(buffer,"GAME OVER! Points: %d",score);
 
-  l=strlen(buffer); 
+  l = strlen(buffer); 
 
   glDisable(GL_LIGHTING);
   glColor3f(1.0f, 1.0f, 1.0f);
   glRasterPos3f(-9, 9,-0.1);
-  for( i=0; i < l; i++) 
-    {
-      glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, buffer[i]); // Print a character on the screen
-    }
+  for( i = 0; i < l; i++) 
+  {
+    glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, buffer[i]); // Print a character on the screen
+  }
   glEnable(GL_LIGHTING);
-
   glPopMatrix();
-
 }
 
 // Game logic: it moves the objects sending the "move" message
@@ -203,7 +196,6 @@ void myLogic()
 {
   int dim;
   int res;
-  
 
   // The bullet is erased after a certain time if it has not found anything
   if(shotTime++ > MAXSHOTTIME)
