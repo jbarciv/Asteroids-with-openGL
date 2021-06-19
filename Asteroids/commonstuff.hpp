@@ -20,6 +20,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #include <GL\glut.h>
+
 #endif
 
 #include <iostream>
@@ -52,7 +53,7 @@ using namespace std;
 #define INACTIVE 0 
 #define ACTIVE 1
 
-#define SIZE_ANGEL 0.5
+#define SIZE_ANGEL 0.25
 #define SIZE_UFO 0.9
 #define SIZE_ASTEROID 0.25
 #define SIZE_BULLET 0.1
@@ -66,11 +67,11 @@ using namespace std;
 #define WINX 800
 #define WINY 600
 
-#define ASTEROID_SPEED 0.05
-#define ALIEN_SPEED 0.05
-#define ANGEL_SPEED 0.005
-#define BULLETSPEED 0.2
-#define SHIPSPEED 0.01
+#define ASTEROID_SPEED 0.005
+#define ALIEN_SPEED 0.005
+//#define ANGEL_SPEED 0.0005
+#define BULLETSPEED 0.02
+#define SHIPSPEED 0.001
 #define NUMASTEROIDS 5
 #define MAXSHOTTIME 100
 

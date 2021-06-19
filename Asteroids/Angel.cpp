@@ -15,7 +15,7 @@ Angel::Angel()
   pos[Z] = 0;
 
   rot[Z] = 0;
-  rot[X] = -90;
+  rot[X] = 0;
   rot[Y] = 0;
 
   rspeed[X] = 0;
@@ -26,9 +26,9 @@ Angel::Angel()
   tspeed[Y] = 0;
   tspeed[Z] = 0;
 
-  color[R] = 255; 
-  color[G] = 150;
-  color[B] = 150;
+  color[R] = 0.247; 
+  color[G] = 0.1;
+  color[B] = 0.2;
 
   status = INACTIVE;
 }

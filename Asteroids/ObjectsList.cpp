@@ -6,7 +6,6 @@
 #include "commonstuff.hpp"
 #include "ObjectsList.hpp"
 
-extern int nShips;
 extern ObjectsList worldobjects;
 
 ObjectsList::ObjectsList()
@@ -98,6 +97,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
         explos[0] = pos_s[0];
         explos[1] = pos_s[1];
         worldobjects.remove(angel);
+        angel -> setStatus(INACTIVE);
         return 7;
     }
     
