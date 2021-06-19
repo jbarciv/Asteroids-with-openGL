@@ -73,6 +73,7 @@ int score=0;
 int FlameTime=0;
 int FT=20;
 time_t timeUFO;
+time_t timeAngel = 0;;
 time_t ref = 0;
 
 ///////////////////////////////////////
@@ -84,6 +85,7 @@ int main(int argc,char* argv[])
 
   // Initializations
   time(&timeUFO);
+  time(&timeAngel);
 
   // Creation and definition of the window
   glutInit(&argc, argv);
@@ -204,7 +206,7 @@ void myLogic()
     theBullet = NULL;
     shotTime = 0;
   }
-  if (time(NULL)-timeUFO > 15 && theUFO -> getStatus() == DESTROYED)
+  if (time(NULL)-timeUFO > 30 && theUFO -> getStatus() == DESTROYED)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theUFO ->setSize(dim);
@@ -212,7 +214,7 @@ void myLogic()
     theUFO -> setStatus(ACTIVE);
   }
 
-  if (time(NULL)-timeUFO > 10 && theAngel -> getStatus() == INACTIVE)
+  if (time(NULL)-timeAngel > 40 && theAngel -> getStatus() == INACTIVE)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theAngel ->setSize(dim);
@@ -279,9 +281,9 @@ void myLogic()
     timeUFO = time(NULL);
   }
   
-  if (res==7)
+  if (res == 7)
   {
-    nShips ++;
+    nShips++;
     theAngel -> setStatus(INACTIVE);
   }
 }
