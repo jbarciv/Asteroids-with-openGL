@@ -20,4 +20,5 @@ class Angel: public Shape{
     void draw();
     void teleport();
     void reposition();
+    void resetpos();
 };

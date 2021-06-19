@@ -68,7 +68,7 @@ Angel *theAngel=NULL;
 
 // Very used constants
 int shotTime=0;
-int nShips=100;
+int nShips=20;
 int score=0;
 int FlameTime=0;
 int FT=20;
@@ -206,7 +206,7 @@ void myLogic()
     theBullet = NULL;
     shotTime = 0;
   }
-  if (time(NULL)-timeUFO > 30 && theUFO -> getStatus() == DESTROYED)
+  if (time(NULL)-timeUFO > 20 && theUFO -> getStatus() == DESTROYED)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theUFO ->setSize(dim);
@@ -214,8 +214,9 @@ void myLogic()
     theUFO -> setStatus(ACTIVE);
   }
 
-  if (time(NULL)-timeAngel > 10 && theAngel -> getStatus() == INACTIVE)
+  if (time(NULL)-timeAngel > 40 && theAngel -> getStatus() == INACTIVE)
   {
+    theAngel -> resetpos();
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theAngel ->setSize(dim);
     worldobjects.add(theAngel);
@@ -258,7 +259,7 @@ void myLogic()
       nShips--;
       if(nShips == 0) exit(1); // The Game ends
       theShip -> resetpos();
-      worldobjects.reposition(theShip);
+      worldobjects.reposition(theShip, theUFO, theAngel);
     }                                  
 
   if(res >= 2 && res <= 4)    

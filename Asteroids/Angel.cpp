@@ -1,16 +1,20 @@
-/////////////////////////////////////
-// Angel.cpp                    //
-// Methods of the Angel class      //
-/////////////////////////////////////
+///////////////////////////////////
+// Angel.cpp                     //
+// Methods of the Angel class    //
+///////////////////////////////////
 
 #include "commonstuff.hpp"
 #include "Angel.hpp"
 
 Angel::Angel()
- {
-  pos[X] = RAND_DOM(0,SIZEX);
-  pos[Y] = RAND_DOM(0,SIZEY);
-  pos[Z] = 0;
+ { 
+  do
+  {
+    pos[X] = RAND_DOM(0,SIZEX);
+    pos[Y] = RAND_DOM(0,SIZEY);
+  } while (!(mydistance(0.0, 0.0, pos[X], pos[Y]) <  5 ));
+  
+  
 
   rot[Z] = 0;
   rot[X] = 0;
@@ -25,7 +29,7 @@ Angel::Angel()
   tspeed[Z] = 0;
 
   color[R] = 1; 
-  color[G] = 0.0;
+  color[G] = 0;
   color[B] = 1;
 
   status = INACTIVE;
@@ -59,7 +63,7 @@ void Angel::teleport()
 }
 
 void Angel::draw()
-{
+{  
     predraw();
     glutSolidTeapot(tamano*SIZE_ANGEL);
     postdraw();
@@ -69,5 +73,10 @@ void Angel::reposition()
 {
   pos[X] += 1+3*RAND_FRAC();
   pos[Y] += 1+3*RAND_FRAC();
+}
 
+void Angel::resetpos()
+{
+  pos[X] += 1+3*RAND_FRAC();
+  pos[Y] += 1+3*RAND_FRAC();
 }
