@@ -206,7 +206,7 @@ void myLogic()
     theBullet = NULL;
     shotTime = 0;
   }
-  if (time(NULL)-timeUFO > 30 && theUFO -> getStatus() == DESTROYED)
+  if (time(NULL)-timeUFO > 25 && theUFO -> getStatus() == DESTROYED)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theUFO ->setSize(dim);
@@ -214,7 +214,7 @@ void myLogic()
     theUFO -> setStatus(ACTIVE);
   }
 
-  if (time(NULL)-timeAngel > 10 && theAngel -> getStatus() == INACTIVE)
+  if (time(NULL)-timeAngel > 30 && theAngel -> getStatus() == INACTIVE)
   {
     dim = (int)(RAND_FRAC()*2.99 + 1);
     theAngel ->setSize(dim);
@@ -279,7 +279,7 @@ void myLogic()
   
   if (res == 6) // res == 6: Angel/Ship
   {
-    nShips++; // We receive a extra life
+    nShips++; // We get an extra life
     theAngel -> setStatus(INACTIVE);
     timeAngel = time(NULL);
   }
