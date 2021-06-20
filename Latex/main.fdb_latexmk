@@ -1,12 +1,22 @@
 # Fdb version 3
+<<<<<<< HEAD
 ["bibtex main"] 1624175224 "main.aux" "main.bbl" "main" 1624175227
   "/usr/local/share/miktex-texmf/bibtex/bst/bibtex/abbrv.bst" 1623928681 20329 b5fed53e10044d0f8112183785c759b1 ""
   "main.aux" 1624175226 3502 7c9a5c7302ff0854a5900b384cbb6aa4 "pdflatex"
+=======
+["bibtex main"] 1624177882 "main.aux" "main.bbl" "main" 1624177886
+  "/usr/local/share/miktex-texmf/bibtex/bst/bibtex/abbrv.bst" 1623928681 20329 b5fed53e10044d0f8112183785c759b1 ""
+  "main.aux" 1624177885 8086 cc387af604016caa7be191719514981d "pdflatex"
+>>>>>>> 3d1866a5b7eeb76e4e919e219ca173f534888598
   "mybib.bib" 1624124233 199 6ac61ca81d7432c8124a6050dd0cd7b4 ""
   (generated)
   "main.blg"
   "main.bbl"
+<<<<<<< HEAD
 ["pdflatex"] 1624175224 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1624175227
+=======
+["pdflatex"] 1624177883 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1624177886
+>>>>>>> 3d1866a5b7eeb76e4e919e219ca173f534888598
   "/dev/null" 1624109506 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/home/josep/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk" 1623997839 9292 3bc5e119a2f8dbdf8203c421f3cab733 ""
   "/home/josep/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1623928843 6547252 fbc79642acd143cb86f79ef0f11ac069 ""
@@ -30,11 +40,16 @@
   "/home/josep/.miktex/texmfs/install/tex/latex/adjustbox/trimclip.sty" 1623930627 7512 c40a4ac8c11834aa8aae46747ec37e8b ""
   "/home/josep/.miktex/texmfs/install/tex/latex/auxhook/auxhook.sty" 1623928859 3935 57aa3c3e203a5c2effb4d2bd2efbc323 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/babel-spanish/spanish.ldf" 1623928757 26965 3b6d1655ad716f98e788b1fb9f2e87b8 ""
+  "/home/josep/.miktex/texmfs/install/tex/latex/bookmark/bkm-pdftex.def" 1623928885 8609 8ac7db65d9617618cf703bd16c1bd0b8 ""
+  "/home/josep/.miktex/texmfs/install/tex/latex/bookmark/bookmark.sty" 1623928885 18237 5cbdfe9ef383a557f780a0a1f45cdb1c ""
   "/home/josep/.miktex/texmfs/install/tex/latex/booktabs/booktabs.sty" 1623928772 6253 71987c78d3b294f5a70855024b9b06cc ""
   "/home/josep/.miktex/texmfs/install/tex/latex/cancel/cancel.sty" 1623928828 7592 dd751af313a16a0308545d5bfd7aaaa2 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/caption/caption.sty" 1623928776 51746 e89c4da670ba533e6ab38e045ce6d1d9 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/caption/caption3.sty" 1623928776 67929 d50ae850e1d9604065e8337a75a41029 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/collectbox/collectbox.sty" 1623930629 9116 495d44b5a3e7be0c46c5d1f053f457f0 ""
+  "/home/josep/.miktex/texmfs/install/tex/latex/csquotes/csquotes.cfg" 1623928903 7068 06f8d141725d114847527a66439066b6 ""
+  "/home/josep/.miktex/texmfs/install/tex/latex/csquotes/csquotes.def" 1623928903 20781 dc1bec6693d5466d8972ecc6b81f9f0b ""
+  "/home/josep/.miktex/texmfs/install/tex/latex/csquotes/csquotes.sty" 1623928903 62518 6e0d74482f5cb16b3b0755031e72faf1 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/diagbox/diagbox.sty" 1623930620 14900 c6dab1304a546287b635ada515bcf3fb ""
   "/home/josep/.miktex/texmfs/install/tex/latex/enumitem/enumitem.sty" 1623928830 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/home/josep/.miktex/texmfs/install/tex/latex/fancyvrb/fancyvrb.sty" 1623930646 43232 77215847fb982a414a0d843125e271d4 ""
@@ -54,8 +69,10 @@
   "/home/josep/.miktex/texmfs/install/tex/latex/listing/listing.sty" 1623930638 3507 f61b787b3be7e57cdbdcecc8803f0f69 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/mathtools/mathtools.sty" 1623928797 58665 e757d1a5d2f651d761f187cea16ae3f3 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/mathtools/mhsetup.sty" 1623928797 5582 a43dedf8e5ec418356f1e9dfe5d29fc3 ""
+  "/home/josep/.miktex/texmfs/install/tex/latex/minted/minted.sty" 1623930641 48369 73f0233834432c0fe19cfd6a659fb7e6 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/multirow/bigstrut.sty" 1623928770 1247 4ebb2dd983304c0951758f7a60a4e901 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/multirow/multirow.sty" 1623928770 6149 2398eec4faa1ee24ff761581e580ecf1 ""
+  "/home/josep/.miktex/texmfs/install/tex/latex/natbib/natbib.sty" 1623930618 46712 8d4348633d6c3362b9c9a329f0b79b1a ""
   "/home/josep/.miktex/texmfs/install/tex/latex/pict2e/p2e-pdftex.def" 1623930623 1209 50fc14945eaff187f5fdaaf79693a33e ""
   "/home/josep/.miktex/texmfs/install/tex/latex/pict2e/pict2e.cfg" 1623930623 2000 6dd4cd467e8b2fa3af20dc835835fb15 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/pict2e/pict2e.sty" 1623930623 31753 ff274e3b23a0606d5cb3bca199402f89 ""
@@ -76,7 +93,7 @@
   "/home/josep/.miktex/texmfs/install/tex/latex/varwidth/varwidth.sty" 1623930633 10894 d359a13923460b2a73d4312d613554c8 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/wrapfig/wrapfig.sty" 1623928826 26220 3701aebf80ccdef248c0c20dd062fea9 ""
   "/home/josep/.miktex/texmfs/install/tex/latex/xstring/xstring.sty" 1623930656 123 a302f2c651a95033260db60e51527ae8 ""
-  "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" 1623953440 3225 869a3449726993e3de37d1a4b6b17602 ""
+  "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" 1624176984 3227 1572e57e2d1075bc24ab8a5bc329cd71 ""
   "/usr/local/share/miktex-texmf/fonts/tfm/jknappen/ec/tcrm0800.tfm" 1623928684 1444 e35ead393df86aae37b5564284d9aa05 ""
   "/usr/local/share/miktex-texmf/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1623928679 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/share/miktex-texmf/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1623928679 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -104,6 +121,8 @@
   "/usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmsy8.tfm" 1623928682 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmti10.tfm" 1623928682 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmti12.tfm" 1623928682 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
+  "/usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmtt10.tfm" 1623928682 768 1321e9409b4137d6fb428ac9dc956269 ""
+  "/usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmtt12.tfm" 1623928682 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1623928679 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1623928679 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1623928679 36554 b67dc2cfa451409e100b3fcf5f506509 ""
@@ -116,6 +135,7 @@
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1623928679 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1623928679 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1623928679 36118 fad905eba93cff5bce1e185fe980a177 ""
+  "/usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1623928679 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/local/share/miktex-texmf/tex/context/base/mkii/supp-pdf.mkii" 1623928707 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/share/miktex-texmf/tex/generic/atbegshi/atbegshi.sty" 1623928680 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/share/miktex-texmf/tex/generic/babel/babel.def" 1623928680 121009 d797444026f7ec580bc6c8aa432a71ab ""
@@ -170,27 +190,34 @@
   "/usr/local/share/miktex-texmf/tex/latex/l3packages/xparse/xparse.sty" 1623928689 6469 d540b48269b71f2a890483b206419e32 ""
   "/usr/local/share/miktex-texmf/tex/latex/listings/listings.cfg" 1623928690 1830 e31effa752c61538383451ae21332364 ""
   "/usr/local/share/miktex-texmf/tex/latex/listings/listings.sty" 1623928690 80964 64e57373f36316e4a09b517cbf1aba2e ""
+  "/usr/local/share/miktex-texmf/tex/latex/listings/lstlang1.sty" 1623928690 204271 bae5b2d457283e99567249c1990510be ""
   "/usr/local/share/miktex-texmf/tex/latex/listings/lstmisc.sty" 1623928690 77022 ee25ce086f4a79d8cf73bac6f94c02a5 ""
   "/usr/local/share/miktex-texmf/tex/latex/tools/array.sty" 1623928690 12689 a1a7b2795918756dcb9c9cbfacc4d9c7 ""
   "/usr/local/share/miktex-texmf/tex/latex/tools/calc.sty" 1623928690 10214 00ce62e730d0cfe22b35e8f1c84949c7 ""
   "/usr/local/share/miktex-texmf/tex/latex/tools/shellesc.sty" 1623928690 4118 0f286eca74ee36b7743ff20320e5479f ""
   "/usr/local/share/miktex-texmf/tex/latex/tools/tabularx.sty" 1623928690 7147 5ac8a9ef36411064b1a501137af0fa54 ""
+  "/usr/local/share/miktex-texmf/tex/latex/tools/verbatim.sty" 1623928690 7392 39729ae6a807e217edf1442cf8fab2c2 ""
   "/usr/local/share/miktex-texmf/tex/latex/url/url.sty" 1623928713 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/share/miktex-texmf/tex/latex/xcolor/xcolor.sty" 1623928713 55589 34128738f682d033422ca125f82e5d62 ""
   "/usr/local/share/miktex-texmf/tex/latex/xkeyval/xkeyval.sty" 1623928714 4902 efb3d66683a2da2a232f71e3a571a899 ""
   "1_Resumen.tex" 1623948887 19 7ad4502b87a3121642fdc7315361f406 ""
   "2_Introduccion.tex" 1624173796 1313 116857e5305140527ccaab7c460fa0d6 ""
   "3_Diagramas.tex" 1624173995 3941 4242c42889f8a806226d926430569544 ""
+<<<<<<< HEAD
   "4_Funciones.tex" 1624175221 4612 8e2875782f3adde240aca9158a7fa180 ""
+=======
+  "4_Funciones.tex" 1624177878 5156 c87b5a5f47defef725744081ae193651 ""
+>>>>>>> 3d1866a5b7eeb76e4e919e219ca173f534888598
   "5_Pruebas.tex" 1623951640 18 e2986134c60ad2693bd3bdda8d165730 ""
-  "6_GuiaDeUso.tex" 1623951812 23 a1363f6e14cea65e16d89cd4711ef990 ""
+  "6_GuiaDeUso.tex" 1624177654 249 2387496edb5719962766c523181965c9 ""
   "7_Roles.tex" 1623951812 27 07a26cc018fc965b36f539c1aa5ac176 ""
   "8_Evaluacion.tex" 1623951820 54 c6acdbf3cc6e00f9e5672fd09feea4ff ""
-  "commonstuff.tex" 1624124070 3114 67cf03548adacbc33fb554b5ae001884 ""
+  "commonstuff.tex" 1624177011 3152 be662cab07ceac873b033442632224a6 ""
   "fotos/Creacion.png" 1623917851 222344 94abbc53f2ed2f99c922e169baf90e02 ""
   "fotos/Logo_azul.png" 1583603027 92223 01dbb39395dbf95abc72cac46df24276 ""
   "fotos/UML.PNG" 1623917851 43386 4916b2c5fbb9b226122a12163d6654bf ""
   "fotos/asteroid.png" 1624122913 112932 fcc4dcda63df33feef192d517127c91f ""
+<<<<<<< HEAD
   "main.aux" 1624175226 3502 7c9a5c7302ff0854a5900b384cbb6aa4 "pdflatex"
   "main.bbl" 1624175224 137 49a298cb613816446d649422c36381af "bibtex main"
   "main.out" 1624175226 2252 cbf2c246a8674f0c155fc33b23d7d6c7 "pdflatex"
@@ -200,5 +227,15 @@
   "main.aux"
   "main.out"
   "main.pdf"
+=======
+  "fotos/instructions.png" 1624177149 409259 b355733eff7236dcb7d7f005d49c2cd3 ""
+  "main.aux" 1624177885 8086 cc387af604016caa7be191719514981d "pdflatex"
+  "main.bbl" 1624177883 137 49a298cb613816446d649422c36381af "bibtex main"
+  "main.tex" 1624176984 3227 1572e57e2d1075bc24ab8a5bc329cd71 ""
+  "main.toc" 1624177885 1189 55332484e8fa008c0d66fd68e4f584e4 "pdflatex"
+  (generated)
+  "main.pdf"
+  "main.aux"
+>>>>>>> 3d1866a5b7eeb76e4e919e219ca173f534888598
   "main.toc"
   "main.log"
