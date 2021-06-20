@@ -1,15 +1,10 @@
 ## Main folder
-# *.zip
+Sounds
 Latex
+UML
+Memoria trabajo Asteroids.docx
+.vscode
 
-## Windows
-# ignore .object files
-# Windows/*.o
-# Windows/tempCodeRunnerFile.*
-
-## Linux
-# ignore .object files
-# Linux/*.o
-# Linux/tempCodeRunnerFile.*
-# Linux/.vscode
+## Asteroids
+.vscode
 
