@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1624203119 "main.aux" "main.bbl" "main" 1624203176
+["bibtex main"] 1624203119 "main.aux" "main.bbl" "main" 1624204501
   "/usr/local/share/miktex-texmf/bibtex/bst/bibtex/plain.bst" 1623928681 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1624203122 4399 07f785442456a0033416f9d92f2479e5 "pdflatex"
+  "main.aux" 1624204501 4399 07f785442456a0033416f9d92f2479e5 "pdflatex"
   "mybib.bib" 1624196736 199 e2927e7f06f600b0002bb93f984c3acc ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1624203119 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1624203176
+["pdflatex"] 1624204498 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1624204501
   "/dev/null" 1624109506 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/home/josep/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk" 1623997839 9292 3bc5e119a2f8dbdf8203c421f3cab733 ""
   "/home/josep/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1623928843 6547252 fbc79642acd143cb86f79ef0f11ac069 ""
@@ -198,7 +198,7 @@
   "5_Pruebas.tex" 1624190644 948 0cfbfacbf62597fb4ddc2002b34d7403 ""
   "6_GuiaDeUso.tex" 1624197495 219 4035ec83ae8d3b768ab26de11b8474b8 ""
   "7_Roles.tex" 1624197689 1178 246eef3c60134e5da2d598daea18912f ""
-  "8_Evaluacion.tex" 1624198008 945 54b3e7804f6942d4d855497fada5f98d ""
+  "8_Evaluacion.tex" 1624204497 1155 b68fc84a27fb8814414b6e11d91d23c7 ""
   "commonstuff.tex" 1624196249 3147 8c8f19580f8348809947893bc3c3aedc ""
   "fotos/Collision.png" 1624202587 223777 8d347368a1e565087796d650f9d0c312 ""
   "fotos/Creacion.png" 1624202587 214376 2b153f449f315d6d0c586eab168e716d ""
@@ -206,14 +206,14 @@
   "fotos/UML.PNG" 1624202587 43934 ab8fcce57886fa7a901566ca803a09b1 ""
   "fotos/asteroid.png" 1624202587 52819 932d1a61599b65976cb48d1e1ce6efa4 ""
   "fotos/instructions.png" 1624188621 405386 15cfc95f59957293979ebb0bbb409dc3 ""
-  "main.aux" 1624203122 4399 07f785442456a0033416f9d92f2479e5 "pdflatex"
+  "main.aux" 1624204501 4399 07f785442456a0033416f9d92f2479e5 "pdflatex"
   "main.bbl" 1624203119 135 e777dd9888dd7b7159d6ffdc8612308c "bibtex main"
-  "main.out" 1624203122 2532 ae4f57106dacdc6943db1fccd9e09d80 "pdflatex"
+  "main.out" 1624204501 2532 ae4f57106dacdc6943db1fccd9e09d80 "pdflatex"
   "main.tex" 1624203070 3074 1bb2b4d6b7132580220d1749e9a93479 ""
-  "main.toc" 1624203122 1352 c3621ce38ae472be23491a4e252e90be "pdflatex"
+  "main.toc" 1624204501 1352 c3621ce38ae472be23491a4e252e90be "pdflatex"
   (generated)
-  "main.log"
-  "main.aux"
-  "main.pdf"
   "main.toc"
+  "main.aux"
   "main.out"
+  "main.pdf"
+  "main.log"

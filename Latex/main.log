@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.17)  20 JUN 2021 17:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.17)  20 JUN 2021 17:54
 entering extended mode
 **"/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex"
 (/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex
@@ -945,7 +945,12 @@ Overfull \hbox (14.87714pt too wide) in paragraph at lines 10--91
 
 (8_Evaluacion.tex (/home/josep/.miktex/texmfs/install/tex/latex/ucs/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)) [9] (main.bbl) [10] (main.aux
+) [9])
+Overfull \hbox (26.49414pt too wide) in paragraph at lines 6--97
+[]\OT1/cmr/m/n/12 Otras posibles mejoras podran ser la inclusion de efectos de sonidos, un menu principal
+ []
+
+(main.bbl) [10] (main.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 )
@@ -961,7 +966,7 @@ Here is how much of TeX's memory you used:
  0 hyphenation exceptions out of 8191
  66i,8n,102p,1130b,1324s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/josep/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (11 pages, 1060228 bytes).
+Output written on main.pdf (11 pages, 1060431 bytes).
 PDF statistics:
  256 PDF objects out of 1000 (max. 8388607)
  43 named destinations out of 1000 (max. 500000)
