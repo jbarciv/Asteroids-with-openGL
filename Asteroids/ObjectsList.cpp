@@ -99,13 +99,13 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
         // Checking the distance/collision between the current Asteroid and theShip
         if(mydistance(pos_a[0], pos_a[1], pos_s[0], pos_s[1]) < (size_a + size_s)) 
         {
-            explos[0] = pos_s[0];      // Is given to expl_pos the ship position for the explosion
+            explos[0] = pos_s[0];      // Ship position given to the explosion
             explos[1] = pos_s[1];
             worldobjects.remove(ship);
             return 1;
         }
 
-        // If there is a bullet the distance/collision between the current Asteroid and the Bullet
+        // If there is a bullet, the distance/collision between the current Asteroid and the Bullet
         //  is checked
         if(bullet)
         {   
@@ -128,7 +128,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
                 {  
                     Asteroid *x = new Asteroid;     // Cast from Shape* to Asteroid*
                     x = (Asteroid*) (*i);
-                    // The medium and big asteroids splits into smallers asteroids
+                    // The medium and big asteroids split into smaller asteroids
                     worldobjects.push_front(x->split());
                     explos[0] = pos_a[0]; // There is again an explosion
                     explos[1] = pos_a[1];
@@ -141,7 +141,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
     // Checking the distance/collision between the Ship and theUFO
     if(mydistance(pos_u[0], pos_u[1], pos_s[0], pos_s[1]) < (size_u + size_s) && ovni->getStatus() == ACTIVE) 
     {
-        explos[0] = pos_s[0];           // There is explosion
+        explos[0] = pos_s[0];           // There is an explosion
         explos[1] = pos_s[1];
         worldobjects.remove(ship);
         worldobjects.remove(ovni);
@@ -184,7 +184,7 @@ int ObjectsList::collisions(Bullet* bullet, Ship* ship, Alien* ovni, Angel* ange
             return 8;
         }
     }
-    return 0; // If there in not any collision
+    return 0; // If there is no collision
 }
 
 void ObjectsList::reposition(Ship* ship, Alien* ovni, Angel* angel)
@@ -224,7 +224,7 @@ void ObjectsList::reposition(Ship* ship, Alien* ovni, Angel* angel)
         {
             if(mydistance(pos_an[0], pos_an[1], 0.0, 0.0) < (size_an + size_s) && angel->getStatus() == ACTIVE)
             {
-                Angel *x = new Angel;     // Cast from Shape* to Alien*
+                Angel *x = new Angel;     // Cast from Shape* to Angel*
                 x = (Angel*) (*i);
                 x->reposition();
             }

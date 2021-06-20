@@ -67,15 +67,15 @@ using namespace std;
 #define WINY 600
 
 #ifdef _WIN32
+#define CONST 10
 #define ASTEROID_SPEED 0.005
 #define ALIEN_SPEED 0.005
-//#define ANGEL_SPEED 0.0005
 #define BULLETSPEED 0.02
 #define SHIPSPEED 0.001
 #else
+#define CONST 1
 #define ASTEROID_SPEED 0.05
 #define ALIEN_SPEED 0.05
-//#define ANGEL_SPEED 0.0005
 #define BULLETSPEED 0.2
 #define SHIPSPEED 0.01
 #endif
