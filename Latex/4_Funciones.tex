@@ -20,12 +20,6 @@ En cada nueva llamada a la función \textsc{collisions()} se comprueban todos y 
 
 En todos los casos, cuando se detecta una colisión, se retorna un entero que indica el tipo de colisión y entre qué elementos se ha producido. Dependiendo del entero se actualiza la puntuación del jugador.  Además, en un vector dedicado a tal efecto se marcan las coordenadas de la explosión. La duración de la explosión será definida en la lógica del juego.
 
-<<<<<<< HEAD
-Otra función muy importante, la función \textsc{reposition()}, se encarga de reposicionar la nave cuando esta es destruida. También se encarga de reposicionar los asteroides cuando la reposición de la nave en el centro no es posible.
-
-\subsection{Clase Alien}
-La clase Alien hereda características de la clase Shape, lo que le otorga características muy similares al resto de figuras del juego. Esto facilita la integración con el resto del código, pues su tratamiento es muy similar al resto de figuras, aunque tiene características propias que son tratadas específicamente. La clase Alien comparte muchas similitudes con la clase Ship en cuanto a estructuración, pero su movimiento se imprime automáticamente desde un generador aleatorio de direcciones en la lógica del juego. Para que su movimiento sea autónomo es necesario llamar al método Alien::run() desde el método Alien::draw()
-=======
 Otra función muy importante, es \textsc{reposition()}, se encarga de reposicionar la nave cuando esta es destruida. También se encarga de reposicionar los asteroides cuando la reposición de la nave en el centro no es posible.
 
 \subsection{Clase Alien}
@@ -47,4 +41,3 @@ void Alien::run()
   }
 }
 \end{lstlisting}
->>>>>>> 3d1866a5b7eeb76e4e919e219ca173f534888598
