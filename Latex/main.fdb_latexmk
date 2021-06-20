@@ -1,12 +1,40 @@
 # Fdb version 3
+<<<<<<< HEAD
 ["bibtex main"] 1624177882 "main.aux" "main.bbl" "main" 1624187372
+||||||| 3d1866a
+["bibtex main"] 1624177882 "main.aux" "main.bbl" "main" 1624177886
+=======
+<<<<<<< HEAD
+["bibtex main"] 1624175224 "main.aux" "main.bbl" "main" 1624175227
   "/usr/local/share/miktex-texmf/bibtex/bst/bibtex/abbrv.bst" 1623928681 20329 b5fed53e10044d0f8112183785c759b1 ""
+  "main.aux" 1624175226 3502 7c9a5c7302ff0854a5900b384cbb6aa4 "pdflatex"
+=======
+["bibtex main"] 1624177882 "main.aux" "main.bbl" "main" 1624177886
+>>>>>>> 0abda75099dd57734037a7061e0e0e74f051dcd4
+  "/usr/local/share/miktex-texmf/bibtex/bst/bibtex/abbrv.bst" 1623928681 20329 b5fed53e10044d0f8112183785c759b1 ""
+<<<<<<< HEAD
   "main.aux" 1624187371 8086 cc387af604016caa7be191719514981d "pdflatex"
+||||||| 3d1866a
+  "main.aux" 1624177885 8086 cc387af604016caa7be191719514981d "pdflatex"
+=======
+  "main.aux" 1624177885 8086 cc387af604016caa7be191719514981d "pdflatex"
+>>>>>>> 3d1866a5b7eeb76e4e919e219ca173f534888598
+>>>>>>> 0abda75099dd57734037a7061e0e0e74f051dcd4
   "mybib.bib" 1624124233 199 6ac61ca81d7432c8124a6050dd0cd7b4 ""
   (generated)
   "main.blg"
   "main.bbl"
+<<<<<<< HEAD
 ["pdflatex"] 1624187368 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1624187372
+||||||| 3d1866a
+["pdflatex"] 1624177883 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1624177886
+=======
+<<<<<<< HEAD
+["pdflatex"] 1624175224 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1624175227
+=======
+["pdflatex"] 1624177883 "/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex" "main.pdf" "main" 1624177886
+>>>>>>> 3d1866a5b7eeb76e4e919e219ca173f534888598
+>>>>>>> 0abda75099dd57734037a7061e0e0e74f051dcd4
   "/dev/null" 1624109506 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/home/josep/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk" 1623997839 9292 3bc5e119a2f8dbdf8203c421f3cab733 ""
   "/home/josep/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1623928843 6547252 fbc79642acd143cb86f79ef0f11ac069 ""
@@ -193,7 +221,17 @@
   "1_Resumen.tex" 1623948887 19 7ad4502b87a3121642fdc7315361f406 ""
   "2_Introduccion.tex" 1624173796 1313 116857e5305140527ccaab7c460fa0d6 ""
   "3_Diagramas.tex" 1624173995 3941 4242c42889f8a806226d926430569544 ""
+<<<<<<< HEAD
   "4_Funciones.tex" 1624187368 5156 7a79e9a3fe15684769f08e0d64bc4f63 ""
+||||||| 3d1866a
+  "4_Funciones.tex" 1624177878 5156 c87b5a5f47defef725744081ae193651 ""
+=======
+<<<<<<< HEAD
+  "4_Funciones.tex" 1624175221 4612 8e2875782f3adde240aca9158a7fa180 ""
+=======
+  "4_Funciones.tex" 1624177878 5156 c87b5a5f47defef725744081ae193651 ""
+>>>>>>> 3d1866a5b7eeb76e4e919e219ca173f534888598
+>>>>>>> 0abda75099dd57734037a7061e0e0e74f051dcd4
   "5_Pruebas.tex" 1623951640 18 e2986134c60ad2693bd3bdda8d165730 ""
   "6_GuiaDeUso.tex" 1624177654 249 2387496edb5719962766c523181965c9 ""
   "7_Roles.tex" 1623951812 27 07a26cc018fc965b36f539c1aa5ac176 ""
@@ -203,6 +241,17 @@
   "fotos/Logo_azul.png" 1583603027 92223 01dbb39395dbf95abc72cac46df24276 ""
   "fotos/UML.PNG" 1623917851 43386 4916b2c5fbb9b226122a12163d6654bf ""
   "fotos/asteroid.png" 1624122913 112932 fcc4dcda63df33feef192d517127c91f ""
+<<<<<<< HEAD
+  "main.aux" 1624175226 3502 7c9a5c7302ff0854a5900b384cbb6aa4 "pdflatex"
+  "main.bbl" 1624175224 137 49a298cb613816446d649422c36381af "bibtex main"
+  "main.out" 1624175226 2252 cbf2c246a8674f0c155fc33b23d7d6c7 "pdflatex"
+  "main.tex" 1623953440 3225 869a3449726993e3de37d1a4b6b17602 ""
+  "main.toc" 1624175226 1189 55332484e8fa008c0d66fd68e4f584e4 "pdflatex"
+  (generated)
+  "main.aux"
+  "main.out"
+  "main.pdf"
+=======
   "fotos/instructions.png" 1624177149 409259 b355733eff7236dcb7d7f005d49c2cd3 ""
   "main.aux" 1624187371 8086 cc387af604016caa7be191719514981d "pdflatex"
   "main.bbl" 1624177883 137 49a298cb613816446d649422c36381af "bibtex main"
@@ -212,4 +261,5 @@
   "main.log"
   "main.pdf"
   "main.aux"
+>>>>>>> 3d1866a5b7eeb76e4e919e219ca173f534888598
   "main.toc"
