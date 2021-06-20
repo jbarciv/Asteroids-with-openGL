@@ -68,7 +68,7 @@ Angel *theAngel = NULL;
 
 // Very used constants
 int shotTime = 0;
-int nShips = 20;
+int nShips = 5;
 int score = 0;
 int FlameTime = 0;
 int FT = 20;
@@ -284,7 +284,7 @@ void myLogic()
   
   if (res == 6) // res == 6: Angel/Ship
   {
-    nShips++; // We get an extra life
+    nShips++; // Extra life provided
     theAngel -> setStatus(INACTIVE);
     timeAngel = time(NULL);
   }
@@ -331,7 +331,7 @@ void OnKeyboardDown(unsigned char key, int x, int y)
     case 'q':
     case ESC: exit(1);
     case ' ':
-        if(!theBullet)                   // If there is not a bullet it is created
+        if(!theBullet)                   // If there is not a bullet, one is created
 	    {
 	        theBullet = theShip->fire(); 
 	        worldobjects.add(theBullet);
@@ -339,7 +339,7 @@ void OnKeyboardDown(unsigned char key, int x, int y)
         break;
     case '-': theShip->thrust(SHIPSPEED);// Accelerates 
         break;  
-    case ',': theShip->hyperjump();      // That is the Hyper Jump (moves the Ship to a random position) 
+    case ',': theShip->hyperjump();      // This is the Hyper Jump (moves the Ship to a random position) 
         break;
     }		
 }
@@ -363,7 +363,7 @@ void OnSpecKeyboardDown(int key, int x, int y)
     }		
 }
 
-// It is not used
+// Unused
 void OnMouseBtn(int button, int state,int x, int y)
 {
   if(state==GLUT_DOWN)
@@ -376,7 +376,7 @@ void OnMouseBtn(int button, int state,int x, int y)
         MODE=NONE;
 }
 
-// It is not used
+// Unused
 void  OnMouseMoveBtn  (int x, int y)
 {
   if(MODE==TRANS){ }
