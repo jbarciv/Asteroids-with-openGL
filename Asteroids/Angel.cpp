@@ -28,9 +28,9 @@ Angel::Angel()
   tspeed[Y] = 0;
   tspeed[Z] = 0;
 
-  color[R] = 0; 
-  color[G] = 0;
-  color[B] = 0;
+  color[R] = 1; 
+  color[G] = 1;
+  color[B] = 1;
 
   status = INACTIVE;
 }
@@ -60,7 +60,7 @@ void Angel::teleport()
     rot[Y] = RAND_FRAC()*360;
     pos[X] = RAND_DOM(0, WINX-10);
     pos[Y] = RAND_DOM(0, WINY-10);
-}
+}   
 
 void Angel::draw()
 {  

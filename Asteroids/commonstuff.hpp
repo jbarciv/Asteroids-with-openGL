@@ -66,17 +66,10 @@ using namespace std;
 #define WINX 800
 #define WINY 600
 
-#ifdef _WIN32
-#define ASTEROID_SPEED 0.005
-#define ALIEN_SPEED 0.005
-#define BULLETSPEED 0.02
-#define SHIPSPEED 0.001
-#else
 #define ASTEROID_SPEED 0.05
 #define ALIEN_SPEED 0.05
 #define BULLETSPEED 0.2
 #define SHIPSPEED 0.01
-#endif
 
 #define NUMASTEROIDS 5
 #define MAXSHOTTIME 100
