@@ -7,7 +7,8 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Comportamiento de un asteroide tras una colisi\IeC {\'o}n}{4}{subsubsection.2.2.2}%
 \contentsline {section}{\numberline {3}Descripci\IeC {\'o}n de funciones y estructuras del juego}{5}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Clase ObjectList}{5}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Pruebas}{6}{section.4}%
-\contentsline {section}{\numberline {5}Gu\IeC {\'\i }a de uso}{6}{section.5}%
+\contentsline {subsection}{\numberline {3.2}Clase Alien}{6}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Pruebas}{7}{section.4}%
+\contentsline {section}{\numberline {5}Gu\IeC {\'\i }a de uso}{7}{section.5}%
 \contentsline {section}{\numberline {6}Reparto de Roles}{7}{section.6}%
 \contentsline {section}{\numberline {7}Propuestas de mejora y valoraci\IeC {\'o}n personal}{7}{section.7}%
