@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.17)  20 JUN 2021 10:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.6.17)  20 JUN 2021 13:09
 entering extended mode
 **"/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex"
 (/home/josep/Documents/ETSII/PROGRAMACIÓN DE SISTEMAS/Trabajos/Asteroids with openGL/Latex/main.tex
@@ -903,16 +903,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/share/miktex-texmf/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-)
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 43.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
-(Font)              using `OT1/cmr/m/sc' instead on input line 43.
-
-) (5_Pruebas.tex) (6_GuiaDeUso.tex
+)) (5_Pruebas.tex) (6_GuiaDeUso.tex
 <fotos/instructions.png, id=87, 1505.625pt x 2175.12625pt>
 File: fotos/instructions.png Graphic file (type png)
 <use fotos/instructions.png>
@@ -935,14 +926,14 @@ LaTeX Info: Redefining \% on input line 27.
 ) ) 
 Here is how much of TeX's memory you used:
  23220 strings out of 480799
- 367072 string characters out of 2900780
+ 367065 string characters out of 2900780
  1110488 words of memory out of 3000000
  40414 multiletter control sequences out of 15000+600000
- 416663 words of font info for 75 fonts, out of 8000000 for 9000
+ 416362 words of font info for 74 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  79i,6n,102p,1130b,1325s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/josep/.miktex/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm0800.pk></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (9 pages, 937042 bytes).
+Output written on main.pdf (9 pages, 937341 bytes).
 PDF statistics:
  218 PDF objects out of 1000 (max. 8388607)
  37 named destinations out of 1000 (max. 500000)

@@ -1412,7 +1412,6 @@ INPUT /usr/local/share/miktex-texmf/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/share/miktex-texmf/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmtt12.tfm
 INPUT /usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmtt10.tfm
-INPUT /usr/local/share/miktex-texmf/fonts/tfm/public/cm/cmcsc10.tfm
 INPUT ./5_Pruebas.tex
 INPUT 5_Pruebas.tex
 INPUT ./5_Pruebas.tex
