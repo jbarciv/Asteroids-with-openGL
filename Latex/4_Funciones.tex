@@ -1,2 +1,23 @@
 \section{Descripción de funciones y estructuras del juego}
+\subsection{Clase ObjectList}
 
+La clase \emph{ObjectList} hereda características de la plantilla {\textless list\textgreater} lo que permite implementar de forma muy sencilla una lista enlazada. Esta lista enlazada es necesaria para gestionar todos los objetos que han sido creados en el constructor del objeto \emph{ObjectList} de forma eficiente. 
+Por un lado, esta clase declara los objetos que serán usados durante el resto del programa y también realiza algunas funciones básicas como son eliminar estos objetos, moverlos o dibujarlos.
+
+Además de declarar los objetos, la clase \emph{OjectList} también hace visibles objetos ya creados mediante su función \textsc{add()}, que será muy útil para hacer visible el \emph{ovni} cuando tenga que aparecer y hacer visibles los nuevos asteroides creados fruto de una colisión. 
+Por comodidad, en la propia clase se han implementado dos métodos que devuelven un puntero a la \emph{nave} y al \emph{ovni}: \textsc{getShip()} y \textsc{getUFO()}, respectivamente. Estos punteros permitirán acceder a los métodos de ambas clases más fácilmente que si no estuvieran implementados.
+
+Por otro lado, la función principal de la clase ObjectList es la función collisions() que devuelve entero. El entero devuelto permitirá identificar al tipo de colisión que se ha producido y permitirá a la lógica del programa, implementada en el archivo fuente mainAsteroids.cpp, gestionar las puntuaciones y eliminar o añadir objetos cuando proceda. En primer lugar, la función asigna tamaños y posiciones de los objetos principales esto es la nave, el ovni y la bala. posteriormente comprueban las distancias entre algunos de estos objetos susceptibles de colisionar, esto es: asteroides y astronave, asteroides y bala, OVNI y bala y astronave y ovnis.
+
+\begin{itemize}
+    \item En el primer caso, el choque entre un asteroide y la astronave, el asteroide se divide o se destruye dependiendo de su tamaño y la astronave se destruye y si no era la última, una nueva astronave se reposiciona en el centro.
+    \item Cuando una bala choca con un asteroide el asteroide se divide o se destruye dependiendo de su tamaño y la bala se destruye.
+    \item Cuando la bala choca con el ovni tanto el ovni como la bala se destruyen, aunque puede ocurrir que donde había un ovni inmediatamente surja otro no ocurre todas las veces y el comportamiento es aleatorio.
+    \item Cuando una astronave choca con un ovni o viceversa, el ovni queda intacto pero la astronave se destruye reposicionándose en el centro si todavía quedan vidas y si no es así se termina el juego.
+\end{itemize}
+
+En cada nueva llamada a la función \textsc{collisions()} se comprueban todos y cada uno de los elementos de la lista enlazada, obteniéndose sus posiciones y sus tamaños mediante un bucle \textsc{for()}. Dentro del bucle se obvian tanto la bala como la astronave pues se pasan como parámetros a la llamada de la función \textsc{collisions()} y no es necesario volver a comprobarlo, si bien es cierto que si se tienen en cuenta a la hora de comprobar las distancias entre los elementos que se han mencionado anteriormente. La comprobación de las distancias se hace mediante la función \textsc{mydistance()} definida en \emph{commonstuff.hpp}.
+
+En todos los casos, cuando se detecta una colisión, se retorna un entero que indica el tipo de colisión y entre qué elementos se ha producido. Dependiendo del entero se actualiza la puntuación del jugador.  Además, en un vector dedicado a tal efecto se marcan las coordenadas de la explosión. La duración de la explosión será definida en la lógica del juego.
+
+Otra función muy importante, la función \textsc{reposition()}, se encarga de reposicionar la nave cuando esta es destruida. También se encarga de reposicionar los asteroides cuando la reposición de la nave en el centro no es posible.
