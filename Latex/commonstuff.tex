@@ -1,12 +1,9 @@
- 
 \documentclass[12pt,a4paper]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage[english, spanish]{babel}
-\setlength{\parskip}{0.8em}
 \usepackage{url}
 \usepackage{graphicx}
 
-\usepackage{bookmark}
 \usepackage{natbib}
 \usepackage{csquotes}
 \usepackage{wrapfig}
@@ -56,11 +53,11 @@ linkcolor=bluegreen,%
 urlcolor=purpure}
 
 %%%%% FOR CODE IN LATEX %%%%
-
-\usepackage{listing}
 \usepackage{listings}
-\usepackage{minted}
 
+% \usepackage{listing}
+\usepackage[]{minted}
+\usepackage{keyval}
 \usepackage{kvoptions}
 \usepackage{fancyvrb}
 \usepackage{fvextra}	
@@ -75,7 +72,7 @@ urlcolor=purpure}
 \usepackage{lineno}
 \usepackage{framed}
 
-
+\usemintedstyle{borland}
 
 \definecolor{codegreen}{rgb}{0,0.5,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}

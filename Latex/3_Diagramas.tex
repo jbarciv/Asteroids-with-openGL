@@ -12,7 +12,7 @@ Para entender correctamente la relación entre las clases, tanto de las ya dadas
 Como puede verse en la Ilustración \ref{uml}, la clase \emph{ObjectList} agrega punteros a las clases \emph{Alien}, \emph{Ship} y \emph{Angel}, además de contener un puntero tipo \emph{Shape} llamado \textit{head} que apunta a la cabeza de la lista (pero que en la implementación realizada no se utiliza). Al igual que la clase \emph{Ship}, las clases \emph{Alien}, \emph{Angel}, \emph{Bullet}, \emph{Flame} y \emph{Asteroid} son hijas (heredan) de la clase \emph{Shape}. La clase \emph{Alien} tiene mucho en común con la clase \emph{Ship}, pues realizan prácticamente lo mismo, con la diferencia de que el \emph{theUFO} (instancia de la clase \emph{Alien}) se mueve automáticamente y de forma errática sin ser necesaria la interacción con el usuario. Por comodidad se han añadido dos punteros, uno al ovni y otro a la astronave (\emph{theShip}), que simplificarán mucho el código tanto en la lógica del juego como en la implementación de la clase \emph{ObjectList}.
 A parte de las clases aquí representadas, existe otro archivo de cabecera llamado \emph{commonstuff}, que almacena funciones cortas, parámetros y llamadas a librerías usadas en todos los archivos fuente del programa.
 
-\subsection{Diagramas de comunicación}
+\subsection{Diagramas de Objetos}
 \subsubsection{Creación de los objetos}
 
 El siguiente diagrama ilustra desde dónde se crean los objetos que se van a usar en el resto del programa:
@@ -26,8 +26,9 @@ El siguiente diagrama ilustra desde dónde se crean los objetos que se van a usa
 
 El diagrama de la Ilustración \ref{creacion} representa el mecanismo de creación de los objetos más importantes que se lleva a cabo en el constructor de \emph{ObjectList} y la creación de la bala a través del método \textsc{fire()} del objeto \emph{theShip}. Se crean también todos los asteroides, donde su número concreto viene definido por el parámetro NUMASTEROIDS definido en \emph{commonstuff.hpp}. Los asteroides son inmediatamente cargados en la interfaz gráfica mediante la función $push\_front()$ de la plantilla {\textless list\textgreater} a diferencia del OVNI (\emph{theUFO}), que será cargado desde la lógica del juego cuando se cumplan las condiciones especificadas en el algoritmo.
 
-A continuación, en otro pequeño diagrama de objetos, se verá el comportamiento de uno de los objetos \emph{Asteroid} cuando es impactado por una bala o por la astronave.
+A continuación, en otro pequeño diagrama, se verá el comportamiento de uno de los objetos \emph{Asteroid} cuando es impactado por una bala o por la astronave.
 
+\subsection{Diagramas de comunicación}
 \subsubsection{Comportamiento de un asteroide tras una colisión}
 En el siguiente diagrama (ver Ilustración \ref{asteroid}) se observa el comportamiento de un objeto \emph{Asteroid} tras una colisión, ya sea con una bala o con la astronave.
 
@@ -39,3 +40,14 @@ En el siguiente diagrama (ver Ilustración \ref{asteroid}) se observa el comport
 \end{figure}
 
 Cuando un asteroide colisiona, surgen dos asteroides donde antes había uno con un tamaño disminuido en una unidad respecto al asteroide original. En realidad, lo que sucede, como se ve en el diagrama es que el asteroide original disminuye su tamaño en una unidad y en el mismo lugar surge otro con el tamaño del original también disminuido en una unidad. Evidentemente si el tamaño es 1 (esto es, SMALL), la función \emph{Split()} no llega a ejecutarse porque el asteroide es destruido antes en la función \emph{collision} de \emph{ObjectList}.
+
+Además, se incluye también en las siguiente ilustración (ver \textsc{Fig.}~\ref{collisions} cómo funciona la función \textsc{collision()} y cómo se comunica con las clases que gestiona.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{fotos/Collision.png}
+    \caption{Diagrama de comunicación en la función collision()}
+    \label{collisions}
+\end{figure}
+
+\clearpage

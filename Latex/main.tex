@@ -38,12 +38,6 @@
 % \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%% RESUMEN %%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\input{1_Resumen.tex} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% ÍNDICE %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -53,6 +47,7 @@
  %Fijaros que estoy cambiando el color solo localmente...es genial para mantener los liks pero que no sea muy cargante el color para el índice de contenidos!!!
  \tableofcontents
 }
+\clearpage
 % \pagenumbering{Roman}
 
 %Si quieres que aparezca en el indice de contenidos pero sin numeración, poner lo siguiente simpre después de algún apartado
@@ -63,7 +58,7 @@
 %%%%%%%%%%%%%% INTRODUCCIÓN %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{2_Introduccion.tex}
+\input{1_Introduccion.tex} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% DIAGRAMAS %%%%%%%%%%%%%%%%%%%%
@@ -78,16 +73,15 @@
 \input{4_Funciones.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%% PRUEBAS %%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\input{5_Pruebas.tex}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% GUÍA DE USO %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{6_GuiaDeUso.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% PRUEBAS %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{5_Pruebas.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% REPARTO DE ROLES %%%%%%%%%%%%%%%%%
@@ -101,9 +95,8 @@
 
 \input{8_Evaluacion.tex}
 
-
 % \clearpage
-\bibliographystyle{abbrv}
+\bibliographystyle{plain}
 \bibliography{mybib}
 
 
