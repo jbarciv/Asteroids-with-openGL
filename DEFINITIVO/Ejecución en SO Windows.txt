@@ -1,0 +1,36 @@
+		
+			*********************************************************
+			**********Ejecución de Asteroids en Windows**************
+			*********************************************************
+
+Para facilitar la compilación del programa en un SO Windows se ha ampliado el makefile original (solo para distribuciones Linux) de forma que con un comando pueda compilarse todo el programa en Windows. El comando que debe usarse depende del compilador que se utilice, pues por defecto, los SO Windows no tienen soporte para Makefiles.
+
+En cualquier caso, para que el programa compile adecuadamente son necesarias dos cosas:
+	-Que los archivos glut32.dll, glut32.lib y glut.h esten en la misma carpeta que el ejecutable, los códigos objeto y los códigos fuente, respectivamente.
+	-Linkar las librerías de OpenGL en linea de comandos, pues si no da errores de linkado.
+
+Como todos los archivos del videojuego están en una misma carpeta lo único que hay que hacer es copiar en esa carpeta glut32.lib, glut.h y glut32.dll.
+
+Para compilar el código manualmente, debes usar: 
+	g++ *.cpp -mwindows glut32.lib -lopengl32 -lglu32 -o <nombreEjecutable>.exe
+
+Para usar el makefile dado con MinGW, debes incluir la carpeta glut32.h en C:\MinGW\include\GL, si no está ya incluido. Después debes compilar con las siguientes líneas de comandos:
+	
+	Para crear los códigos objeto:
+		mingw32-make Objects
+	
+	Para crear el ejecutable:
+		mingw32-make Asteroids
+
+	Para eliminar todos los códigos objeto y el ejecutable:
+		mingw32-make clean
+
+
+ #Las anteriores líneas de código han sido probadas en un terminal tipo Git Bash integrado en la plataforma Visual Studio Code
+
+Si se quiere crear el ejecutable y los códigos objeto de una sola vez basta con ejecutar solo la segunda línea:
+		mingw32-make Asteroids
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+	
