@@ -1,9 +1,4 @@
 # Main folder
-Sounds
-Latex
-UML
-.vscode
-
-# Asteroids folder
-Asteroids/.vscode
+some_stuff
+*.zip
 

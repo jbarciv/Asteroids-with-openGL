@@ -1,5 +1,0 @@
-En esta carpeta encontrarás los diagramas de clases, de objetos y de comunicación más importantes, que ayudan mucho a entender las partes más intrincadas del código y su funcionamiento.
-
-Los diagramas de objetos y de comunicación están hechos con un programa de dibujo asistido por ordenador (Microsoft Whiteboard) y estan disponibles en formato SVG y PNG. Te recomiendo abrir el SVG pues al ser un formato vectorial permite un zoom muy nítido.
-
-El diagrama de clases solo está disponible en formato PNG, aunque se adjunta un archivo que puede abrirse con el programa StarUML y con el que puedes apreciar mucho mejor las clases y sus relaciones.
