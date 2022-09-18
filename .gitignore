@@ -2,3 +2,4 @@
 some_stuff
 *.zip
 .vscode
+.gitignore
