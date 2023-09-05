@@ -13,13 +13,13 @@ As extras, a new class called Angel has been added, which grants lives when capt
 
 The graphics are made thanks to the **OpenGL** multiplatform library.
 
+## Instructions 
+
+![plot](./docs/INSTRUCTIONS.png)
+
 ## Acknowldegements
 The awesome instructions have been designed by Celia Ramos Ramírez, her creativity and good initiative have guided us throughout the project.
 
 Gonzalo Quiros Torres has been the main leader and has helped in every way necessary. The implementation of the erratic and random logic of the UFO has been all his own.
 
 Finally, we would like to thank Claudio Rossi for teaching us object-oriented programming, especially in C++, and for launching us to carry out complex projects that challenge us to give more of ourselves.
-
-## Instructions 
-
-![plot](./docs/INSTRUCTIONS.png)
